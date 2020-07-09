@@ -23,6 +23,7 @@
     "@types/redux-thunk": "^2.1.0",
     "@types/styled-components": "^5.1.1",
     "gatsby": "^2.23.12",
+    "gatsby-cli": "^2.12.60",
     "gatsby-link": "^2.4.11",
     "gatsby-plugin-react-helmet": "^3.3.9",
     "gatsby-plugin-react-redux": "^1.1.0-0",
