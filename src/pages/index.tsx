@@ -1,9 +1,20 @@
 import React from "react"
-import App from "~/components/App"
-export default function Home() {
+import App from "~/components/App";
 
-  return (
+import styled from "styled-components";
 
-    <App />
-  )
+interface Props {
+  className?: string;
 }
+
+const Component: React.FC<Props> = (props) => (
+  <div className={props.className}>
+    <App />
+  </div>
+)
+export default styled(Component)`
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+`
+

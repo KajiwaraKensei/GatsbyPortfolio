@@ -90,7 +90,7 @@ const Li = styled.li<LiProps>`
     &:before{
       content: '';
       background: inherit;
-      filter: blur(2px) grayscale(50%);
+      filter: blur(4px) grayscale(20%);
       position: absolute;
       top: -5px;
       left: -5px;
