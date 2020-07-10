@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import Image from "~/Parts/Image"
+import profile from "~/data/profile"
+
 
 type Props = {
   className?: string;
@@ -7,6 +10,7 @@ type Props = {
 
 const Component: React.FC<Props> = (props) => {
   const { className } = props;
+
   return (
     <div className={className}>
       <div className="profile_title">
@@ -16,7 +20,9 @@ const Component: React.FC<Props> = (props) => {
       <div className="profile_content">
         <div className="profile_left">
 
-          <div className="image"></div>
+          <div className="profile_image">
+            <Image filename={profile.image} height={"20rem"} width={"20rem"} style={{ borderRadius: "50%" }} />
+          </div>
           <div className="name">Kajiwara Kensei</div>
           <div className="info">
             <div className="title">Address</div>
@@ -84,10 +90,11 @@ const Component: React.FC<Props> = (props) => {
 };
 
 export default styled(Component)`
-  padding: 5rem 2rem;
+  
   .profile_content {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
   }
   .profile_title {
     display: flex;
@@ -95,78 +102,67 @@ export default styled(Component)`
     align-items: center;
     font-weight: bold;
     font-size: 2rem;
-    & h3 {
-      padding: 1rem 3rem;
-    }
+    padding-bottom: 2rem;
   }
   .profile_left,
   .profile_right {
     width: 100%;
-    padding: 3rem;
+    max-width: 30rem;
     display: flex;
     flex-direction: column;
   }
   .profile_left {
     align-items: center;
     & .info {
-      padding: 1.5rem;
       text-align: center;
-      & .title {
+      & > .title {
+        padding-bottom: 2rem;
         font-size: 1.5rem;
         font-weight: bold;
-        padding: 1rem .5rem;
       }
-      &  .value {
+      & > .value {
         color: #777;
         font-size: 1.2rem;
       }
     }
     &  .image {
-      width: 20rem;
-      height: 20rem;
+      width: 15rem;
+      height: 15rem;
+      overflow: hidden;
       border-radius: 50%50%;
       border: 1px solid;
+      
     }
     &  .name {
-      padding: 3rem 0;
       font-weight: bold;
       font-size: 2rem;
     }
   }
   .profile_right {
     & > .content {
-      padding: 2rem;
       & > .title {
         font-size: 2rem;
-        padding-bottom: 1rem;
         font-weight: bold;
       }
       & > .value {
-        padding: 1rem;
         font-family: 'Cardo', serif;
-    font-size: .9rem;
-    font-style: italic;
-
+        font-size: .9rem;
+        font-style: italic;
       }
     }
 
     & > .introduction, & > .career {
-      padding: 2rem;
       & > .title {
         font-size: 2rem;
-        padding-bottom: .5rem;
         font-weight: bold;
       }
       & .content{
         & > div{
-          padding: .5rem 1rem;
           & > .year{
-            padding: .5rem 0;
             font-size: 1.2rem;
             font-weight: bold;
           }
           & > .event{
-            padding-left: 1rem;
             font-family: 'Cardo', serif;
             font-size: .9rem;
             font-style: italic;

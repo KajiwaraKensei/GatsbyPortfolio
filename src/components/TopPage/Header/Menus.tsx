@@ -14,27 +14,39 @@ const Component: React.FC<Props> = (props) => {
 
   return (
     <div className={className}>
-      <div>PORTFOLIO</div>
-      <div onClick={clickDetail}>SKILLS</div>
-      <div>WORKS</div>
-      <div>CONTACT</div>
+      <div>
+        <div>PORTFOLIO</div>
+        <div onClick={clickDetail}>SKILLS</div>
+        <div>WORKS</div>
+        <div>CONTACT</div>
+      </div>
+
     </div>
   );
 };
 
 export default styled(Component)`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  width: 100%;
   & > div {
-    font-weight: bold;
-    padding: 2rem 3rem;
-    margin: 1rem auto;
-    transition: 0.5s;
-    border-bottom: 5px inset #eee;
-    border-radius: 1rem;
-    &:hover {
-      cursor: pointer;
-      border-bottom: 5px outset #aaa;
+    width: 100%;
+    max-width: 50rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    & > div{
+      font-weight: bold;
+      padding: 2rem 3rem;
+      margin: 1rem auto;
+      transition: 0.5s;
+      border-bottom: 5px inset #eee;
+      border-radius: 1rem;
+      &:hover {
+        cursor: pointer;
+        border-bottom: 5px outset #aaa;
+      }
     }
+
   }
 `;

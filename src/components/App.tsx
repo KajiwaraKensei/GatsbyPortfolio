@@ -5,7 +5,7 @@ import './index.css';
 
 type Props = {
   className?: string;
-}
+};
 
 
 const App: React.FC<Props> = (props) => {
