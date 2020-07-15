@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-
+import Background from "~/Parts/Background"
 type Props = {
   className?: string;
   images: string[];
@@ -8,12 +8,11 @@ type Props = {
 
 const Component: React.FC<Props> = (props) => {
   const { className, images } = props;
-  const mapImages = images.map(image => <Li url={image} key={"loop_" + image}></Li>)
+  const mapImages = images.map((image, index) => <Li url={image} key={"loop_" + image + index}></Li>)
   return (
     <div className={className}>
       <ul className="ho1">
         {mapImages}
-
       </ul>
       <ul className="ho2">
         {mapImages}
@@ -64,12 +63,12 @@ export default styled(Component)`
   }
 
 & > .ho1{
-    animation: ${loop} 40s -20s linear infinite;
+    animation: ${loop} 60s -30s linear infinite;
     backface-visibility: hidden;
     will-change: transform;
   }
   & > .ho2 {
-    animation: ${loop2} 40s 0s linear infinite;
+    animation: ${loop2} 60s 0s linear infinite;
   }
 `;
 

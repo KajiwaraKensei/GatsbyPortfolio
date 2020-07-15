@@ -12,7 +12,6 @@ export type Skill = {
     url: string;
     name: string;
   }[];
-
 }
 type Props = {
   className?: string;

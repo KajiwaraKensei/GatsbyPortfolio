@@ -5,8 +5,6 @@ import Profile from "~/components/TopPage/Profile";
 import Skills from "~/components/TopPage/Skills";
 import Works from "~/components/TopPage/Works";
 import LoopBackGround from "components/Parts/LoopsBackground";
-import { useSelector } from "react-redux"
-import { RootState } from "~/store";
 
 import works from "~/data/works";
 
@@ -15,19 +13,12 @@ type Props = {
   className?: string;
 };
 
-const useRedux = () => {
-  const state = useSelector((state: RootState) => ({
-    select: state.style.select
-  }));
-  return { state }
-}
+
 
 const Component: React.FC<Props> = (props) => {
   const { className } = props;
-  const { state } = useRedux();
   return (
     <div className={className}>
-      {state.select !== null && <LoopBackGround images={works[state.select].images} />}
       <Header />
       <Profile />
       <Skills />

@@ -8,16 +8,16 @@ type Props = {
 
 const Component: React.FC<Props> = (props) => {
   const { className } = props;
-  const clickDetail = (event: React.MouseEvent) => {
-    scroller.scrollTo("skills", scrollOption)
+  const clickDetail = (to: string) => (event: React.MouseEvent) => {
+    scroller.scrollTo(to, scrollOption)
   }
 
   return (
     <div className={className}>
       <div>
         <div>PORTFOLIO</div>
-        <div onClick={clickDetail}>SKILLS</div>
-        <div>WORKS</div>
+        <div onClick={clickDetail("skills")}>SKILLS</div>
+        <div onClick={clickDetail("works")}>WORKS</div>
         <div>CONTACT</div>
       </div>
 

@@ -110,6 +110,7 @@ export default styled(Component)`
     max-width: 30rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
   }
   .profile_left {
     align-items: center;
