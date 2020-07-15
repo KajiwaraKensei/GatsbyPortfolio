@@ -15,6 +15,5 @@ const Component: React.FC<Props> = (props) => (
 export default styled(Component)`
   max-width: 100vw;
   min-height: 100vh;
-  overflow: hidden;
 `
 

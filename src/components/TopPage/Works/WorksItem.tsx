@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { workType } from "~/data/works";
-import { copy } from "~/lib/style"
+import { copy } from "~/lib/style";
+import Img from "~/Parts/Image"
 export const CARD_SIZE = 20;
 
 type Props = {
@@ -14,11 +15,11 @@ type Props = {
 
 const Component: React.FC<Props> = (props) => {
   const { className, work, onMouseOver, onMouseOut } = props;
-  const { name, images, briefDescription } = work;
+  const { name, icon, briefDescription } = work;
   return (
     <div className={className}>
       <h4 className="work_name">{name}</h4>
-      <img src={images[0]} alt="" onMouseOver={onMouseOver} onMouseOut={onMouseOut} />
+      <img src={icon} onMouseOver={onMouseOver} onMouseOut={onMouseOut} />
       <p className="work_copy">{briefDescription}</p>
     </div>
   )
@@ -44,14 +45,17 @@ export default styled(Component) <StyledProps>`
   align-items: center;
   flex-direction: column;
   transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
-  & > img{
-    transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
+  &  img{
+    transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1) !important;
     pointer-events : auto;
-    width: ${CARD_SIZE - 2}rem;
-    height: ${CARD_SIZE - 2}rem;
+    width: ${CARD_SIZE - 2}rem !important;
+    height: ${CARD_SIZE - 2}rem !important;
     object-fit: cover;
     cursor: pointer;
+    margin: 0 auto !important;
   }
+
+
 
   & > .work_name, & > .work_copy{
     pointer-events:none;
@@ -82,9 +86,9 @@ export default styled(Component) <StyledProps>`
     }
   }
 
-  & > img:hover{
-    height: ${CARD_SIZE}rem;
-    width:100%;
+  & img:hover{
+    height: ${CARD_SIZE}rem !important;
+    width:100% !important;
   }
 
 

@@ -3,7 +3,7 @@ import { StaticQuery, graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
 // 画像ファイルパスをプロパティに取るようなコンポーネントを定義
-export default ({ filename, height, width, style }: { filename: string, height?: string, width?: string, style?: object }) => (
+export default ({ filename, height, width, style }: { filename: string, height?: number | string, width?: number | string, style?: object }) => (
 
   // ページじゃないコンポーネントでもGraphQLが使えるように
   // StaticQueryタグを使う
@@ -43,9 +43,7 @@ export default ({ filename, height, width, style }: { filename: string, height?:
       })
 
       if (!image) {
-        console.log("Image Not Fount !!");
-
-        return
+        return null
       }
 
       // Imgタグでgatsby-imageで最適化された画像を表示する
