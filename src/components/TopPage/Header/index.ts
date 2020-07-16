@@ -1,4 +1,5 @@
-import Header from './HeaderPage'
-import Menus from './Menus'
-export { Header, Menus }
+import Header from "./HeaderPage"
+import Menus from "./Menus"
+import Contact from "./Contact"
+export { Header, Menus, Contact }
 export default Header

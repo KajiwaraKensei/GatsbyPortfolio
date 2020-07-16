@@ -23,10 +23,16 @@ const Component: React.FC<Props> = (props) => {
 };
 
 export default styled(Component)`
+max-height: 100rem;
+.header_menus{
+  max-height: 100rem;
+  transition: all 1.0s;
+}
+  
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  padding: 6rem 2rem;
+  padding: 6rem 2rem 3rem;;
   background-color: #000;
   color: #fff;
   .header_main {
