@@ -1,4 +1,4 @@
-import {keyframes} from "styled-components"
+import { keyframes } from "styled-components"
 export const copy = `
   margin: 0;
   font-family: 'Cardo', serif;
@@ -11,9 +11,24 @@ export const fadeIn = keyframes`
   0% {
     opacity: 0;
     padding: 0 1rem;
-  } /*アニメーション開始時は不透明度0%*/
+  } 
   100% {
     opacity: 1;
     padding: 0;
-  } /*アニメーション終了時は不透明度100%*/
+  }
 `
+
+export const customFadeIn = (props?: { start?: string; end?: string }) => {
+  return keyframes`
+  0% {
+    opacity: 0;
+    padding: 0 1rem;
+    ${props && props.start}
+  } 
+  100% {
+    opacity: 1;
+    padding: 0;
+    ${props && props.end}
+  }
+`
+}
