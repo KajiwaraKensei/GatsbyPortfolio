@@ -10,16 +10,16 @@ type Props = {
   work: workType;
   onMouseOver?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   onMouseOut?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-
+  onClick?: () => void;
 } & StyledProps;
 
 const Component: React.FC<Props> = (props) => {
-  const { className, work, onMouseOver, onMouseOut } = props;
+  const { className, work, onMouseOver, onMouseOut, onClick } = props;
   const { name, icon, briefDescription } = work;
   return (
     <div className={className}>
       <h4 className="work_name">{name}</h4>
-      <img src={icon} onMouseOver={onMouseOver} onMouseOut={onMouseOut} />
+      <img src={icon} onClick={onClick} onMouseOver={onMouseOver} onMouseOut={onMouseOut} />
       <p className="work_copy">{briefDescription}</p>
     </div>
   )
@@ -28,6 +28,7 @@ const Component: React.FC<Props> = (props) => {
 
 type StyledProps = {
   focus?: boolean | 0 | null;
+  opacity?: string | number;
 }
 export default styled(Component) <StyledProps>`
   pointer-events:none;
@@ -90,6 +91,8 @@ export default styled(Component) <StyledProps>`
     height: ${CARD_SIZE}rem !important;
     width:100% !important;
   }
+  ${({ opacity }) => opacity != null && `opacity: ${opacity};`}
+  
 
 
 `;

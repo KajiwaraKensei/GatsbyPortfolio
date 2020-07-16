@@ -11,11 +11,11 @@ type Props = {
 const Component: React.FC<Props> = (props) => {
   const { className, name } = props;
   const [work, setWork] = React.useState<workType | undefined>(() => {
-    return works.find(e => e.name.toLowerCase() === name);
+    return works.find(e => e.name.toLowerCase() === name.toLowerCase());
   });
   const Page = work && (
     <Fragment>
-      <Header />
+      <Header url={work.backgroundImage} />
       <Contents work={work} />
     </Fragment>
   )
