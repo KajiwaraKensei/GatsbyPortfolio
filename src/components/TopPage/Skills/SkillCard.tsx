@@ -78,8 +78,6 @@ const Component: React.FC<Props> = (props) => {
           <p className="copy">
             {skill.description}
           </p>
-          <button className="btn">詳細</button>
-
         </div>
       </div>
     </Fade>
