@@ -30,18 +30,18 @@ const Component: React.FC<Props> = (props) => {
     <Element name="works">
       <div className={className}>
         <div className="work_background">
-        
+
           <div className="work_background_image">
-           <Image 
-        filename={state.select !== null ? works[state.select].backgroundImage : "work.jpg"} 
-        width="100%" 
-        height="100%"
-         />
-         </div>
-         
-         <div className="work_bottom_back"></div>
+            <Image
+              filename={state.select !== null ? works[state.select].backgroundImage : "work.jpg"}
+              width="100%"
+              height="100%"
+            />
+          </div>
+
+          <div className="work_bottom_back"></div>
           <h1 className="title">WORKS</h1>
-          
+
         </div>
 
         <div className="works_list">
@@ -68,7 +68,7 @@ export default styled(Component)`
     }
     & img {
       animation: ${fadeIn} 1s forwards;
-      z-index: -11;
+      z-index: -5;
     }
     position: sticky;
     top: 0;
@@ -79,6 +79,7 @@ export default styled(Component)`
       padding-top: 24vh;
       color: #fff;
       text-shadow: 0px 12px 20px #000;
+      z-index: -5;
     }
     & .work_bottom_back{
     position: absolute;
@@ -86,7 +87,7 @@ export default styled(Component)`
     left: 0;
     height: 50%;
     width: 100vw;
-    background-color: #d8ebe9;
+    background-color: #fcfffc;
   }
   }
 

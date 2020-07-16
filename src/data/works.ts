@@ -29,6 +29,24 @@ const works: worksType = [
     icon: "01f.jpg",
     backgroundImage: "01f.jpg",
   },
+  {
+    platform: "web",
+    name: "Gotinabi_task",
+    images: ["my.jpg", "my.jpg"],
+    briefDescription: "This is a simple description of this app.",
+    workDay: 2020,
+    icon: "my.jpg",
+    backgroundImage: "S__7241731.jpg",
+  },
+  {
+    platform: "web",
+    name: "Gotinabi_task2",
+    images: ["goti.jpg", "my.jpg"],
+    briefDescription: "This is a simple description of this app.",
+    workDay: 2020,
+    icon: "profile.jpg",
+    backgroundImage: "profile.jpg",
+  },
 ]
 
 export default works

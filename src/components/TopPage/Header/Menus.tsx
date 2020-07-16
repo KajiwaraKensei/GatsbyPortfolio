@@ -31,20 +31,23 @@ export default styled(Component)`
   width: 100%;
   & > div {
     width: 100%;
-    max-width: 50rem;
+    max-width: 40rem;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding: 2rem 0 0;
     & > div{
       font-weight: bold;
-      padding: 2rem 3rem;
-      margin: 1rem auto;
+      padding: 1rem 1rem;
+      margin: 1rem 1rem 0;
       transition: 0.5s;
-      border-bottom: 5px inset #eee;
-      border-radius: 1rem;
+      cursor: pointer;
+      border-bottom: 2px solid #fff;
       &:hover {
-        cursor: pointer;
-        border-bottom: 5px outset #aaa;
+        background-color: #ddd;
+        color: #000;
+        border-bottom: 2px solid #fa9;
+        border-radius: .5rem .5rem 0 0;
       }
     }
 

@@ -35,9 +35,8 @@ const Component: React.FC<Props> = (props) => {
 
   return (
     <div className={className}>
-      <div className="map_works">
-        {mapWorks}
-      </div>
+      {mapWorks}
+
 
     </div>
   );
@@ -49,18 +48,17 @@ type StyledProps = {
 
 export default styled(Component) <StyledProps>`
   height: 100%;
-  .map_works{
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
+
 
   max-width: ${CARD_SIZE * MAX_ON_LINE}rem;
   @media screen and (min-width: ${CARD_SIZE * MAX_ON_LINE}rem){
     justify-content: left;
   }
   ${({ works }) => flexLeft(works)}
-
 `;
 
 const flexLeft = (works: any[]) => {
