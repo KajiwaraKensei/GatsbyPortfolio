@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import BackGround from "~/Parts/Background"
+import Image from "~/Parts/Image"
 type Props = {
   className?: string;
-
+  url?: string
 }
 
 const Component: React.FC<Props> = (props) => {
-  const { className } = props;
+  const { className, url } = props;
   return (
 
     <div className={className}>
-      <BackGround width={"100%"} height={"100%"} url={"01f.jpg"} ></BackGround>
+      <Image width={"100%"} height={"100%"} filename={url || "01f.jpg"} />
     </div>
   )
 }
@@ -22,5 +22,5 @@ z-index: -10;
 top: 0;
 left: 0;
 width: 100%;
-height: 50vh;
+height: 100vh;
 `;

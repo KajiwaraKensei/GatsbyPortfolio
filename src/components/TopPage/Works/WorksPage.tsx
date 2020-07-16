@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { WorksList } from "."
 import works from "~/data/works"
-import Background from "~/Parts/Background"
 import Image from "~/Parts/Image"
 import { Element } from "react-scroll";
 import { fadeIn } from "~/lib/style"
@@ -25,7 +24,11 @@ const useRedux = () => {
 const Component: React.FC<Props> = (props) => {
   const { className } = props;
   const { state } = useRedux();
-
+  const [toggle, setToggle] = useState(false);
+  const handleCardClick = () => {
+    console.log("card click!")
+    setToggle(!toggle)
+  }
   return (
     <Element name="works">
       <div className={className}>
@@ -38,19 +41,32 @@ const Component: React.FC<Props> = (props) => {
               height="100%"
             />
           </div>
+          <BottomBack toggle={toggle} />
 
-          <div className="work_bottom_back"></div>
           <h1 className="title">WORKS</h1>
 
         </div>
 
         <div className="works_list">
-          <WorksList works={works} />
+          <WorksList onCardClick={handleCardClick} works={works} />
         </div>
       </div>
     </Element>
   )
 }
+
+type BottomBack = {
+  toggle?: boolean
+}
+const BottomBack = styled.div<BottomBack>`
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: ${({ toggle }) => toggle ? `0` : `50%`};
+    width: 100vw;
+    background-color: #fcfffc;
+    transition: .5s;
+`;
 
 export default styled(Component)`
   padding: 5rem 0;
@@ -64,7 +80,8 @@ export default styled(Component)`
       right: 0;
       width: 100%;
       box-shadow: 0px -19px 20px 0px #00000052 inset;
-      height: 50%;
+      height: 100%;
+
     }
     & img {
       animation: ${fadeIn} 1s forwards;
@@ -81,14 +98,6 @@ export default styled(Component)`
       text-shadow: 0px 12px 20px #000;
       z-index: -5;
     }
-    & .work_bottom_back{
-    position: absolute;
-    top: 50%;
-    left: 0;
-    height: 50%;
-    width: 100vw;
-    background-color: #fcfffc;
-  }
   }
 
   & > .title{

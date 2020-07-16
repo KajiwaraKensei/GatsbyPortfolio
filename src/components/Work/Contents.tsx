@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import works, { workType } from "~/data/works";
 
 type Props = {
@@ -18,7 +18,18 @@ const Component: React.FC<Props> = (props) => {
   )
 }
 
+const up = keyframes`
+0% {
+  margin-top: 100vh;
+}
+100% {
+  margin-top: 50vh;
+
+}
+`
+
 export default styled(Component)`
+  animation: ${up} 1s forwards;
   margin-top: 50vh;
   min-height: 100vh;
   background-color: #fff;
