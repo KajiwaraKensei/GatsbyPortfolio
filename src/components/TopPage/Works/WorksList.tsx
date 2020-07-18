@@ -43,7 +43,7 @@ const Component: React.FC<Props> = (props) => {
   }
   const mapWorks = works.map((work, index) => (
     <React.Fragment key={"work_id_" + work.name}>
-      <WorksItem opacity={clickSelect === null ? null : index === clickSelect ? 1 : 0} focus={(select && (select === index))} onClick={handleCardClick(index)} work={work} onMouseOut={callBack(null)} onMouseOver={callBack(index)} />
+      <WorksItem opacity={clickSelect === null ? undefined : index === clickSelect ? 1 : 0} focus={(select && (select === index))} onClick={handleCardClick(index)} work={work} onMouseOut={callBack(null)} onMouseOver={callBack(index)} />
     </React.Fragment>
   ));
 
