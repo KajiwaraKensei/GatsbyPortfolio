@@ -37,7 +37,7 @@ justify-content: center;
 align-items: center;
 color: #fff;
  & > *{
-   margin: 2rem 1rem 0;
+   margin: 0 1rem 0;
    cursor: pointer;
    padding-bottom: .3rem;
    border-bottom: 2px solid #000;
