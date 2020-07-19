@@ -17,3 +17,23 @@ code {
 * {
   box-sizing: border-box;
 }
+
+h2,
+h1,
+h3,
+h4 {
+  font-weight: 100;
+}
+
+.width_material_icon {
+  display: flex;
+  align-items: center;
+}
+.width_material_icon > * {
+  margin-left: 0.5rem;
+}
+
+a {
+  color: inherit;
+  font-weight: 150;
+}

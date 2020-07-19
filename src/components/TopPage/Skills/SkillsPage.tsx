@@ -12,7 +12,7 @@ const Component: React.FC<Props> = (props) => {
   return (
     <Element name="skills">
       <div className={className}>
-        <h2>SKILLS</h2>
+        <h1>SKILLS</h1>
         <SkillList skills={skills} />
       </div>
     </Element>
@@ -20,11 +20,18 @@ const Component: React.FC<Props> = (props) => {
 }
 
 export default styled(Component)`
-  text-align: center;
-  padding: 5rem 2rem;
-
-  h2{
-    font-size: 2rem;
-    margin: 0 0 3rem;
+  & h1{
+    &:after {
+        content: " ";
+        border-bottom: solid 1px #9f9ae7;
+        display: block;
+        width: 5rem;
+        margin: 10px auto;
+      }
   }
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: #000;
+  color: #fff;
+ 
 `;

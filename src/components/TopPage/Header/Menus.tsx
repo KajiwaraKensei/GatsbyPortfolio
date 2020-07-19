@@ -3,12 +3,14 @@ import styled from "styled-components";
 import { scroller } from 'react-scroll';
 import { scrollOption } from "~/lib/scroll";
 import { Contact } from "."
+import { profile } from "~/data/profile";
 type Props = {
   className?: string;
+  profile: profile
 };
 
 const Component: React.FC<Props> = (props) => {
-  const { className } = props;
+  const { className, profile } = props;
   const clickDetail = (to: string) => (event: React.MouseEvent) => {
     scroller.scrollTo(to, scrollOption)
   }
@@ -19,12 +21,12 @@ const Component: React.FC<Props> = (props) => {
   return (
     <div className={className}>
       <div className="menu_buttons">
-        <div>PORTFOLIO</div>
+        <div onClick={clickDetail("profile")}>PORTFOLIO</div>
         <div onClick={clickDetail("skills")}>SKILLS</div>
         <div onClick={clickDetail("works")}>WORKS</div>
         <div onClick={clickContact}>CONTACT</div>
       </div>
-      <Contact display={contactToggle} />
+      <Contact display={contactToggle} profile={profile} />
     </div>
   );
 };
@@ -39,16 +41,14 @@ export default styled(Component)`
     padding: 2rem 0 0;
     margin: 0 auto;
     & > div{
-      font-weight: bold;
       padding: 1rem 1rem .75rem;
       margin: 1rem;
       transition: 0.25s;
       cursor: pointer;
-      border-bottom: 2px solid #fff;
+      border-bottom: 2px solid #39ffd14d;
       &:hover {
-        background-color: #ddd;
-        color: #000;
-        border-bottom: 2px solid #fa7;
+        background-color: #ffffff2e;
+        border-bottom: 2px solid #39edff;
         border-radius: .5rem .5rem 0 0;
       }
     }

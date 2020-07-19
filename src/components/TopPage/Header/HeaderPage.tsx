@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Menus } from ".";
+import profile from "~/data/profile";
+
 type Props = {
   className?: string;
 };
@@ -16,7 +18,7 @@ const Component: React.FC<Props> = (props) => {
         <div>Integrates with Sketch and Adobe XD* on macOS</div>
       </div>
       <div className="header_menus">
-        <Menus />
+        <Menus profile={profile} />
       </div>
     </div>
   );
@@ -37,14 +39,11 @@ max-height: 100rem;
   color: #fff;
   .header_main {
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    font-family: 'Vesterbro poster', sans-serif;
-    font-weight: 400;
+    text-align: center;
     & > h1{
-      font-size: 4.75rem;
+      font-weight: 900;
+      font-size: 4rem;
     }
   }
   .header_subtitle{

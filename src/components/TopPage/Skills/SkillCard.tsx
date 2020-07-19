@@ -25,22 +25,22 @@ const SetSVG = (skill: Skill): SVGProps => {
 
   const { proficiencyLevel } = skill;
 
-  let color = (256 - Math.floor(256 * (proficiencyLevel * 0.01))) + 10;
+  let color = (Math.floor(256 * (proficiencyLevel * 0.01))) + 10;
   color > 210 && (color = 210);
 
   let r = color;
   let g = color * 0.9;
-  let b = (color + 100) * 1.2;
+  let b = (color + 50) * 1.2;
 
   const baseColor = `rgba(${r}, ${g}, ${b}, .5)`
   const strokeWidth =
     proficiencyLevel > 25 ?
       proficiencyLevel > 50 ?
         proficiencyLevel > 75 ?
-          2 :
           3 :
-        4 :
-      4;
+          3 :
+        3.5 :
+      3;
 
   const circumference =
     proficiencyLevel > 25 ?
@@ -56,14 +56,14 @@ const SetSVG = (skill: Skill): SVGProps => {
     baseColor,
     strokeWidth,
     circumference,
-    marginalColor: "#ddd"
+    marginalColor: "#ffffff00"
   }
 }
 
 const Component: React.FC<Props> = (props) => {
   const { className, skill, index } = props;
   return (
-    <Fade className={className} direction="top" delay={500 * index} triggerOnce >
+    <Fade className={className} direction="top" delay={200 * index} triggerOnce >
       <div className="card">
 
         <div className="circle">
@@ -87,7 +87,8 @@ const Component: React.FC<Props> = (props) => {
 export default styled(Component)`
   display: flex;
   margin: 2rem 1rem;
-
+  color: #eee;
+  font-weight: 200;
   & .card >  .circle {
     & > div{
       position: relative;
@@ -97,17 +98,19 @@ export default styled(Component)`
         top: 50%;
         left: 50%;
         transform: translateY(-50%) translateX(-50%);
+        
       }
     }
   }
 
   .card{
+    background-color: #ffffff1a;
+    border-radius: .25rem;
     flex-grow: 1;
     border-radius: .5rem;
     position: relative;
     padding: .75rem 1rem;
     width: 15rem;
-    color: #445;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -133,7 +136,6 @@ export default styled(Component)`
 
   .title {
     font-size: 1.3rem;
-    font-weight: bold;
     margin-bottom: .5rem;
     &:after{
     content: " ";
@@ -147,15 +149,12 @@ export default styled(Component)`
   .copy {
     margin: 0;
     transition: transform calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
-    font-family: 'Cardo', serif;
     font-size: .9rem;
-    font-style: italic;
     line-height: 1.35;
   }
 
   .btn {
     transition: opacity 700ms cubic-bezier(0.19, 1, 0.22, 1);
-
     opacity: 0;
     cursor: pointer;
     margin-top: auto;

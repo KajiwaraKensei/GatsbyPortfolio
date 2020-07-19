@@ -95,7 +95,7 @@ const works: worksType = [
       {
         type: "article",
         value:
-          'This site is responsive. It uses a CSS in Javascript called "Styled-Components" to make the site responsive. It dynamically generates CSS to fit the width of the screen.',
+          'This site is responsive.  It uses a CSS in Javascript called "Styled-Components" to make the site responsive. It dynamically generates CSS to fit the width of the screen.',
         headline: "Responsive Support",
         styled: "margin-top: 5rem;",
       },
