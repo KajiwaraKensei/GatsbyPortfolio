@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 import works, { workType } from "~/data/works";
 import { NotFount, Header, Contents } from ".";
+import '../index.css';
 
 type Props = {
   className?: string;

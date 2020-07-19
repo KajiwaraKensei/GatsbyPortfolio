@@ -32,8 +32,7 @@ const Component: React.FC<Props> = (props) => {
   return (
     <Element name="works">
       <div className={className}>
-        <div className="work_background">
-
+        <div className="work_background">{"　"}
           <div className="work_background_image">
             <Image
               filename={state.select !== null ? works[state.select].backgroundImage : "work.jpg"}
@@ -69,10 +68,11 @@ const BottomBack = styled.div<BottomBack>`
 `;
 
 export default styled(Component)`
-  padding: 5rem 0;
+  width: 100%;
   & > .work_background{
     height: 100vh;
     position: relative;
+    width: 100%;
     & .work_background_image{
       position: absolute;
       top: 0;
