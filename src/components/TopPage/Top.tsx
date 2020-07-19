@@ -4,9 +4,7 @@ import Header from "~/components/TopPage/Header"
 import Profile from "~/components/TopPage/Profile"
 import Skills from "~/components/TopPage/Skills"
 import Works from "~/components/TopPage/Works"
-import LoopBackGround from "components/Parts/LoopsBackground"
-
-import works from "~/data/works"
+import Footer from "~/Parts/Footer"
 
 type Props = {
   className?: string
@@ -20,6 +18,7 @@ const Component: React.FC<Props> = props => {
       <Profile />
       <Skills />
       <Works />
+      <Footer />
     </div>
   )
 }

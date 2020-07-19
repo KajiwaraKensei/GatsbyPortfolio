@@ -109,5 +109,4 @@ export default styled(Component)`
     display: flex;
     justify-content: center;
   }
-  margin-bottom: 20rem;
 `
