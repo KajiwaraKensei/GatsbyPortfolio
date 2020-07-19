@@ -1,44 +1,43 @@
-import React from 'react'
-import { graphql, StaticQuery } from 'gatsby'
-import styled from 'styled-components'
+import React from "react"
+import { graphql, StaticQuery } from "gatsby"
+import styled from "styled-components"
 
-import BackgroundImage from 'gatsby-background-image'
-
+import BackgroundImage from "gatsby-background-image"
 
 type Props = {
-  className?: string;
-  url: string;
-  height?: string | number;
-  width?: string | number;
-  style?: object;
+  className?: string
+  url: string
+  height?: string | number
+  width?: string | number
+  style?: object
 }
-const BackgroundSection: React.FC<Props> = (props) => {
-  const { children, className, url, style, width, height } = props;
+const BackgroundSection: React.FC<Props> = props => {
+  const { children, className, url, style, width, height } = props
 
   return (
     <StaticQuery
       query={graphql`
-      query {
-        allFile(filter: {}) {
-          edges {
-            node {
-              relativePath
-              childImageSharp {
-                fluid(maxWidth: 1600) {
-                  base64
-                  src
-                  srcSet
-                  srcSetWebp
-                  srcWebp
-                  aspectRatio
-                  sizes
+        query {
+          allFile(filter: {}) {
+            edges {
+              node {
+                relativePath
+                childImageSharp {
+                  fluid(maxWidth: 1600) {
+                    base64
+                    src
+                    srcSet
+                    srcSetWebp
+                    srcWebp
+                    aspectRatio
+                    sizes
+                  }
                 }
               }
             }
           }
         }
-      }
-    `}
+      `}
       render={data => {
         // Set ImageData.
         const image = data.allFile.edges.find((n: any) => {
@@ -46,20 +45,25 @@ const BackgroundSection: React.FC<Props> = (props) => {
         })
 
         if (!image) {
-          console.log("Image Not Fount !!");
+          console.log("Image Not Fount !!")
           return children
         }
 
         const imageSizes = image.node.childImageSharp.fluid
-        return <BackgroundImage
-          Tag="section"
-          className={className}
-          fluid={imageSizes}
-          style={{ ...style, height: height || "20rem", width: width || "20rem" }}
-        >
-          {children}
-        </BackgroundImage>
-
+        return (
+          <BackgroundImage
+            Tag="section"
+            className={className}
+            fluid={imageSizes}
+            style={{
+              ...style,
+              height: height || "20rem",
+              width: width || "20rem",
+            }}
+          >
+            {children}
+          </BackgroundImage>
+        )
       }}
     />
   )

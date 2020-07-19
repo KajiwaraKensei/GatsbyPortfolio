@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { scroller } from 'react-scroll';
-import { scrollOption } from "~/lib/scroll";
+import React, { useState } from "react"
+import styled from "styled-components"
+import { scroller } from "react-scroll"
+import { scrollOption } from "~/lib/scroll"
 import { Contact } from "."
-import { profile } from "~/data/profile";
+import { profile } from "~/data/profile"
 type Props = {
-  className?: string;
+  className?: string
   profile: profile
-};
+}
 
-const Component: React.FC<Props> = (props) => {
-  const { className, profile } = props;
+const Component: React.FC<Props> = props => {
+  const { className, profile } = props
   const clickDetail = (to: string) => (event: React.MouseEvent) => {
     scroller.scrollTo(to, scrollOption)
   }
@@ -28,8 +28,8 @@ const Component: React.FC<Props> = (props) => {
       </div>
       <Contact display={contactToggle} profile={profile} />
     </div>
-  );
-};
+  )
+}
 
 export default styled(Component)`
   & > .menu_buttons {
@@ -40,8 +40,8 @@ export default styled(Component)`
     flex-wrap: wrap;
     padding: 2rem 0 0;
     margin: 0 auto;
-    & > div{
-      padding: 1rem 1rem .75rem;
+    & > div {
+      padding: 1rem 1rem 0.75rem;
       margin: 1rem;
       transition: 0.25s;
       cursor: pointer;
@@ -49,9 +49,8 @@ export default styled(Component)`
       &:hover {
         background-color: #ffffff2e;
         border-bottom: 2px solid #39edff;
-        border-radius: .5rem .5rem 0 0;
+        border-radius: 0.5rem 0.5rem 0 0;
       }
     }
   }
-  
-`;
+`

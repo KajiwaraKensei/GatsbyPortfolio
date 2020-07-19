@@ -1,14 +1,14 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 import SkillList from "./SkillsList"
-import { Element } from "react-scroll";
-import skills from "~/data/skills";
+import { Element } from "react-scroll"
+import skills from "~/data/skills"
 type Props = {
-  className?: string;
+  className?: string
 }
 
-const Component: React.FC<Props> = (props) => {
-  const { className } = props;
+const Component: React.FC<Props> = props => {
+  const { className } = props
   return (
     <Element name="skills">
       <div className={className}>
@@ -20,18 +20,17 @@ const Component: React.FC<Props> = (props) => {
 }
 
 export default styled(Component)`
-  & h1{
+  & h1 {
     &:after {
-        content: " ";
-        border-bottom: solid 1px #9f9ae7;
-        display: block;
-        width: 5rem;
-        margin: 10px auto;
-      }
+      content: " ";
+      border-bottom: solid 1px #9f9ae7;
+      display: block;
+      width: 5rem;
+      margin: 10px auto;
+    }
   }
   text-align: center;
   padding: 3rem 2rem;
   background-color: #000;
   color: #fff;
- 
-`;
+`

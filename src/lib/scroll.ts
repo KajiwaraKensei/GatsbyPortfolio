@@ -3,4 +3,3 @@ export const scrollOption = {
   delay: 0,
   smooth: true,
 }
-

@@ -1,15 +1,14 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 import Image from "~/Parts/Image"
 type Props = {
-  className?: string;
+  className?: string
   url?: string
 }
 
-const Component: React.FC<Props> = (props) => {
-  const { className, url } = props;
+const Component: React.FC<Props> = props => {
+  const { className, url } = props
   return (
-
     <div className={className}>
       <Image width={"100%"} height={"100%"} filename={url || "01f.jpg"} />
     </div>
@@ -17,10 +16,10 @@ const Component: React.FC<Props> = (props) => {
 }
 
 export default styled(Component)`
-position: fixed;
-z-index: -10;
-top: 0;
-left: 0;
-width: 100%;
-height: 100vh;
-`;
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+`

@@ -1,21 +1,15 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 
 type Props = {
-  className?: string;
-  name: string;
+  className?: string
+  name: string
 }
 
-const Component: React.FC<Props> = (props) => {
-  const { className, name } = props;
+const Component: React.FC<Props> = props => {
+  const { className, name } = props
 
-
-
-  return (
-    <div className={className}>
-      「 {name} 」は見つかりませんでした^^
-    </div>
-  )
+  return <div className={className}>「 {name} 」は見つかりませんでした^^</div>
 }
 
-export default styled(Component)``;
+export default styled(Component)``

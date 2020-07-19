@@ -1,4 +1,4 @@
-import SkillsPage from "./SkillsPage";
+import SkillsPage from "./SkillsPage"
 
-export { SkillsPage };
-export default SkillsPage;
+export { SkillsPage }
+export default SkillsPage

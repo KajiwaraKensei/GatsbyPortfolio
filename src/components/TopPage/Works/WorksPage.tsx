@@ -1,30 +1,28 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from "react"
+import styled from "styled-components"
 import { WorksList } from "."
 import works from "~/data/works"
 import Image from "~/Parts/Image"
-import { Element } from "react-scroll";
+import { Element } from "react-scroll"
 import { fadeIn } from "~/lib/style"
 import { useSelector } from "react-redux"
-import { RootState } from "~/store";
-
+import { RootState } from "~/store"
 
 type Props = {
-  className?: string;
+  className?: string
 }
 
 const useRedux = () => {
   const state = useSelector((state: RootState) => ({
-    select: state.style.select
-  }));
+    select: state.style.select,
+  }))
   return { state }
 }
 
-
-const Component: React.FC<Props> = (props) => {
-  const { className } = props;
-  const { state } = useRedux();
-  const [toggle, setToggle] = useState(false);
+const Component: React.FC<Props> = props => {
+  const { className } = props
+  const { state } = useRedux()
+  const [toggle, setToggle] = useState(false)
   const handleCardClick = () => {
     console.log("card click!")
     setToggle(!toggle)
@@ -32,10 +30,15 @@ const Component: React.FC<Props> = (props) => {
   return (
     <Element name="works">
       <div className={className}>
-        <div className="work_background">{"　"}
+        <div className="work_background">
+          {"　"}
           <div className="work_background_image">
             <Image
-              filename={state.select !== null ? works[state.select].backgroundImage : "work.jpg"}
+              filename={
+                state.select !== null
+                  ? works[state.select].backgroundImage
+                  : "work.jpg"
+              }
               width="100%"
               height="100%"
             />
@@ -43,7 +46,6 @@ const Component: React.FC<Props> = (props) => {
           <BottomBack toggle={toggle} />
 
           <h1 className="title">WORKS</h1>
-
         </div>
 
         <div className="works_list">
@@ -58,22 +60,22 @@ type BottomBack = {
   toggle?: boolean
 }
 const BottomBack = styled.div<BottomBack>`
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: ${({ toggle }) => toggle ? `0` : `50%`};
-    width: 100vw;
-    background-color: #fcfffc;
-    transition: .5s;
-`;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: ${({ toggle }) => (toggle ? `0` : `50%`)};
+  width: 100vw;
+  background-color: #fcfffc;
+  transition: 0.5s;
+`
 
 export default styled(Component)`
   width: 100%;
-  & > .work_background{
+  & > .work_background {
     height: 100vh;
     position: relative;
     width: 100%;
-    & .work_background_image{
+    & .work_background_image {
       position: absolute;
       top: 0;
       left: 0;
@@ -81,7 +83,6 @@ export default styled(Component)`
       width: 100%;
       box-shadow: 0px -19px 20px 0px #00000052 inset;
       height: 100%;
-
     }
     & img {
       animation: ${fadeIn} 1s forwards;
@@ -91,7 +92,7 @@ export default styled(Component)`
     top: 0;
     left: 0;
     z-index: -10;
-    & h1{
+    & h1 {
       text-align: center;
       padding-top: 24vh;
       color: #fff;
@@ -100,13 +101,13 @@ export default styled(Component)`
     }
   }
 
-  & > .title{
+  & > .title {
     text-align: center;
   }
-  & > .works_list{
+  & > .works_list {
     transform: translateY(-50vh);
     display: flex;
     justify-content: center;
   }
   margin-bottom: 20rem;
-`;
+`
