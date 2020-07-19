@@ -1,29 +1,30 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 import { profile } from "~/data/profile"
 import { MapCareer, MapIntroduction } from "."
-import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
-import { Fade } from 'react-awesome-reveal';
+import RecordVoiceOverIcon from "@material-ui/icons/RecordVoiceOver"
+import { Fade } from "react-awesome-reveal"
 
 type Props = {
-  className?: string;
+  className?: string
   profile: profile
-
 }
 
-const Component: React.FC<Props> = (props) => {
-  const { className, profile } = props;
+const Component: React.FC<Props> = props => {
+  const { className, profile } = props
   return (
     <div className={className}>
       <div className="self_introduction">
-        <Fade direction="top" triggerOnce >
-          <h2 className="title width_material_icon">Self-introduction<RecordVoiceOverIcon /></h2>
+        <Fade direction="top" triggerOnce>
+          <h2 className="title width_material_icon">
+            Self-introduction
+            <RecordVoiceOverIcon />
+          </h2>
         </Fade>
-        <Fade direction="top" delay={200} triggerOnce >
+        <Fade direction="top" delay={200} triggerOnce>
           <div className="value">{profile.selfIntroduction}</div>
         </Fade>
       </div>
-
 
       <MapIntroduction introductions={profile.introductions} />
       <MapCareer careers={profile.careers} />
@@ -43,11 +44,9 @@ export default styled(Component)`
     & > .title {
       margin-top: 0;
     }
-    & .value{
+    & .value {
       border-left: 2px dotted #aaa;
-      padding-left: .75rem;
+      padding-left: 0.75rem;
     }
   }
-  
-
-`;
+`

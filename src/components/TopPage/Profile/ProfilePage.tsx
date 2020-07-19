@@ -1,16 +1,16 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 import profile from "~/data/profile"
 import { Left, Right } from "."
-import { Element } from "react-scroll";
-import { Fade } from 'react-awesome-reveal';
+import { Element } from "react-scroll"
+import { Fade } from "react-awesome-reveal"
 
 type Props = {
-  className?: string;
-};
+  className?: string
+}
 
-const Component: React.FC<Props> = (props) => {
-  const { className } = props;
+const Component: React.FC<Props> = props => {
+  const { className } = props
 
   return (
     <Element name="profile">
@@ -22,14 +22,13 @@ const Component: React.FC<Props> = (props) => {
         </div>
       </div>
     </Element>
-  );
-};
+  )
+}
 
 export default styled(Component)`
   padding: 3rem 0rem 5rem;
 
-
-  & > h1{
+  & > h1 {
     text-align: center;
     &:after {
       content: " ";
@@ -40,25 +39,25 @@ export default styled(Component)`
     }
   }
 
-  .profile_content{
+  .profile_content {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
   }
 
-  & h4{
-    margin: .5rem 0rem .25rem;
+  & h4 {
+    margin: 0.5rem 0rem 0.25rem;
   }
 
-  & h2{
-    margin: 2rem 0 .75rem;
+  & h2 {
+    margin: 2rem 0 0.75rem;
   }
-  .content{
-      border-left: 2px dotted #aaa;
-      padding-left: .5rem;
+  .content {
+    border-left: 2px dotted #aaa;
+    padding-left: 0.5rem;
 
-      & > .event{
-      padding-left: .5rem;
+    & > .event {
+      padding-left: 0.5rem;
     }
   }
-`;
+`
