@@ -3,6 +3,7 @@ import styled from "styled-components"
 import works, { workType } from "~/data/works"
 import { NotFount, Header, Contents } from "."
 import "../index.css"
+import Footer from "~/Parts/Footer"
 
 type Props = {
   className?: string
@@ -18,6 +19,7 @@ const Component: React.FC<Props> = props => {
     <Fragment>
       <Header url={work.backgroundImage} />
       <Contents work={work} />
+      <Footer />
     </Fragment>
   )
 

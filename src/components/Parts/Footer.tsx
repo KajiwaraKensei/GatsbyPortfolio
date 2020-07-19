@@ -7,19 +7,32 @@ type Props = {
 
 const Component: React.FC<Props> = props => {
   const { className } = props
-  return <div className={className}>
-    <p>© {profile.name} ALL RIGHTS RESERVED</p>
-  </div>
+  return (
+    <div className={className}>
+      <p>© {profile.name} ALL RIGHTS RESERVED</p>
+    </div>
+  )
 }
 
 export default styled(Component)`
-font-weight: 150;
-font-size: .8rem;
-display: flex;
-justify-content: center;
-align-items: center;
-color: #fff;
-min-height: 5rem;
-background-color: #000;
-text-align: center;
+  font-weight: 150;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  min-height: 5rem;
+  background-color: #000;
+  text-align: center;
+  position: relative;
+  &::after {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    content: " ";
+    height: 1px;
+    background: linear-gradient(to bottom right, #ffffff1a, #789bff96);
+    display: block;
+    width: 100%;
+  }
 `

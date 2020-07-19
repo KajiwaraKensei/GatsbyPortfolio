@@ -26,14 +26,18 @@ const Component: React.FC<Props> = props => {
   const { className, works, onCardClick } = props
   const dispatch = useDispatch()
   const [clickSelect, setClickSelect] = useState<number | null>(null)
+  const [animation, setAnimation] = useState(false)
   const callBack = (index: number | null) => () => {
-    dispatch(actionCreator.style.setImageSelect(index))
+    animation || dispatch(actionCreator.style.setImageSelect(index))
   }
-
+  React.useEffect(() => {
+    dispatch(actionCreator.style.setImageSelect(null))
+  }, [])
   const handleCardClick = (index: number) => () => {
     console.log(index)
     setClickSelect(clickSelect === null ? index : null)
     onCardClick && onCardClick()
+    setAnimation(true)
     setTimeout(() => {
       navigate(`/work/${works[index].name}`)
     }, 1000)
@@ -44,11 +48,12 @@ const Component: React.FC<Props> = props => {
         opacity={
           clickSelect === null ? undefined : index === clickSelect ? 1 : 0
         }
-        focus={select && select === index}
+        focus={select !== null ? select === index : undefined}
         onClick={handleCardClick(index)}
         work={work}
         onMouseOut={callBack(null)}
         onMouseOver={callBack(index)}
+        animation={animation}
       />
     </React.Fragment>
   ))
