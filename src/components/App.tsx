@@ -13,13 +13,13 @@ const App: React.FC<Props> = props => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
-    }, 2000)
+    }, 2500)
   }, [])
   return (
     <div className={className}>
-
-      <Top />
       {loading && <Loading />}
+      <Top />
+
     </div>
   )
 }
