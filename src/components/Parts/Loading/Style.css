@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeout 1s ease-out 1.5s infinite alternate;
+  animation: fadeout 1s ease-out 1.5s forwards;
   position: fixed;
   display: grid;
 }
