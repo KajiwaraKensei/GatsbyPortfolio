@@ -6,12 +6,14 @@ interface State {
   width: number
   type: WindowType
   breakPoint: number
+  load: boolean
 }
 
 export const initialState = (injects?: State): State => ({
   width: 0,
   breakPoint: 770,
   type: "phone",
+  load: true,
   ...injects,
 })
 
@@ -19,6 +21,8 @@ export const reducer = (state = initialState(), action: Actions): State => {
   switch (action.type) {
     case "WINDOW_SET_WINDOW_WIDTH":
       return { ...state, type: changeMode(state, action.payload.nextWidth) }
+    case "WINDOW_SET_LOAD":
+      return { ...state, load: false }
     default:
       return state
   }

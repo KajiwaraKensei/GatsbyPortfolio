@@ -21,25 +21,25 @@ const Component: React.FC<Props> = props => {
         rel="noopener noreferrer"
         target="_blank"
       >
-        <GithubIcon fontSize="large" />
+        <GithubIcon />
       </a>
       <a
         href={twitterLink(profile.twitter)}
         rel="noopener noreferrer"
         target="_blank"
       >
-        <TwitterIcon fontSize="large" />
+        <TwitterIcon />
       </a>
 
       <a href={telLink(profile.tel)} rel="noopener noreferrer" target="_blank">
-        <PhoneIcon fontSize="large" />
+        <PhoneIcon />
       </a>
       <a
         href={mailLink(profile.mail)}
         rel="noopener noreferrer"
         target="_blank"
       >
-        <MailIcon fontSize="large" />
+        <MailIcon />
       </a>
     </div>
   )

@@ -24,7 +24,6 @@ const Component: React.FC<Props> = props => {
   const { state } = useRedux()
   const [toggle, setToggle] = useState(false)
   const handleCardClick = () => {
-    console.log("card click!")
     setToggle(!toggle)
   }
   return (
@@ -37,15 +36,16 @@ const Component: React.FC<Props> = props => {
               filename={
                 state.select !== null
                   ? works[state.select].backgroundImage
-                  : "work.jpg"
+                  : "flame.png"
               }
               width="100%"
               height="100%"
             />
           </div>
           <BottomBack toggle={toggle} />
-
-          <h1 className="title">WORKS</h1>
+          <div className="work_head_title">
+            <h1 className="title">WORKS</h1>
+          </div>
         </div>
 
         <div className="works_list">
@@ -65,7 +65,7 @@ const BottomBack = styled.div<BottomBack>`
   left: 0;
   height: ${({ toggle }) => (toggle ? `0` : `50%`)};
   width: 100vw;
-  background-color: #fcfffc;
+  background-color: #35373e;
   transition: 0.5s;
 `
 
@@ -81,7 +81,7 @@ export default styled(Component)`
       left: 0;
       right: 0;
       width: 100%;
-      box-shadow: 0px -19px 20px 0px #00000052 inset;
+
       height: 100%;
     }
     & img {
@@ -93,21 +93,26 @@ export default styled(Component)`
     left: 0;
     z-index: -10;
     & h1 {
+      font-weight: 300;
       text-align: center;
-      padding-top: 24vh;
       color: #fff;
-      text-shadow: 0px 12px 20px #000;
+      text-shadow: 0px 7px 6px #00000075;
       z-index: -5;
     }
   }
-
+  .work_head_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
   & > .title {
     text-align: center;
   }
   & > .works_list {
     transform: translateY(-50vh);
+
     display: flex;
     justify-content: center;
   }
-  margin-bottom: 20rem;
 `

@@ -45,10 +45,10 @@ export default styled(Component)`
       margin: 1rem;
       transition: 0.25s;
       cursor: pointer;
-      border-bottom: 2px solid #39ffd14d;
+      border-bottom: 2px solid #9f9ae780;
       &:hover {
         background-color: #ffffff2e;
-        border-bottom: 2px solid #39edff;
+        border-bottom: 2px solid #9f9ae7;
         border-radius: 0.5rem 0.5rem 0 0;
       }
     }

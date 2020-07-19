@@ -1,9 +1,76 @@
 .loading {
-  position: absolute;
-  top: 0;
-  left: 0;
+  z-index: 100;
   width: 100vw;
   height: 100vh;
-  background-color: #fff;
-  text-align: center;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeout 1s ease-out 1.5s infinite alternate;
+  position: fixed;
+  display: grid;
+}
+
+svg.tea {
+  --secondary: #fff;
+}
+
+#teabag {
+  transform-origin: top center;
+  transform: rotate(3deg);
+  animation: swing 1s infinite;
+}
+
+#steamL {
+  stroke-dasharray: 13;
+  stroke-dashoffset: 13;
+  animation: steamLarge 1s infinite;
+}
+
+#steamR {
+  stroke-dasharray: 9;
+  stroke-dashoffset: 9;
+  animation: steamSmall 1s infinite;
+}
+
+@keyframes swing {
+  50% {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes steamLarge {
+  0% {
+    stroke-dashoffset: 13;
+    opacity: 0.6;
+  }
+
+  100% {
+    stroke-dashoffset: 39;
+    opacity: 0;
+  }
+}
+
+@keyframes steamSmall {
+  10% {
+    stroke-dashoffset: 9;
+    opacity: 0.6;
+  }
+  80% {
+    stroke-dashoffset: 27;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 27;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
