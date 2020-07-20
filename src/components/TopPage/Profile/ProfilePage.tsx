@@ -31,7 +31,7 @@ export default styled(Component)`
   & > h1 {
     text-align: center;
     &:after {
-      content: " ";
+      content: "";
       border-bottom: solid 1px #9f9ae7;
       display: block;
       width: 5rem;

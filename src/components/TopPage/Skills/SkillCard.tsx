@@ -131,8 +131,8 @@ export default styled(Component)`
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
     &:after {
-      content: " ";
-      border: solid 1px #9f9ae7;
+      content: "";
+      border-top: solid 1px #9f9ae7;
       display: block;
       width: 55px;
       margin: 10px auto;

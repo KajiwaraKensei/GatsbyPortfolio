@@ -22,17 +22,13 @@ export const profile: profile = {
   tel: "09028070449",
   mail: "kd1270632@st.kobedenshi.ac.jp",
   image: "profile.jpg",
-  careers: [
-    { year: "2020", event: "Graduated from Kobe Electronics College" },
-    { year: "2022", event: "Graduated from Kobe Electronics College" },
-    { year: "2022 ~ ", event: "Graduated from Kobe Electronics College" },
-  ],
+  careers: [{ year: "2021 ~ ", event: "とある会社に内定済み" }],
   introductions: [
-    { year: "2011", event: "Entered Kobe Electronics College." },
-    { year: "2020", event: "Graduated from Kobe Electronics College" },
-    { year: "2021 ~ 2022", event: "Joined Kobe Electronics College" },
+    { year: "2017", event: "岡山県立岡山芳泉高等学校 卒業" },
+    { year: "2018", event: "神戸電子専門学校 ITスペシャリリスト学科 入学" },
+    { year: "2021 ", event: "神戸電子専門学校 卒業見込み" },
   ],
   selfIntroduction:
-    "My hobby is to buy reference books. I have purchased over 30 books so far.",
+    "趣味は参考書を買うことです。\nMy hobby is to buy reference books. I have purchased over 30 books so far.",
 }
 export default profile

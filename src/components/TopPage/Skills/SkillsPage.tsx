@@ -22,7 +22,7 @@ const Component: React.FC<Props> = props => {
 export default styled(Component)`
   & h1 {
     &:after {
-      content: " ";
+      content: "";
       border-bottom: solid 1px #9f9ae7;
       display: block;
       width: 5rem;

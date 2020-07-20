@@ -93,7 +93,6 @@ export default styled(Component)`
     left: 0;
     z-index: -10;
     & h1 {
-      font-weight: 300;
       text-align: center;
       color: #fff;
       text-shadow: 0px 7px 6px #00000075;
