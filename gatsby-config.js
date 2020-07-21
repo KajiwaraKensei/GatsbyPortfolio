@@ -50,7 +50,8 @@ module.exports = {
         background_color: `#000`,
         theme_color: `#a2466c`,
         display: `standalone`,
-        icon: `profile.jpg`,
+        icon: `src/images/template_code.png`,
+        legacy: false,
         icon_options: {
           purpose: `maskable`,
         },
