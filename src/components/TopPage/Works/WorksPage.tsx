@@ -44,7 +44,7 @@ const Component: React.FC<Props> = props => {
           </div>
           <BottomBack toggle={toggle} />
           <div className="work_head_title">
-            <h1 className="title">WORKS</h1>
+            <h1 className="title">{state.select === null && "WORKS"}</h1>
           </div>
         </div>
 
@@ -65,7 +65,7 @@ const BottomBack = styled.div<BottomBack>`
   left: 0;
   height: ${({ toggle }) => (toggle ? `0` : `50%`)};
   width: 100vw;
-  background-color: #35373e;
+  background-color: #fefffe;
   transition: 0.5s;
 `
 
@@ -94,9 +94,18 @@ export default styled(Component)`
     z-index: -10;
     & h1 {
       text-align: center;
-      color: #fff;
-      text-shadow: 0px 7px 6px #00000075;
+      color: #000;
+      font-weight: 200;
+      letter-spacing: 0.3em;
+      font-size: 1.5rem;
       z-index: -5;
+      &:after {
+      content: "";
+      border-top: solid 1px #9f9ae7;
+      display: block;
+      width: 55px;
+      margin: 10px auto;
+    }
     }
   }
   .work_head_title {

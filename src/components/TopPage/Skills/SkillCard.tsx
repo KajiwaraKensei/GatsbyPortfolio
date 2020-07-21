@@ -85,6 +85,7 @@ export default styled(Component)`
   color: #eee;
   font-weight: 200;
   & .card > .circle {
+    margin-top: 0.5rem;
     & > div {
       position: relative;
       & > .percent {
@@ -98,7 +99,7 @@ export default styled(Component)`
   }
 
   .card {
-    background-color: #ffffff1a;
+    background-color: #ffffff24;
     border-radius: 0.25rem;
     flex-grow: 1;
     border-radius: 0.5rem;
@@ -129,8 +130,9 @@ export default styled(Component)`
 
   .title {
     font-size: 1.3rem;
+    margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-    
+
     &:after {
       content: "";
       border-top: solid 1px #9f9ae7;
