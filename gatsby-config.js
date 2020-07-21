@@ -45,12 +45,12 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Portfolio`,
-        short_name: `GatsbyJS`,
+        short_name: `Portfolio`,
         start_url: `/`,
         background_color: `#000`,
-        theme_color: `#a2466c`,
+        theme_color: `#0088b187`,
         display: `standalone`,
-        icon: `src/images/template_code.png`,
+        icon: `src/images/icon.png`,
         legacy: false,
         icon_options: {
           purpose: `maskable`,
