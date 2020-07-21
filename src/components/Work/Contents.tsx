@@ -83,6 +83,8 @@ export default styled(Component)`
 
   .work_langs {
     padding-top: 5rem;
+    max-width: 50rem;
+    margin: 0 auto;
     & .work_langs_map {
       display: flex;
       flex-wrap: wrap;

@@ -5,13 +5,16 @@ import "./index.css"
 import Loading from "~/Parts/Loading"
 import { useSelector, useDispatch } from "react-redux"
 import { RootState, actionCreator } from "~/store"
-import EventListener from 'react-event-listener';
+import EventListener from "react-event-listener"
 type Props = {
   className?: string
 }
 
 const useRedux = () => {
-  const state = useSelector((state: RootState) => ({ load: state.window.load, type: state.window.type }))
+  const state = useSelector((state: RootState) => ({
+    load: state.window.load,
+    type: state.window.type,
+  }))
   const dispatch = useDispatch()
   const setLoad = () => {
     dispatch(actionCreator.window.setLoad())
@@ -19,26 +22,21 @@ const useRedux = () => {
   return { state, setLoad, dispatch }
 }
 
-
 const App: React.FC<Props> = props => {
   const { className } = props
   const [loading, setLoading] = useState(true)
 
   const { state, setLoad, dispatch } = useRedux()
 
-
-
-
   const initFetch = React.useCallback(() => {
     dispatch(actionCreator.window.setWindowWidth(window.innerWidth))
-  }, [dispatch]);
+  }, [dispatch])
   React.useEffect(() => {
-    initFetch();
+    initFetch()
   }, [initFetch])
   const handleResize = () => {
     dispatch(actionCreator.window.setWindowWidth(window.innerWidth))
-  };
-
+  }
 
   useEffect(() => {
     setTimeout(() => {

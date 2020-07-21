@@ -20,7 +20,7 @@ const Component: React.FC<Props> = props => {
 }
 
 export default styled(Component)`
-  flex-basis: 25rem;
+  flex-basis: 20rem;
   flex-grow: 1;
   padding: 1rem;
   & > p {

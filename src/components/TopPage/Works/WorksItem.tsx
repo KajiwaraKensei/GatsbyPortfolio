@@ -1,10 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import { workType } from "~/data/works"
-import { copy } from "~/lib/style"
-import { fadeIn, customFadeIn } from "~/lib/style"
 
-export const CARD_SIZE = 20
+export const CARD_SIZE = 24
 
 type Props = {
   className?: string
@@ -16,10 +14,9 @@ type Props = {
 
 const Component: React.FC<Props> = props => {
   const { className, work, onMouseOver, onMouseOut, onClick } = props
-  const { name, icon, briefDescription } = work
+  const { name, icon, platform } = work
   return (
     <div className={className}>
-      <h4 className="work_name">{name}</h4>
       <div className="work_image">
         <img
           src={icon}
@@ -27,9 +24,11 @@ const Component: React.FC<Props> = props => {
           onMouseOver={onMouseOver}
           onMouseOut={onMouseOut}
         />
+        <h4 className="work_name">
+          <span>{name}</span>
+          <span>{platform}</span>
+        </h4>
       </div>
-
-      <p className="work_copy">{briefDescription}</p>
     </div>
   )
 }
@@ -39,7 +38,7 @@ type StyledProps = {
   opacity?: string | number
   animation: boolean
 }
-export default styled(Component) <StyledProps>`
+export default styled(Component)<StyledProps>`
   pointer-events: none;
   ${({ focus }) =>
     focus === false
@@ -49,9 +48,9 @@ export default styled(Component) <StyledProps>`
       : `
   color: #fff;
   `}
-  overflow: hidden;
-  width: ${CARD_SIZE}rem;
-  min-height: ${CARD_SIZE}rem;
+  flex-basis: ${CARD_SIZE}rem;
+  height: ${CARD_SIZE}rem;
+  flex-flow: 1;
   padding: 1rem;
   margin-bottom: 2rem;
   display: flex;
@@ -60,10 +59,11 @@ export default styled(Component) <StyledProps>`
   transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
   position: relative;
   .work_image {
-    width: ${CARD_SIZE - 2}rem;
-    height: ${CARD_SIZE - 2}rem;
+    width: ${CARD_SIZE}rem;
+    height: ${CARD_SIZE}rem;
+    padding: 3.5rem;
     transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
-
+    pointer-events: none;
     & img {
       background-color: #fff;
       width: 100%;
@@ -76,48 +76,27 @@ export default styled(Component) <StyledProps>`
     }
   }
 
-  & > .work_name,
-  & > .work_copy {
+ .work_name {
+    color: #000;
     margin: 0;
     width: 100%;
-    background-color: #000000a1;;
-    padding: 1rem;
+    padding: .75rem .5rem;
     pointer-events: none;
-    opacity: 0;
-    text-align: center;
     transition: opacity calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
-  }
-
-  & > .work_name {
-    border-bottom: 1px solid #fff;
-    font-size: 1.5rem;
+    font-size: .8rem;
     line-height: 1.1;
-    letter-spacing: -0.02em;
-  }
-
-  & > .work_copy {
-    border-top: 1px solid #fff;
-    padding-top: 1rem;
-    ${copy}
-  }
-
-  &:hover {
-    margin-bottom: 0rem;
-    padding: 0.5rem 0.5rem 1rem;
-    position: relative;
-    & > .work_name,
-    & > .work_copy {
-      opacity: 1;
-      z-index: 3;
+    letter-spacing: 0.02em;
+    display: flex;
+    justify-content: space-between;
+    & > span:last-child{
+      color: #0099bd;
     }
   }
 
   & .work_image:hover {
-    height: ${CARD_SIZE}rem;
-    width: 100%;
-    display: inline-block;
-    position: relative;
+    padding: 2.5rem;
     z-index: 2;
+    transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
   }
   ${({ opacity }) => opacity != null && `opacity: ${opacity};`}
 `

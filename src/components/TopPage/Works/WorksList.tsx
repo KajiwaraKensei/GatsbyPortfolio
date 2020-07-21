@@ -17,7 +17,7 @@ type Props = {
 const useRedux = () => {
   const state = useSelector((state: RootState) => ({
     select: state.style.select,
-    type: state.window.type
+    type: state.window.type,
   }))
   return { state }
 }
@@ -45,29 +45,17 @@ const Component: React.FC<Props> = props => {
   }
   const mapWorks = works.map((work, index) => (
     <React.Fragment key={"work_id_" + work.name}>
-      {type === "phone" ?
-        <MiniCard
-          opacity={
-            clickSelect === null ? undefined : index === clickSelect ? 1 : 0
-          }
-          onClick={handleCardClick(index)}
-          work={work}
-          onMouseOut={callBack(null)}
-          onMouseOver={callBack(index)}
-
-        />
-        : <WorksItem
-          opacity={
-            clickSelect === null ? undefined : index === clickSelect ? 1 : 0
-          }
-          focus={select !== null ? select === index : undefined}
-          onClick={handleCardClick(index)}
-          work={work}
-          onMouseOut={callBack(null)}
-          onMouseOver={callBack(index)}
-          animation={animation}
-        />}
-
+      <WorksItem
+        opacity={
+          clickSelect === null ? undefined : index === clickSelect ? 1 : 0
+        }
+        focus={select !== null ? select === index : undefined}
+        onClick={handleCardClick(index)}
+        work={work}
+        onMouseOut={callBack(null)}
+        onMouseOver={callBack(index)}
+        animation={animation}
+      />
     </React.Fragment>
   ))
 
@@ -78,7 +66,7 @@ type StyledProps = {
   works: worksType
 }
 
-export default styled(Component) <StyledProps>`
+export default styled(Component)<StyledProps>`
   height: 100%;
 
   display: flex;
@@ -99,7 +87,7 @@ const flexLeft = (works: any[]) => {
       (word += `
     @media only screen and (min-width: ${CARD_SIZE * i}rem) and ( max-width: ${
         CARD_SIZE * (i + 1)
-        }rem){
+      }rem){
       justify-content: left;
       width: ${CARD_SIZE * i}rem;
     }`)

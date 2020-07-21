@@ -99,5 +99,6 @@ export default styled(Component)`
   }
   .name {
     text-align: center;
+    text-transform: capitalize;
   }
 `
