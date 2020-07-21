@@ -130,6 +130,7 @@ export default styled(Component)`
   .title {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
+    
     &:after {
       content: "";
       border-top: solid 1px #9f9ae7;
@@ -140,10 +141,11 @@ export default styled(Component)`
   }
 
   .copy {
+    text-align: justify;
     margin: 0;
     transition: transform calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
     font-size: 0.9rem;
-    line-height: 1.35;
+    line-height: 1.25rem;
   }
 
   .btn {

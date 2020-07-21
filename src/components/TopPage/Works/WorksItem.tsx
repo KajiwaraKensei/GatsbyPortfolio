@@ -65,6 +65,7 @@ export default styled(Component) <StyledProps>`
     transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
 
     & img {
+      background-color: #fff;
       width: 100%;
       height: 100%;
       transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
@@ -88,12 +89,14 @@ export default styled(Component) <StyledProps>`
   }
 
   & > .work_name {
+    border-bottom: 1px solid #fff;
     font-size: 1.5rem;
     line-height: 1.1;
     letter-spacing: -0.02em;
   }
 
   & > .work_copy {
+    border-top: 1px solid #fff;
     padding-top: 1rem;
     ${copy}
   }
