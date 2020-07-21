@@ -27,7 +27,7 @@ const Component: React.FC<Props> = props => {
 
 export default styled(Component)`
   padding: 3rem 0rem 5rem;
-
+  background-color: #eee;
   & > h1 {
     text-align: center;
     &:after {
