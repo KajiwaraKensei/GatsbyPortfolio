@@ -42,7 +42,7 @@ export default styled(Component)`
     width: 100%;
     text-align: center;
     & > h1 {
-      font-weight: 900;
+      font-weight: 100;
       font-size: 4rem;
     }
   }

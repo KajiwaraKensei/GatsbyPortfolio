@@ -39,7 +39,7 @@ type StyledProps = {
   opacity?: string | number
   animation: boolean
 }
-export default styled(Component)<StyledProps>`
+export default styled(Component) <StyledProps>`
   pointer-events: none;
   ${({ focus }) =>
     focus === false
@@ -65,6 +65,7 @@ export default styled(Component)<StyledProps>`
     transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
 
     & img {
+      background-color: #fff;
       width: 100%;
       height: 100%;
       transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
@@ -77,9 +78,10 @@ export default styled(Component)<StyledProps>`
 
   & > .work_name,
   & > .work_copy {
-    position: absolute;
-    left: 0;
-    right: 0;
+    margin: 0;
+    width: 100%;
+    background-color: #000000a1;;
+    padding: 1rem;
     pointer-events: none;
     opacity: 0;
     text-align: center;
@@ -87,17 +89,14 @@ export default styled(Component)<StyledProps>`
   }
 
   & > .work_name {
-    top: 0rem;
-    margin-bottom: 1rem;
-    font-family: "Vesterbro poster", sans-serif;
+    border-bottom: 1px solid #fff;
     font-size: 1.5rem;
     line-height: 1.1;
-    font-weight: 400;
     letter-spacing: -0.02em;
   }
 
   & > .work_copy {
-    top: 6rem;
+    border-top: 1px solid #fff;
     padding-top: 1rem;
     ${copy}
   }
@@ -119,42 +118,6 @@ export default styled(Component)<StyledProps>`
     display: inline-block;
     position: relative;
     z-index: 2;
-    ${({ animation }) =>
-      !animation &&
-      `&:before {
-    content: "";
-    background: #00000094;
-    filter: grayscale(20%);
-    position: absolute;
-    top: 0;
-    left: 0rem;
-    right: 0rem;
-    bottom: 0rem;
-    z-index: 2;
-  }`}
-  }
-
-  @media screen and (max-width: 700px) {
-    & > .work_name,
-    & > .work_copy {
-      opacity: 1;
-      z-index: 3;
-    }
-    .work_image {
-      ${({ animation }) =>
-        !animation &&
-        `&:before {
-    content: "";
-    background: #00000094;
-    filter: grayscale(20%);
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    z-index: 2;
-  }`}
-    }
   }
   ${({ opacity }) => opacity != null && `opacity: ${opacity};`}
 `

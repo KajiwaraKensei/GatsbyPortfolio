@@ -11,35 +11,56 @@ export type SkillTypes = SkillType[]
 
 export const skills: SkillTypes = [
   {
-    name: "JavaScript",
-    proficiencyLevel: 24,
+    name: "Gatsby.js",
+    proficiencyLevel: 70,
     description:
-      "It was the first thing I learned and the first thing that inspired me to create a web app.",
+      "React をベースに SSG ができるということで。このサイトは Gatsby.js を使用しています。",
+    works: [],
+  },
+  {
+    name: "Next.js",
+    proficiencyLevel: 60,
+    description:
+      "SSR の勉強のために学習しました。 Typescript の導入が非常に楽で👍",
+    works: [],
+  },
+
+  {
+    name: "JavaScript",
+    proficiencyLevel: 50,
+    description: "最初に学習した言語なので思い入れがあります。",
     works: [],
   },
   {
     name: "TypeScript",
-    proficiencyLevel: 75,
-    description:
-      "It's my favorite programming language. I would like to use it actively.",
+    proficiencyLevel: 80,
+    description: "一番好きな言語です。型を自由につけれるって素晴らしい！",
     works: [],
   },
   {
     name: "React.JS",
-    proficiencyLevel: 65,
-    description: "This is my favorite of all the JavaScript libraries.",
+    proficiencyLevel: 90,
+    description: "最初に学習した Javascript のフレームワークです。",
     works: [],
   },
   {
-    name: "Next.JS",
-    proficiencyLevel: 75,
-    description: "I'm hoping to learn Gatsby next.",
+    name: "Express",
+    proficiencyLevel: 60,
+    description:
+      "簡単なAPIサバーの作成に使用しました。Javascript を使っていたので、そこまで学習コストはかかりませんでした。",
+    works: [],
+  },
+  {
+    name: "Docker",
+    proficiencyLevel: 50,
+    description:
+      "Docker-Compose を使用し、 Lamp 環境を構築したり、アプリの開発環境に使用しています。",
     works: [],
   },
   {
     name: "PHP",
-    proficiencyLevel: 100,
-    description: "Just enough to remember the grammar.",
+    proficiencyLevel: 25,
+    description: "超基本的な文法のみ",
     works: [],
   },
 ]

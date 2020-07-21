@@ -32,22 +32,12 @@ export type Article = {
 const works: worksType = [
   {
     platform: "web",
-    name: "SKYPage",
-    images: ["01f.jpg", "my.jpg", "log.jpg"],
-    briefDescription: "This is a simple description of this app.",
-    icon: "log.jpg",
-    backgroundImage: "my.jpg",
-    contents: [],
-    languages: [],
-  },
-  {
-    platform: "web",
     name: "Makers",
-    images: ["my.jpg", "my.jpg"],
-    briefDescription: "This is a simple description of this app.",
+    images: [],
+    briefDescription: "文章をテンプレート化し、作業効率UP↑",
     workDay: 2020,
-    icon: "01f.jpg",
-    backgroundImage: "01f.jpg",
+    icon: "makers-icon.png",
+    backgroundImage: "makersicon.png",
     languages: [
       {
         name: "Next.js",
@@ -99,6 +89,65 @@ const works: worksType = [
         headline: "Responsive Support",
         styled: "margin-top: 5rem;",
       },
+      {
+        type: "image",
+        image: ["maker_r_1.png"],
+        width: "100%",
+      },
+      {
+        type: "image",
+        image: ["maker_r_2.png"],
+        width: "60%",
+        styled: "padding: 0;",
+      },
+    ],
+  },
+  {
+    platform: "web",
+    name: "PortfolioTemplate ver 1",
+    images: [],
+    briefDescription: "変数いじるだけでポートフォリオサイトが作れます。",
+    workDay: 2020,
+    icon: "portfolio_template_icon.png",
+    backgroundImage: "portfolio_template_back.png",
+    languages: [
+      {
+        name: "React.js",
+        reason: [
+          "JSでWebのアプリを作りたかったため",
+          "HTML と CSS だけでは機能不足だったため。",
+        ],
+      },
+      {
+        name: "Typescript",
+        reason: [
+          "型を使って予測の精度が上がるため。また実行前にエラーを出してくれるため、快適に開発できる。",
+        ],
+      },
+      {
+        name: "Styled Components",
+        reason: [
+          "CSS in Javascript で 動的にcssの中身を書き換えることができ、レスポンシブに対応しやすくするため。",
+        ],
+      },
+    ],
+    contents: [
+      {
+        type: "article",
+        value:
+          "このサイトはReact.jsを使用し、ページの表示する内容に変数を使うことで、よりメンテナンスがしやすいテンプレートアプリになっています。",
+        headline: "Differentiation",
+        styled: "padding-bottom: 0;",
+        image: "template_code.png",
+        imagePosition: "bottom",
+      },
+      {
+        type: "article",
+        value:
+          "Typescriptで肩を使用しているので、必須項目が抜けていてもエラーでどこが間違っているかわかります。",
+        styled: "margin-top: 0",
+      },
+
       {
         type: "image",
         image: ["maker_r_1.png"],
