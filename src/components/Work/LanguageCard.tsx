@@ -1,3 +1,5 @@
+// ______________________________________________________
+// 使用言語説明
 import React from "react"
 import styled from "styled-components"
 
@@ -6,6 +8,8 @@ type Props = {
   language: { name: string; reason: string[] }
 }
 
+// ______________________________________________________
+//
 const Component: React.FC<Props> = props => {
   const { className, language } = props
   const mapReasons = language.reason.map(reason => (
@@ -19,6 +23,8 @@ const Component: React.FC<Props> = props => {
   )
 }
 
+// ______________________________________________________
+//
 export default styled(Component)`
   flex-basis: 20rem;
   flex-grow: 1;

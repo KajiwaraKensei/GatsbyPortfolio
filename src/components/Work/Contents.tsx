@@ -1,3 +1,5 @@
+// ______________________________________________________
+//
 import React from "react"
 import styled, { keyframes } from "styled-components"
 import works, { workType } from "~/data/works"
@@ -7,6 +9,8 @@ type Props = {
   work: workType
 }
 
+// ______________________________________________________
+//
 const Component: React.FC<Props> = props => {
   const { className, work } = props
 
@@ -59,6 +63,8 @@ const up = keyframes`
 }
 `
 
+// ______________________________________________________
+//
 export default styled(Component)`
   animation: ${up} 1s forwards;
   margin-top: 50vh;

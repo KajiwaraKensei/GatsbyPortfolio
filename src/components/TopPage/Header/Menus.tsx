@@ -1,3 +1,5 @@
+// ______________________________________________________
+// header menu
 import React, { useState } from "react"
 import styled from "styled-components"
 import { scroller } from "react-scroll"
@@ -6,32 +8,57 @@ import { Contact } from "."
 import { profile } from "~/data/profile"
 type Props = {
   className?: string
-  profile: profile
+  profile: profile // 使うプロフィール
 }
 
 const Component: React.FC<Props> = props => {
   const { className, profile } = props
+
+  // クリックイベント
   const clickDetail = (to: string) => (event: React.MouseEvent) => {
     scroller.scrollTo(to, scrollOption)
   }
-  const [contactToggle, setContactToggle] = useState(false)
+
+  const [contactToggle, setContactToggle] = useState(false) // コンタクトを表示するか
+
+  // コンタクトクリック
   const clickContact = () => {
     setContactToggle(!contactToggle)
   }
   return (
     <div className={className}>
       <div className="menu_buttons">
-        <Button onClick={clickDetail("profile")} color="#000" background="#fff" value="PORTFOLIO" border="#fff" />
+        <Button
+          onClick={clickDetail("profile")}
+          color="#000"
+          background="#fff"
+          value="PROFILE"
+          border="#fff"
+        />
         <Button onClick={clickDetail("skills")} value="SKILLS" />
         <Button onClick={clickDetail("works")} value="WORKS" />
-        <Button onClick={clickContact} value="CONTACT" backBackground="#9f9ae7" />
+        <Button
+          onClick={clickContact}
+          value="CONTACT"
+          backBackground="#9f9ae7"
+        />
       </div>
       <Contact display={contactToggle} profile={profile} />
     </div>
   )
 }
 
-const Button = styled.div<{ value: string, color?: string, background?: string, backBackground?: string, border?: string }>`
+// ______________________________________________________
+// スタイル
+
+// ボタンスタイル
+const Button = styled.div<{
+  value: string
+  color?: string
+  background?: string
+  backBackground?: string
+  border?: string
+}>`
   width: 6.5rem;
   height: 3rem;
   margin: 1rem;
@@ -73,7 +100,7 @@ const Button = styled.div<{ value: string, color?: string, background?: string, 
     }
   }
 `
-
+// 全体
 export default styled(Component)`
   & > .menu_buttons {
     width: 100%;

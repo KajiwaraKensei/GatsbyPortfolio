@@ -1,3 +1,5 @@
+// ______________________________________________________
+// Workページ　default
 import React, { useState } from "react"
 import styled from "styled-components"
 import { WorksList } from "."
@@ -11,7 +13,7 @@ import { RootState } from "~/store"
 type Props = {
   className?: string
 }
-
+// Redux
 const useRedux = () => {
   const state = useSelector((state: RootState) => ({
     select: state.style.select,
@@ -19,13 +21,18 @@ const useRedux = () => {
   return { state }
 }
 
+// ______________________________________________________
+//
 const Component: React.FC<Props> = props => {
   const { className } = props
   const { state } = useRedux()
   const [toggle, setToggle] = useState(false)
+
+  // カードクリック時のイベント
   const handleCardClick = () => {
     setToggle(!toggle)
   }
+
   return (
     <Element name="works">
       <div className={className}>
@@ -33,10 +40,11 @@ const Component: React.FC<Props> = props => {
           {"　"}
           <div className="work_background_image">
             <Image
+              className={state.select === null ? "work_bg_img" : undefined}
               filename={
                 state.select !== null
                   ? works[state.select].backgroundImage
-                  : "flame.png"
+                  : "joshua-ness-9iqqFZ7OuwY-unsplash.jpg"
               }
               width="100%"
               height="100%"
@@ -44,7 +52,7 @@ const Component: React.FC<Props> = props => {
           </div>
           <BottomBack toggle={toggle} />
           <div className="work_head_title">
-            <h1 className="title">{state.select === null && "WORKS"}</h1>
+            {state.select === null && <h1 className="title">WORKS</h1>}
           </div>
         </div>
 
@@ -56,6 +64,8 @@ const Component: React.FC<Props> = props => {
   )
 }
 
+// ______________________________________________________
+// 背景
 type BottomBack = {
   toggle?: boolean
 }
@@ -69,8 +79,17 @@ const BottomBack = styled.div<BottomBack>`
   transition: 0.5s;
 `
 
+// ______________________________________________________
+// スタイル
 export default styled(Component)`
   width: 100%;
+
+  .work_bg_img {
+    & img {
+      object-position: 50% 50% !important;
+      filter: brightness(110%);
+    }
+  }
   & > .work_background {
     height: 100vh;
     position: relative;
@@ -81,9 +100,9 @@ export default styled(Component)`
       left: 0;
       right: 0;
       width: 100%;
-
       height: 100%;
     }
+
     & img {
       animation: ${fadeIn} 1s forwards;
       z-index: -5;
@@ -100,12 +119,12 @@ export default styled(Component)`
       font-size: 1.5rem;
       z-index: -5;
       &:after {
-      content: "";
-      border-top: solid 1px #9f9ae7;
-      display: block;
-      width: 55px;
-      margin: 10px auto;
-    }
+        content: "";
+        border-top: solid 1px #9f9ae7;
+        display: block;
+        width: 55px;
+        margin: 10px auto;
+      }
     }
   }
   .work_head_title {
@@ -119,7 +138,7 @@ export default styled(Component)`
   }
   & > .works_list {
     transform: translateY(-50vh);
-
+    overflow: hidden;
     display: flex;
     justify-content: center;
   }

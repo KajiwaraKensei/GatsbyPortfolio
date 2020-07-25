@@ -1,48 +1,61 @@
+// ______________________________________________________
+// Works を展開して表示
 import React, { useState } from "react"
 import styled from "styled-components"
 import { worksType } from "~/data/works"
-import { WorksItem, MiniCard } from "."
+import { WorksItem } from "."
 import { CARD_SIZE } from "./WorksItem"
 import { useDispatch, useSelector } from "react-redux"
 import { actionCreator, RootState } from "~/store"
 import { navigate } from "@reach/router"
+
 const MAX_ON_LINE = 4 // 一列に表示する最大個数
 
 type Props = {
   className?: string
   works: worksType
-  onCardClick?: () => void
+  onCardClick?: () => void // カードをクリックしたときの処理
 }
 
+// Redux の設定
 const useRedux = () => {
   const state = useSelector((state: RootState) => ({
     select: state.style.select,
     type: state.window.type,
   }))
-  return { state }
+  const dispatch = useDispatch()
+  return { state, dispatch }
 }
+
+// ______________________________________________________
+//
+
 const Component: React.FC<Props> = props => {
-  const { state } = useRedux()
+  const { state, dispatch } = useRedux()
   const { select, type } = state
   const { className, works, onCardClick } = props
-  const dispatch = useDispatch()
-  const [clickSelect, setClickSelect] = useState<number | null>(null)
-  const [animation, setAnimation] = useState(false)
+
+  const [clickSelect, setClickSelect] = useState<number | null>(null) // ホバーしている要素
+  const [animation, setAnimation] = useState(false) // 子要素のアニメーションをするかどうか
   const callBack = (index: number | null) => () => {
     animation || dispatch(actionCreator.style.setImageSelect(index))
   }
   React.useEffect(() => {
     dispatch(actionCreator.style.setImageSelect(null))
   }, [])
+
+  // カードをクリックした時
   const handleCardClick = (index: number) => () => {
-    console.log(index)
     setClickSelect(clickSelect === null ? index : null)
     onCardClick && onCardClick()
-    setAnimation(true)
+    setAnimation(true) // 子要素に遷移時のアニメーションを適応
+
+    // １秒後に遷移
     setTimeout(() => {
       navigate(`/work/${works[index].name}`)
     }, 1000)
   }
+
   const mapWorks = works.map((work, index) => (
     <React.Fragment key={"work_id_" + work.name}>
       <WorksItem
@@ -65,6 +78,8 @@ const Component: React.FC<Props> = props => {
 type StyledProps = {
   works: worksType
 }
+// ______________________________________________________
+// スタイル
 
 export default styled(Component)<StyledProps>`
   height: 100%;
@@ -80,8 +95,9 @@ export default styled(Component)<StyledProps>`
   ${({ works }) => flexLeft(works)}
 `
 
+// justify-contents: center と space-around の中間
 const flexLeft = (works: any[]) => {
-  let word = ""
+  let word = ``
   for (let i = 2; i <= MAX_ON_LINE; i++) {
     works.length % i &&
       (word += `

@@ -99,7 +99,7 @@ export default styled(Component)`
   }
 
   .card {
-    background-color: #ffffff24;
+    background-color: #71717142;
     border-radius: 0.25rem;
     flex-grow: 1;
     border-radius: 0.5rem;

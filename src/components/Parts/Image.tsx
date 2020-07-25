@@ -8,11 +8,13 @@ export default ({
   height,
   width,
   style,
+  className,
 }: {
   filename: string
   height?: number | string
   width?: number | string
   style?: object
+  className?: string
 }) => (
   // ページじゃないコンポーネントでもGraphQLが使えるように
   // StaticQueryタグを使う
@@ -56,6 +58,7 @@ export default ({
       const imageSizes = image.node.childImageSharp.fluid
       return (
         <Img
+          className={className}
           style={{
             ...style,
             height: height || "20rem",

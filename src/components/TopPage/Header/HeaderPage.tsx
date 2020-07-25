@@ -1,32 +1,65 @@
+// ______________________________________________________
+// Header
 import React from "react"
 import styled from "styled-components"
 import { Menus } from "."
 import profile from "~/data/profile"
-
+import Image from "~/Parts/Image"
+import HomeIcon from "~/Parts/HomeIcon"
 type Props = {
   className?: string
 }
 
+// ______________________________________________________
+//
 const Component: React.FC<Props> = props => {
   const { className } = props
   return (
-    <div className={className}>
-      <div className="header_main">
-        <h1>{profile.name[0]}'s Portfolio</h1>
+    <header className={className}>
+      <div className="profile_background">
+        <HomeIcon size={750} style={HomeIconStyle} />
       </div>
-      <div className="header_subtitle">
-        <div>Integrates with Sketch and Adobe XD* on macOS</div>
+
+      <div className="wrap">
+        <div className="header_main">
+          <h1>{profile.name[0]}'s Portfolio</h1>
+        </div>
+        <div className="header_subtitle">
+          <div>Integrates with Sketch and Adobe XD* on macOS</div>
+        </div>
+        <div className="header_menus">
+          <Menus profile={profile} />
+        </div>
       </div>
-      <div className="header_menus">
-        <Menus profile={profile} />
-      </div>
-    </div>
+    </header>
   )
 }
 
+// ______________________________________________________
+// スタイル
+
+const HomeIconStyle = `
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%)translateY(-50%);
+  z-index: -1;
+`
 export default styled(Component)`
+  position: relative;
   h1::first-letter {
     text-transform: capitalize;
+  }
+  .profile_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    & img {
+      object-position: 50% 20% !important;
+      filter: brightness(90%);
+    }
   }
 
   max-height: 100rem;
@@ -34,12 +67,11 @@ export default styled(Component)`
     max-height: 100rem;
     transition: all 1s;
   }
-
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
+  .wrap {
+    display: flex;
+    flex-direction: column;
+  }
   padding: 6rem 2rem 3rem;
-  background-color: #000;
   color: #fff;
   .header_main {
     flex: 1;

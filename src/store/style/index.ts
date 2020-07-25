@@ -1,7 +1,6 @@
 import { Actions } from "../actions"
 import * as actions from "./actions"
 
-export type WindowType = "phone" | "tablet" | "pc"
 interface State {
   select: number | null
 }

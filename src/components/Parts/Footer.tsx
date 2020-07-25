@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import profile from "~/data/profile"
-import { scrollToTop } from "~/lib/scroll"
 type Props = {
   className?: string
 }
@@ -10,13 +9,13 @@ const Component: React.FC<Props> = props => {
   const { className } = props
   return (
     <div className={className}>
-      <p>© {profile.name} ALL RIGHTS RESERVED</p>
-      <button onClick={scrollToTop}>top</button>
+      <p>© {profile.name[0]} ALL RIGHTS RESERVED</p>
     </div>
   )
 }
 
 export default styled(Component)`
+  text-transform: uppercase;
   font-weight: 150;
   font-size: 0.8rem;
   display: flex;
