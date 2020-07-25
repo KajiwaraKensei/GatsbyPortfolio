@@ -4,7 +4,7 @@ import React from "react"
 import styled from "styled-components"
 import { Menus } from "."
 import profile from "~/data/profile"
-import HomeIcon from "~/Parts/HomeIcon"
+import HomeIcon from "~/icon/HomeIcon"
 
 type Props = {
   className?: string
@@ -29,7 +29,10 @@ const Component: React.FC<Props> = props => {
   return (
     <header className={className}>
       <div className="profile_background">
-        <HomeIcon size={setSize(state.type, 900, 750, 750)} style={HomeIconStyle} />
+        <HomeIcon
+          size={setSize(state.type, 900, 750, 750)}
+          style={HomeIconStyle}
+        />
       </div>
 
       <div className="wrap">

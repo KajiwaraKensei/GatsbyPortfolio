@@ -27,7 +27,10 @@ const Component: React.FC<Props> = props => {
       <div className={className}>
         <h1>SKILLS</h1>
         <SkillList skills={skills} />
-        <Hologram style={HologramIcon} size={setSize(state.type, 400, 350, 300)} />
+        <Hologram
+          style={HologramIcon}
+          size={setSize(state.type, 400, 350, 300)}
+        />
       </div>
     </Element>
   )

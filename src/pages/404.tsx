@@ -1,11 +1,13 @@
 import * as React from "react"
 import Work from "~/components/Work"
+import A from "~/components/Work/NotFount"
+import "~/components/index.css"
 type Props = {
   "*"?: string
 }
 const Component: React.FC<Props> = props => (
   <div>
-    <Work name={props["*"] || ""} />
+    <A name={props["*"] || ""} />
   </div>
 )
 export default Component

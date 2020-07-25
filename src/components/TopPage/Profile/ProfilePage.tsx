@@ -25,12 +25,15 @@ const useRedux = () => {
 //
 const Component: React.FC<Props> = props => {
   const { className } = props
-  const { state } = useRedux();
+  const { state } = useRedux()
   return (
     <Element name="profile">
       <div className={className}>
         <div className="profile_background">
-          <Friend style={friendStyle} size={setSize(state.type, 350, 300, 250)} />
+          <Friend
+            style={friendStyle}
+            size={setSize(state.type, 350, 300, 250)}
+          />
         </div>
         <div className="wrap">
           <h1>PROFILE</h1>

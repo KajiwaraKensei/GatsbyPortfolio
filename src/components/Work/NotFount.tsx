@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components"
 import works from "~/data/works"
 import { navigate } from "@reach/router"
 import { Page } from "."
-import NotFoundIcon from "~/Parts/NotFoundIcon"
+import NotFoundIcon from "~/components/Icons/NotFoundIcon"
 type Props = {
   className?: string
   name: string
@@ -23,9 +23,9 @@ const Component: React.FC<Props> = props => {
   const [work, setWork] = useState(name)
   const [ok, setOk] = useState(false)
   const [articles, serArticles] = useState([
-    `not found page:'${name}'`,
+    `page not found:'${name}'`,
     `表示したい作品名を入力してください。`,
-    `ls:一覧で作品を表示 | home:ホームに戻る`,
+    `もしくは、ls:一覧で作品を表示 | home:ホームに戻る`,
   ])
   const ref = useRef<HTMLInputElement>(null)
   const [count, setCount] = useState(0)
@@ -42,7 +42,7 @@ const Component: React.FC<Props> = props => {
       serArticles(articles => [...articles, `ホームに移動します...`])
       setTimeout(() => {
         navigate(`/`)
-      }, 1000)
+      }, 500)
     } else if (work === "ls") {
       serArticles(articles => [...articles, worksName()])
     } else {
@@ -54,7 +54,7 @@ const Component: React.FC<Props> = props => {
           setTimeout(() => {
             setOk(true)
             navigate(`/work/${res[0].name}`)
-          }, 1000)
+          }, 500)
           return
         }
       }
@@ -77,25 +77,25 @@ const Component: React.FC<Props> = props => {
   return ok ? (
     <Page name={work} />
   ) : (
-    <div className={className}>
-      <NotFoundIcon style={IconStyle} />
-      <form onSubmit={handleSubmit}>
-        {mapArticles}
-        <p>
-          {"> "}
-          <Cursor
-            ref={ref}
-            onBlur={() => {
-              ref.current?.focus()
-            }}
-            value={work}
-            onChange={handleChange}
-            autoFocus
-          />
-        </p>
-      </form>
-    </div>
-  )
+      <div className={className}>
+        <NotFoundIcon style={IconStyle} />
+        <form onSubmit={handleSubmit}>
+          {mapArticles}
+          <p>
+            {"> "}
+            <Cursor
+              ref={ref}
+              onBlur={() => {
+                ref.current?.focus()
+              }}
+              value={work}
+              onChange={handleChange}
+              autoFocus
+            />
+          </p>
+        </form>
+      </div>
+    )
 }
 
 const Cursor = styled.input`
