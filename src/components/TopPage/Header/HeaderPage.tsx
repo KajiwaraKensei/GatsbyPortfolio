@@ -29,7 +29,7 @@ const Component: React.FC<Props> = props => {
   return (
     <header className={className}>
       <div className="profile_background">
-        <HomeIcon size={setSize(state.type, 850, 700, 500)} style={HomeIconStyle} />
+        <HomeIcon size={setSize(state.type, 900, 750, 750)} style={HomeIconStyle} />
       </div>
 
       <div className="wrap">
@@ -54,7 +54,7 @@ const HomeIconStyle = `
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%)translateY(-45%);
+  transform: translateX(-50%)translateY(-42%);
   z-index: -1;
   
 `
