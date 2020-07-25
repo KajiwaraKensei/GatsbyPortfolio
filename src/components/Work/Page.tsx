@@ -4,6 +4,7 @@ import works, { workType } from "~/data/works"
 import { NotFount, Header, Contents } from "."
 import "../index.css"
 import Footer from "~/Parts/Footer"
+import SEO from "~/components/SEO"
 
 type Props = {
   className?: string
@@ -17,6 +18,7 @@ const Component: React.FC<Props> = props => {
   })
   const Page = work && (
     <Fragment>
+      <SEO title={work.name} />
       <Header url={work.backgroundImage} />
       <Contents work={work} />
       <Footer />

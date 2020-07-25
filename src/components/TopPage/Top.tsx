@@ -6,10 +6,14 @@ import Skills from "~/components/TopPage/Skills"
 import Works from "~/components/TopPage/Works"
 import Footer from "~/Parts/Footer"
 
+// ______________________________________________________
+//
 type Props = {
   className?: string
 }
 
+// ______________________________________________________
+//
 const Component: React.FC<Props> = props => {
   const { className } = props
   return (
@@ -23,6 +27,8 @@ const Component: React.FC<Props> = props => {
   )
 }
 
+// ______________________________________________________
+//
 export default styled(Component)`
   width: 100%;
   min-height: 100vh;

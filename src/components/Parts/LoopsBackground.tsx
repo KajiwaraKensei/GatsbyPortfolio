@@ -1,6 +1,5 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
-import Background from "~/Parts/Background"
 type Props = {
   className?: string
   images: string[]

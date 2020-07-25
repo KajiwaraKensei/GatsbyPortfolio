@@ -1,3 +1,5 @@
+// ______________________________________________________
+// Profile no 左側
 import React from "react"
 import styled from "styled-components"
 import { profile } from "~/data/profile"
@@ -13,6 +15,8 @@ type Props = {
   profile: profile
 }
 
+// ______________________________________________________
+//
 const Component: React.FC<Props> = props => {
   const { className, profile } = props
   return (
@@ -33,7 +37,8 @@ const Component: React.FC<Props> = props => {
       <Fade direction="top" delay={200} triggerOnce>
         <div className="info">
           <h3 className="title width_material_icon">
-            GitHub <GitHub />
+            <GitHub />
+            GitHub
           </h3>
           <a
             href={githubLink(profile.github)}
@@ -47,7 +52,8 @@ const Component: React.FC<Props> = props => {
       <Fade direction="top" delay={400} triggerOnce>
         <div className="info">
           <h3 className="title width_material_icon">
-            Phone <PhoneIcon />
+            <PhoneIcon />
+            Phone
           </h3>
           <a
             href={telLink(profile.tel)}
@@ -61,7 +67,8 @@ const Component: React.FC<Props> = props => {
       <Fade direction="top" delay={600} triggerOnce>
         <div className="info">
           <h3 className="title width_material_icon">
-            Email <MailIcon />
+            <MailIcon />
+            Email
           </h3>
           <a
             href={mailLink(profile.mail)}
@@ -76,13 +83,15 @@ const Component: React.FC<Props> = props => {
   )
 }
 
+// ______________________________________________________
+// スタイル
 export default styled(Component)`
-  flex-basis: 30rem;
-  flex-grow: 0;
+  flex-basis: 25rem;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4rem 2rem;
+  padding: 2rem 2rem 3rem;
   & h2 {
     font-weight: 200;
   }

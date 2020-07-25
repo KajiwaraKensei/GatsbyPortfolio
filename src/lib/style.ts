@@ -1,4 +1,6 @@
 import { keyframes } from "styled-components"
+
+// copy light のスタイル
 export const copy = `
   margin: 0;
   font-size: .9rem;
@@ -17,7 +19,13 @@ export const fadeIn = keyframes`
     padding: 0;
   }
 `
-
+export const blinking = keyframes`
+  0%, 100% {
+    opacity: 0;
+  } 
+  50% {
+    opacity: 1;
+  }`
 export const customFadeIn = (props?: { start?: string; end?: string }) => {
   return keyframes`
   0% {

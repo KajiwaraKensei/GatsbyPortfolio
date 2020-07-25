@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react"
-import styled from "styled-components"
 import Top from "./TopPage"
 import "./index.css"
 import Loading from "~/Parts/Loading"
 import { useSelector, useDispatch } from "react-redux"
 import { RootState, actionCreator } from "~/store"
 import EventListener from "react-event-listener"
+
+// ______________________________________________________
+//
 type Props = {
   className?: string
 }
@@ -22,6 +24,8 @@ const useRedux = () => {
   return { state, setLoad, dispatch }
 }
 
+// ______________________________________________________
+//
 const App: React.FC<Props> = props => {
   const { className } = props
   const [loading, setLoading] = useState(true)
@@ -39,17 +43,18 @@ const App: React.FC<Props> = props => {
   }
 
   useEffect(() => {
+    setLoad()
     setTimeout(() => {
-      setLoad()
-    }, 2500)
+      setLoading(false)
+    }, 1500)
   }, [])
   return (
     <div className={className}>
       <EventListener target="window" onResize={handleResize} />
-      {state.load && <Loading />}
+      {loading && <Loading load={state.load} />}
       <Top />
     </div>
   )
 }
 
-export default styled(App)``
+export default App

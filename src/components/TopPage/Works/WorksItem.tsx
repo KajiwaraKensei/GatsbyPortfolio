@@ -1,3 +1,5 @@
+// ______________________________________________________
+// Worksの1つ1つ
 import React from "react"
 import styled from "styled-components"
 import { workType } from "~/data/works"
@@ -12,6 +14,8 @@ type Props = {
   onClick?: () => void
 } & StyledProps
 
+// ______________________________________________________
+//
 const Component: React.FC<Props> = props => {
   const { className, work, onMouseOver, onMouseOut, onClick } = props
   const { name, icon, platform } = work
@@ -33,10 +37,12 @@ const Component: React.FC<Props> = props => {
   )
 }
 
+// ______________________________________________________
+// スタイル
 type StyledProps = {
-  focus?: boolean | 0 | null
-  opacity?: string | number
-  animation: boolean
+  focus?: boolean | 0 | null // フォーカスが当たっているか
+  opacity?: string | number // 透明度指定
+  animation: boolean // アニメーションをするか
 }
 export default styled(Component)<StyledProps>`
   pointer-events: none;

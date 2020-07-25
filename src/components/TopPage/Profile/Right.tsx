@@ -1,3 +1,5 @@
+// ______________________________________________________
+// Profile no 右側
 import React from "react"
 import styled from "styled-components"
 import { profile } from "~/data/profile"
@@ -10,6 +12,8 @@ type Props = {
   profile: profile
 }
 
+// ______________________________________________________
+//
 const Component: React.FC<Props> = props => {
   const { className, profile } = props
   return (
@@ -32,10 +36,12 @@ const Component: React.FC<Props> = props => {
   )
 }
 
+// ______________________________________________________
+// スタイル
 export default styled(Component)`
-  padding: 4rem 2rem;
-  flex-basis: 30rem;
-  flex-grow: 0;
+  padding: 2rem 2rem 3rem;
+  flex-basis: 25rem;
+  flex-grow: 0.5;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -45,7 +51,7 @@ export default styled(Component)`
       margin-top: 0;
     }
     & .value {
-      border-left: 2px dotted #aaa;
+      border-left: 2px dotted #0c0c0c;
       padding-left: 0.75rem;
     }
   }
