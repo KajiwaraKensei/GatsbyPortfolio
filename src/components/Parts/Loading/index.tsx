@@ -2,7 +2,7 @@
 // loading画面
 
 import React from "react"
-import "./style.css"
+import "./styles.css"
 import { Coffee } from ".."
 type Props = {
   load: boolean
