@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components"
 import works from "~/data/works"
 import { navigate } from "@reach/router"
 import { Page } from "."
-import NotFoundIcon from "~/Parts/NotFoundIcon"
+import NotFoundIcon from "~/components/Icons/NotFoundIcon"
 type Props = {
   className?: string
   name: string
@@ -77,25 +77,25 @@ const Component: React.FC<Props> = props => {
   return ok ? (
     <Page name={work} />
   ) : (
-    <div className={className}>
-      <NotFoundIcon style={IconStyle} />
-      <form onSubmit={handleSubmit}>
-        {mapArticles}
-        <p>
-          {"> "}
-          <Cursor
-            ref={ref}
-            onBlur={() => {
-              ref.current?.focus()
-            }}
-            value={work}
-            onChange={handleChange}
-            autoFocus
-          />
-        </p>
-      </form>
-    </div>
-  )
+      <div className={className}>
+        <NotFoundIcon style={IconStyle} />
+        <form onSubmit={handleSubmit}>
+          {mapArticles}
+          <p>
+            {"> "}
+            <Cursor
+              ref={ref}
+              onBlur={() => {
+                ref.current?.focus()
+              }}
+              value={work}
+              onChange={handleChange}
+              autoFocus
+            />
+          </p>
+        </form>
+      </div>
+    )
 }
 
 const Cursor = styled.input`
