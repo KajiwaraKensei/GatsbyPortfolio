@@ -8,7 +8,7 @@ type Props = {
   size?: number // コーヒーのサイズ
 }
 
-const DEFAULT_COFFEE_SIZE = 50 // デフォルトサイズ
+const DEFAULT_COFFEE_SIZE = 20 // デフォルトサイズ
 
 // ______________________________________________________
 //
