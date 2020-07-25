@@ -4,25 +4,37 @@ import React from "react"
 import styled from "styled-components"
 import { Menus } from "."
 import profile from "~/data/profile"
-import Image from "~/Parts/Image"
 import HomeIcon from "~/Parts/HomeIcon"
+
 type Props = {
   className?: string
+}
+
+import { setSize } from "~/lib/scroll"
+import { useSelector } from "react-redux"
+import { RootState } from "~/store"
+const useRedux = () => {
+  const state = useSelector((state: RootState) => ({
+    load: state.window.load,
+    type: state.window.type,
+  }))
+  return { state }
 }
 
 // ______________________________________________________
 //
 const Component: React.FC<Props> = props => {
   const { className } = props
+  const { state } = useRedux()
   return (
     <header className={className}>
       <div className="profile_background">
-        <HomeIcon size={750} style={HomeIconStyle} />
+        <HomeIcon size={setSize(state.type, 850, 700, 500)} style={HomeIconStyle} />
       </div>
 
       <div className="wrap">
         <div className="header_main">
-          <h1>{profile.name[0]}'s Portfolio</h1>
+          <h1>{profile.name[0]}'s Portfolio1</h1>
         </div>
         <div className="header_subtitle">
           <div>Integrates with Sketch and Adobe XD* on macOS</div>
@@ -42,11 +54,13 @@ const HomeIconStyle = `
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%)translateY(-50%);
+  transform: translateX(-50%)translateY(-45%);
   z-index: -1;
+  
 `
 export default styled(Component)`
   position: relative;
+  overflow: hidden;
   h1::first-letter {
     text-transform: capitalize;
   }

@@ -5,22 +5,32 @@ import styled from "styled-components"
 import profile from "~/data/profile"
 import { Left, Right } from "."
 import { Element } from "react-scroll"
-import Coffee from "~/Parts/Coffee"
-import Image from "~/Parts/Image"
 import Friend from "~/icon/Friends"
 type Props = {
   className?: string
 }
+
+import { setSize } from "~/lib/scroll"
+import { useSelector } from "react-redux"
+import { RootState } from "~/store"
+const useRedux = () => {
+  const state = useSelector((state: RootState) => ({
+    load: state.window.load,
+    type: state.window.type,
+  }))
+  return { state }
+}
+
 // ______________________________________________________
 //
 const Component: React.FC<Props> = props => {
   const { className } = props
-
+  const { state } = useRedux();
   return (
     <Element name="profile">
       <div className={className}>
         <div className="profile_background">
-          <Friend style={friendStyle} size={400} />
+          <Friend style={friendStyle} size={setSize(state.type, 350, 300, 250)} />
         </div>
         <div className="wrap">
           <h1>PROFILE</h1>
@@ -30,7 +40,6 @@ const Component: React.FC<Props> = props => {
           </div>
         </div>
       </div>
-      <img src="nikoru.svg" alt="" />
     </Element>
   )
 }

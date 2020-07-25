@@ -288,6 +288,6 @@ const Component: React.FC<Props> = props => {
   )
 }
 
-export default styled(Component)<{ style?: string }>`
+export default styled(Component) <{ style?: string }>`
   ${({ style }) => style}
 `

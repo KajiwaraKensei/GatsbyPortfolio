@@ -4,19 +4,30 @@ import SkillList from "./SkillsList"
 import { Element } from "react-scroll"
 import skills from "~/data/skills"
 import { Hologram } from "~/icon"
-
+import { setSize } from "~/lib/scroll"
 type Props = {
   className?: string
 }
 
+import { useSelector } from "react-redux"
+import { RootState } from "~/store"
+const useRedux = () => {
+  const state = useSelector((state: RootState) => ({
+    load: state.window.load,
+    type: state.window.type,
+  }))
+  return { state }
+}
+
 const Component: React.FC<Props> = props => {
   const { className } = props
+  const { state } = useRedux()
   return (
     <Element name="skills">
       <div className={className}>
         <h1>SKILLS</h1>
         <SkillList skills={skills} />
-        <Hologram style={HologramIcon} />
+        <Hologram style={HologramIcon} size={setSize(state.type, 400, 350, 300)} />
       </div>
     </Element>
   )
