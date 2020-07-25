@@ -77,25 +77,25 @@ const Component: React.FC<Props> = props => {
   return ok ? (
     <Page name={work} />
   ) : (
-      <div className={className}>
-        <NotFoundIcon style={IconStyle} />
-        <form onSubmit={handleSubmit}>
-          {mapArticles}
-          <p>
-            {"> "}
-            <Cursor
-              ref={ref}
-              onBlur={() => {
-                ref.current?.focus()
-              }}
-              value={work}
-              onChange={handleChange}
-              autoFocus
-            />
-          </p>
-        </form>
-      </div>
-    )
+    <div className={className}>
+      <NotFoundIcon style={IconStyle} />
+      <form onSubmit={handleSubmit}>
+        {mapArticles}
+        <p>
+          {"> "}
+          <Cursor
+            ref={ref}
+            onBlur={() => {
+              ref.current?.focus()
+            }}
+            value={work}
+            onChange={handleChange}
+            autoFocus
+          />
+        </p>
+      </form>
+    </div>
+  )
 }
 
 const Cursor = styled.input`
@@ -125,4 +125,4 @@ const IconStyle = `
   top: 5rem;
   right: 5rem;
   opacity: .5rem;
-`;
+`

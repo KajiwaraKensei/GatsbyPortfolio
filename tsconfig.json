@@ -22,7 +22,9 @@
       "~/lib/*": ["./lib/*"],
       "~/data/*": ["./data/*"],
       "~/store/*": ["./store/*"],
-      "~/store": ["./store"]
+      "~/store": ["./store"],
+      "~/icon/*": ["./components/Icons/*"],
+      "~/icon": ["./components/Icons"]
     }
   },
   "include": ["src"]

@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 type Props = {
   className?: string
-  size?: number;
+  size?: number
 }
 const ICON_SIZE = 500
 const Component: React.FC<Props> = props => {
@@ -226,20 +226,8 @@ const Component: React.FC<Props> = props => {
         height="5.33572"
         fill="#e6e6e6"
       />
-      <rect
-        x="615.30421"
-        y="521.57379"
-        width="2"
-        height="110"
-        fill="#e6e6e6"
-      />
-      <rect
-        x="817.30421"
-        y="410.57379"
-        width="2"
-        height="221"
-        fill="#e6e6e6"
-      />
+      <rect x="615.30421" y="521.57379" width="2" height="110" fill="#e6e6e6" />
+      <rect x="817.30421" y="410.57379" width="2" height="221" fill="#e6e6e6" />
       <circle cx="617.08488" cy="508.7277" r="16.41727" fill="#6c63ff" />
       <circle cx="819.81149" cy="395.28885" r="16.41727" fill="#6c63ff" />
       <circle cx="870.23596" cy="525.45432" r="16.41727" fill="#e6e6e6" />
@@ -247,4 +235,6 @@ const Component: React.FC<Props> = props => {
   )
 }
 
-export default styled(Component) <{ style?: string }>`${({ style }) => style}`;
+export default styled(Component)<{ style?: string }>`
+  ${({ style }) => style}
+`

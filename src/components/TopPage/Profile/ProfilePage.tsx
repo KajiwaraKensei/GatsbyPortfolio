@@ -7,7 +7,7 @@ import { Left, Right } from "."
 import { Element } from "react-scroll"
 import Coffee from "~/Parts/Coffee"
 import Image from "~/Parts/Image"
-
+import Friend from "~/icon/Friends"
 type Props = {
   className?: string
 }
@@ -20,12 +20,7 @@ const Component: React.FC<Props> = props => {
     <Element name="profile">
       <div className={className}>
         <div className="profile_background">
-          <Image
-            style={{ position: "absolute", zIndex: "-1" }}
-            filename="joshua-ness-9iqqFZ7OuwY-unsplash.jpg"
-            width="100vw"
-            height="100%"
-          />
+          <Friend style={friendStyle} size={400} />
         </div>
         <div className="wrap">
           <h1>PROFILE</h1>
@@ -47,6 +42,7 @@ export default styled(Component)`
   position: relative;
   color: #000;
   text-shadow: 1px 2px 5px #f6f6f6;
+  background: #f6f6f6;
   & > .wrap {
     width: 100%;
     max-width: 60rem;
@@ -95,4 +91,9 @@ export default styled(Component)`
     right: 0;
     bottom: 0;
   }
+`
+const friendStyle = `
+position: absolute;
+bottom: 2rem;
+right: 5rem;
 `

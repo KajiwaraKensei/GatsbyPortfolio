@@ -5,7 +5,7 @@ import styled from "styled-components"
 import { Menus } from "."
 import profile from "~/data/profile"
 import Image from "~/Parts/Image"
-
+import HomeIcon from "~/Parts/HomeIcon"
 type Props = {
   className?: string
 }
@@ -16,7 +16,10 @@ const Component: React.FC<Props> = props => {
   const { className } = props
   return (
     <header className={className}>
-      <div className="profile_background"></div>
+      <div className="profile_background">
+        <HomeIcon size={750} style={HomeIconStyle} />
+      </div>
+
       <div className="wrap">
         <div className="header_main">
           <h1>{profile.name[0]}'s Portfolio</h1>
@@ -34,6 +37,14 @@ const Component: React.FC<Props> = props => {
 
 // ______________________________________________________
 // スタイル
+
+const HomeIconStyle = `
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%)translateY(-50%);
+  z-index: -1;
+`
 export default styled(Component)`
   position: relative;
   h1::first-letter {
