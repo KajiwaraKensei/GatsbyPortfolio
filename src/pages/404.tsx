@@ -1,7 +1,7 @@
 import * as React from "react"
 import Work from "~/components/Work"
 import A from "~/components/Work/NotFount"
-import "~/components/indx.css"
+import "~/components/index.css"
 type Props = {
   "*"?: string
 }
