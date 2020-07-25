@@ -125,4 +125,5 @@ const IconStyle = `
   top: 5rem;
   right: 5rem;
   opacity: .5rem;
+  z-index: -2;
 `
