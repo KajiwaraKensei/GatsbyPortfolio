@@ -2,8 +2,6 @@ export type workType = {
   platform: "web" | "mobile"
   name: string
   icon: string
-
-  images: string[] // 画像は static に入れてください
   backgroundImage: string
   rootImagePath?: string
   briefDescription: string
@@ -32,8 +30,70 @@ export type Article = {
 const works: worksType = [
   {
     platform: "web",
+    name: "Portfolio2",
+    workDay: "2020 07",
+    briefDescription: "",
+    icon: "gat_icon.png",
+    backgroundImage: "gatsby/not_found.png",
+    languages: [
+      {
+        name: "Gatsby.js",
+        reason: [
+          "SSG(Static Site Generator)のお試し。Next.jsでもできるとのこと。",
+          "Graphql が組み込まれていて画像の最適化が簡単に実装可能。",
+        ],
+      },
+      {
+        name: "Netlify",
+        reason: [
+          "ホスティングサービスです。サイトの公開に使用しました。",
+          "Github とリンクさせて, Github にマージしたタイミングで公開しているサイトを自動更新してくれます。",
+        ],
+      },
+      {
+        name: "Typescript",
+        reason: [
+          "Gatsby.js を Javascript ではなく、Typescript で開発することで、型の恩恵を受けながら開発しました。",
+        ],
+      },
+    ],
+    contents: [
+      {
+        headline: "動機",
+        type: "article",
+        styled: "padding-bottom: 0;",
+        value:
+          "「自分のホームページを作りなさい」という学校の授業の一貫で制作しました。自分のためになるサイトを作りたかったので、以前に作ったポートフォリオサイトをパワーアップすることにしました。",
+      },
+      {
+        type: "article",
+        styled: "padding-top: 0;",
+        value:
+          "そのまま HTML と CSS , Javascript で制作は芸がないですし、面倒そうだったので、Gatsby.js を使うことにしました。\nGatsby.js は React ベースとなっており、部品単位にファイルを区切れるので、管理がしやすいです。また繰り返しの部分を変数や関数を使って簡略化でき、変更に強いです。",
+      },
+      {
+        headline: "力を入れた点",
+        type: "article",
+        image: "gatsby/skill.png",
+        imagePosition: "underHeadline",
+        value:
+          "SKILLS の部分の習熟度の円の表示は SVG を使って表示しています。\n毎回パラメーターを計算して書き直していては効率が悪いので、関数化して、引数で習熟度を渡したら自動で円を計算して表示できるようにしました。",
+      },
+    ],
+  },
+  {
+    platform: "web",
+    name: "ごちナビ",
+    workDay: "2020 07",
+    briefDescription: "",
+    icon: "goti_icon.png",
+    backgroundImage: "gotinabi/gotinavi-kate.png",
+    languages: [],
+    contents: [],
+  },
+  {
+    platform: "web",
     name: "Makers",
-    images: [],
     briefDescription: "文章をテンプレート化し、作業効率UP↑",
     workDay: 2020,
     icon: "makers-icon.png",
@@ -105,7 +165,6 @@ const works: worksType = [
   {
     platform: "web",
     name: "PortfolioTemplate ver 1",
-    images: [],
     briefDescription: "変数いじるだけでポートフォリオサイトが作れます。",
     workDay: 2020,
     icon: "portfolio_template_icon.png",
