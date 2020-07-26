@@ -26,8 +26,10 @@ export const blinking = keyframes`
   50% {
     opacity: 1;
   }`
-export const customFadeIn = (props?: { start?: string; end?: string }) => {
-  return keyframes`
+export const customFadeIn = (props?: {
+  start?: string
+  end?: string
+}) => keyframes`
   0% {
     opacity: 0;
     padding: 0 1rem;
@@ -39,4 +41,16 @@ export const customFadeIn = (props?: { start?: string; end?: string }) => {
     ${props && props.end}
   }
 `
-}
+
+export const customBlinking = (
+  color1: [string, string],
+  color2: [string, string]
+) => keyframes`
+  0%, 100% {
+    color: ${color1[0]};
+    background: ${color1[1]};
+  } 
+  50% {
+    color: ${color2[0]};
+    background: ${color2[1]};
+  }`

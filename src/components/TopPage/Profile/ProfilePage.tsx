@@ -53,7 +53,6 @@ export default styled(Component)`
   padding: 3rem 0rem 5rem;
   position: relative;
   color: #000;
-  text-shadow: 1px 2px 5px #f6f6f6;
   background: #f6f6f6;
   & > .wrap {
     width: 100%;

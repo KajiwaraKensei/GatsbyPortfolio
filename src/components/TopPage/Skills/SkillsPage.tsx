@@ -29,7 +29,7 @@ const Component: React.FC<Props> = props => {
         <SkillList skills={skills} />
         <Hologram
           style={HologramIcon}
-          size={setSize(state.type, 400, 350, 300)}
+          size={setSize(state.type, 300, 250, 200)}
         />
       </div>
     </Element>
