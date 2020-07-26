@@ -4,6 +4,8 @@ import works from "~/data/works"
 import { navigate } from "@reach/router"
 import { Page } from "."
 import NotFoundIcon from "~/components/Icons/NotFoundIcon"
+import { customBlinking } from "~/lib/style"
+
 type Props = {
   className?: string
   name: string
@@ -18,7 +20,19 @@ const worksName = () => {
   return name
 }
 
+import { setSize } from "~/lib/scroll"
+import { useSelector } from "react-redux"
+import { RootState } from "~/store"
+const useRedux = () => {
+  const state = useSelector((state: RootState) => ({
+    load: state.window.load,
+    type: state.window.type,
+  }))
+  return { state }
+}
+
 const Component: React.FC<Props> = props => {
+  const { state } = useRedux()
   const { className, name } = props
   const [work, setWork] = useState(name)
   const [ok, setOk] = useState(false)
@@ -31,6 +45,9 @@ const Component: React.FC<Props> = props => {
   const [count, setCount] = useState(0)
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     !ok && setWork(event.target.value)
+  }
+  const gotoHome = () => {
+    navigate(`/`)
   }
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -78,7 +95,7 @@ const Component: React.FC<Props> = props => {
     <Page name={work} />
   ) : (
       <div className={className}>
-        <NotFoundIcon style={IconStyle} />
+        <NotFoundIcon style={IconStyle} size={setSize(state.type, 500, 450, 350)} />
         <form onSubmit={handleSubmit}>
           {mapArticles}
           <p>
@@ -94,6 +111,7 @@ const Component: React.FC<Props> = props => {
             />
           </p>
         </form>
+        <button onClick={gotoHome}>HOME</button>
       </div>
     )
 }
@@ -110,6 +128,25 @@ export default styled(Component)`
   background: #000;
   color: #fff;
   position: relative;
+  z-index: -2;
+  button {
+    font-size: 1rem;
+    color: #fff;
+    position: fixed;
+    top: 3rem;
+    right: 5%;
+    background: #fb496d;
+    border: 1px solid #000;
+    border-radius: 5rem;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    animation: ${customBlinking(["#fff", "#fb496d"], ["#000", "#fff"])} 2s infinite; 
+    cursor: pointer;
+  }
   p {
     display: flex;
   }
@@ -123,7 +160,7 @@ export default styled(Component)`
 const IconStyle = `
   position: absolute;
   top: 5rem;
-  right: 5rem;
+  right: 5%;
   opacity: .5rem;
-  z-index: -2;
+  z-index: -1;
 `
