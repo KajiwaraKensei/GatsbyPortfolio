@@ -9,7 +9,7 @@ type Props = {
 
 const Component: React.FC<Props> = props => {
   const { className, content } = props
-  const { headline, value, imagePosition, image } = content
+  const { headline, value, imagePosition, image, width } = content
   const _imgPosition = imagePosition || "top"
 
   const displayImage = image && (
@@ -18,6 +18,7 @@ const Component: React.FC<Props> = props => {
         borderRadius: ".3rem",
         boxShadow: "#7373735c 0px 5px 11px 2px",
         margin: "3%",
+        maxWidth: width,
       }}
       filename={image}
       width={"96%"}
@@ -40,6 +41,8 @@ export default styled(Component)<{ content: Article }>`
   max-width: 50rem;
   padding: 0 2rem 2rem;
   .content_value {
+    line-height: 1.75rem;
+    font-weight: 200;
     text-align: justify;
     letter-spacing: 0.07em;
     font-family: "museo-sans", sans-serif;

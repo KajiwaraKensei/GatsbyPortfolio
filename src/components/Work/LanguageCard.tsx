@@ -31,7 +31,7 @@ export default styled(Component)`
   padding: 1rem;
   & > p {
     font-size: 1rem;
-    font-weight: 150;
+    font-weight: 250;
     margin: 0.25rem 0;
   }
   ul {
@@ -43,7 +43,7 @@ export default styled(Component)`
     position: relative;
     list-style: none;
     line-height: 1.4;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
   ul > li::after {
     display: block;

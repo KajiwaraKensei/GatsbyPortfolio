@@ -5,6 +5,7 @@ import Contents from "./Contents"
 import ArticleType from "./ArticleType"
 import LanguageCard from "./LanguageCard"
 import ImageType from "./ImageType"
+import BackButton from "./BackButton"
 
 export {
   Page,
@@ -14,6 +15,7 @@ export {
   ArticleType,
   LanguageCard,
   ImageType,
+  BackButton,
 }
 
 export default Page

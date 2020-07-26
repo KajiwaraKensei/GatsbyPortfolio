@@ -6,26 +6,20 @@ import profile from "~/data/profile"
 import { Left, Right } from "."
 import { Element } from "react-scroll"
 import Friend from "~/icon/Friends"
+import Next from "~/Parts/ScrollButton"
+import { useWindowSize } from "~/lib/redux"
+import { setSize } from "~/lib/scroll"
+
 type Props = {
   className?: string
-}
-
-import { setSize } from "~/lib/scroll"
-import { useSelector } from "react-redux"
-import { RootState } from "~/store"
-const useRedux = () => {
-  const state = useSelector((state: RootState) => ({
-    load: state.window.load,
-    type: state.window.type,
-  }))
-  return { state }
 }
 
 // ______________________________________________________
 //
 const Component: React.FC<Props> = props => {
   const { className } = props
-  const { state } = useRedux()
+  const { state } = useWindowSize()
+
   return (
     <Element name="profile">
       <div className={className}>
@@ -42,6 +36,7 @@ const Component: React.FC<Props> = props => {
             <Right profile={profile} />
           </div>
         </div>
+        <Next to="skills" />
       </div>
     </Element>
   )
@@ -49,6 +44,14 @@ const Component: React.FC<Props> = props => {
 
 // ______________________________________________________
 //
+
+const BackButtonStyle = `
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%)translateY(-50%);
+  animation: none;
+`
 export default styled(Component)`
   padding: 3rem 0rem 5rem;
   position: relative;
