@@ -37,7 +37,7 @@ const Component: React.FC<Props> = props => {
 
       <div className="wrap">
         <div className="header_main">
-          <h1>{profile.name[0]}'s Portfolio1</h1>
+          <h1>{profile.name[0]}'s Portfolio</h1>
         </div>
         <div className="header_subtitle">
           <div>Integrates with Sketch and Adobe XD* on macOS</div>

@@ -44,7 +44,7 @@ type StyledProps = {
   opacity?: string | number // 透明度指定
   animation: boolean // アニメーションをするか
 }
-export default styled(Component)<StyledProps>`
+export default styled(Component) <StyledProps>`
   pointer-events: none;
   ${({ focus }) =>
     focus === false
@@ -54,9 +54,8 @@ export default styled(Component)<StyledProps>`
       : `
   color: #fff;
   `}
-  flex-basis: ${CARD_SIZE}rem;
+  width: ${CARD_SIZE}rem;
   height: ${CARD_SIZE}rem;
-  flex-flow: 1;
   padding: 1rem;
   margin-bottom: 2rem;
   display: flex;
