@@ -8,6 +8,8 @@ export type workType = {
   workDay?: string | number
   contents: (ImageContent | Article)[]
   languages: { name: string; reason: string[] }[]
+  github: string
+  demo: string
 }
 export type worksType = workType[]
 export type ImageContent = {
@@ -26,9 +28,12 @@ export type Article = {
   styled?: string // スタイル styled-components にそのまま渡す
   image?: string // 画像　タイトルのした
   imagePosition?: "top" | "bottom" | "underHeadline"
+  width?: string | number
 }
 const works: worksType = [
   {
+    github: "",
+    demo: "",
     platform: "web",
     name: "Portfolio2",
     workDay: "2020 07",
@@ -59,6 +64,18 @@ const works: worksType = [
     ],
     contents: [
       {
+        headline: "Portfolio2とは",
+        type: "article",
+        styled: "",
+        value:
+          "このサイトのことです。ポートフォリオサイトです。以前にも作ったことがあり、それのパワーアップしたバージョンです。",
+      },
+      {
+        type: "image",
+        image: ["gatsby/top.png"],
+        styled: "padding-bottom: 5rem;",
+      },
+      {
         headline: "動機",
         type: "article",
         styled: "padding-bottom: 0;",
@@ -67,7 +84,7 @@ const works: worksType = [
       },
       {
         type: "article",
-        styled: "padding-top: 0;",
+
         value:
           "そのまま HTML と CSS , Javascript で制作は芸がないですし、面倒そうだったので、Gatsby.js を使うことにしました。\nGatsby.js は React ベースとなっており、部品単位にファイルを区切れるので、管理がしやすいです。また繰り返しの部分を変数や関数を使って簡略化でき、変更に強いです。",
       },
@@ -76,12 +93,50 @@ const works: worksType = [
         type: "article",
         image: "gatsby/skill.png",
         imagePosition: "underHeadline",
+        width: "50rem",
         value:
           "SKILLS の部分の習熟度の円の表示は SVG を使って表示しています。\n毎回パラメーターを計算して書き直していては効率が悪いので、関数化して、引数で習熟度を渡したら自動で円を計算して表示できるようにしました。",
+      },
+
+      {
+        type: "article",
+        headline: "PWA対応",
+        value:
+          "PWA(Progressive Web App) に対応したと言っても、gatsby はプラグインが充実しているので、PWAのプラグインをインストールし、設定を少しした程度で、導入は簡単です。\nService Worker によってキャッシュが効くようになるので、２回目以降のロードがかなり早くなったり、オフラインでも利用可能です。",
+      },
+      {
+        type: "image",
+        image: ["gatsby/offline.png"],
+        width: "15rem",
+      },
+      {
+        type: "article",
+        value:
+          "またブラウザの UI を非表示にできるなど、ネイティブアプリのように振る舞えます。",
+      },
+      {
+        type: "article",
+        headline: "404ページ",
+        image: "gatsby/404.png",
+        imagePosition: "bottom",
+
+        value:
+          "404ページをコマンドライン風にしてみました。作品名 か home と入力することで正常のページに移動できます。\nコマンドラインになれていない人用に HOME ボタンを置いています。わかりやすいように点滅させるようにしています。",
+      },
+      {
+        headline: "アニメーション",
+        type: "article",
+        image: "gatsby/animation.png",
+        imagePosition: "underHeadline",
+        width: "50rem",
+        value:
+          "アニメーションにも力を入れました。画面の遷移どうでしたでしょうか？遷移を遅らせてその間にアニメーションを入れる感じで実装しました。そこまで触れてこなかったのでいろいろ勉強になりました。",
       },
     ],
   },
   {
+    github: "",
+    demo: "",
     platform: "web",
     name: "ごちナビ",
     workDay: "2020 07",
@@ -92,6 +147,8 @@ const works: worksType = [
     contents: [],
   },
   {
+    github: "",
+    demo: "",
     platform: "web",
     name: "Makers",
     briefDescription: "文章をテンプレート化し、作業効率UP↑",
@@ -163,8 +220,10 @@ const works: worksType = [
     ],
   },
   {
+    github: "",
+    demo: "",
     platform: "web",
-    name: "PortfolioTemplate ver 1",
+    name: "Portfolio1",
     briefDescription: "変数いじるだけでポートフォリオサイトが作れます。",
     workDay: 2020,
     icon: "portfolio_template_icon.png",
@@ -189,6 +248,14 @@ const works: worksType = [
           "CSS in Javascript で 動的にcssの中身を書き換えることができ、レスポンシブに対応しやすくするため。",
         ],
       },
+      {
+        name: "Firebase",
+        reason: [
+          "ホスティングサービスと画像のアップロードに使用。",
+          "デプロイはビルド→専用のライブラリでコマンドから実行。なので Netlify と比較すると面倒。",
+          "無料枠で十分。",
+        ],
+      },
     ],
     contents: [
       {
@@ -203,20 +270,25 @@ const works: worksType = [
       {
         type: "article",
         value:
-          "Typescriptで肩を使用しているので、必須項目が抜けていてもエラーでどこが間違っているかわかります。",
+          "Typescriptで型を使用しているので、必須項目が抜けていてもエラーでどこが間違っているかわかります。",
         styled: "margin-top: 0",
       },
-
       {
-        type: "image",
-        image: ["maker_r_1.png"],
-        width: "100%",
+        type: "article",
+        value:
+          "レスポンシブに対応しました。基本的に PC | Tablet | Phone の３段階に分けています。",
+        headline: "レスポンシブ対応",
+        styled: "margin-top: 5rem; padding-bottom: 0;",
       },
       {
         type: "image",
-        image: ["maker_r_2.png"],
+        image: ["portfolio1/pc.png"],
+      },
+      {
+        type: "image",
+        image: ["portfolio1/phone.png"],
         width: "60%",
-        styled: "padding: 0;",
+        styled: "padding: .5rem;",
       },
     ],
   },

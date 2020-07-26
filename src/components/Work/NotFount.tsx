@@ -5,7 +5,8 @@ import { navigate } from "@reach/router"
 import { Page } from "."
 import NotFoundIcon from "~/components/Icons/NotFoundIcon"
 import { customBlinking } from "~/lib/style"
-
+import { useWindowSize } from "~/lib/redux"
+import { setSize } from "~/lib/scroll"
 type Props = {
   className?: string
   name: string
@@ -20,19 +21,10 @@ const worksName = () => {
   return name
 }
 
-import { setSize } from "~/lib/scroll"
-import { useSelector } from "react-redux"
-import { RootState } from "~/store"
-const useRedux = () => {
-  const state = useSelector((state: RootState) => ({
-    load: state.window.load,
-    type: state.window.type,
-  }))
-  return { state }
-}
+
 
 const Component: React.FC<Props> = props => {
-  const { state } = useRedux()
+  const { state } = useWindowSize()
   const { className, name } = props
   const [work, setWork] = useState(name)
   const [ok, setOk] = useState(false)
@@ -95,6 +87,7 @@ const Component: React.FC<Props> = props => {
     <Page name={work} />
   ) : (
       <div className={className}>
+        <div className="button" onClick={gotoHome}>HOME</div>
         <NotFoundIcon style={IconStyle} size={setSize(state.type, 500, 450, 350)} />
         <form onSubmit={handleSubmit}>
           {mapArticles}
@@ -111,7 +104,7 @@ const Component: React.FC<Props> = props => {
             />
           </p>
         </form>
-        <button onClick={gotoHome}>HOME</button>
+
       </div>
     )
 }
@@ -125,14 +118,12 @@ const Cursor = styled.input`
 `
 
 export default styled(Component)`
-  background: #000;
   color: #fff;
   position: relative;
-  z-index: -2;
-  button {
+  .button {
     font-size: 1rem;
     color: #fff;
-    position: fixed;
+    position: absolute;
     top: 3rem;
     right: 5%;
     background: #fb496d;
@@ -146,9 +137,11 @@ export default styled(Component)`
     font-weight: bold;
     animation: ${customBlinking(["#fff", "#fb496d"], ["#000", "#fff"])} 2s infinite; 
     cursor: pointer;
+    z-index: 999;
   }
   p {
     display: flex;
+    
   }
   * {
     font-size: 0.8rem;

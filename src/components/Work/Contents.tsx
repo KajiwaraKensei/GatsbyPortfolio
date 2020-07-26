@@ -84,12 +84,12 @@ export default styled(Component)`
     color: #96bdb9;
     text-align: center;
     font-size: 1.2rem;
-    font-weight: 150;
+    font-weight: 200;
   }
 
   .work_langs {
     padding-top: 5rem;
-    max-width: 50rem;
+    max-width: 52rem;
     margin: 0 auto;
     & .work_langs_map {
       display: flex;
@@ -103,7 +103,7 @@ export default styled(Component)`
   .work_platform {
     text-align: center;
     color: #96bdb9;
-    font-size: 0.65rem;
+    font-size: 0.8rem;
     margin-bottom: 0.5rem;
     letter-spacing: 0.2em;
   }

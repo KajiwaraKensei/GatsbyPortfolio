@@ -85,7 +85,7 @@ export default styled(Component) <StyledProps>`
     color: #000;
     margin: 0;
     width: 100%;
-    padding: .75rem .5rem;
+    padding: .5rem .5rem;
     pointer-events: none;
     transition: opacity calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
     font-size: .8rem;
