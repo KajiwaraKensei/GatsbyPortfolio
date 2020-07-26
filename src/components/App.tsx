@@ -11,16 +11,12 @@ type Props = {
   className?: string
 }
 
-
-
 // ______________________________________________________
 //
 const App: React.FC<Props> = props => {
   const { className } = props
   const { state, dispatch } = useWindowSize()
   const [loading, setLoading] = useState(state.load === true)
-
-
 
   const initFetch = React.useCallback(() => {
     dispatch(actionCreator.window.setWindowWidth(window.innerWidth))

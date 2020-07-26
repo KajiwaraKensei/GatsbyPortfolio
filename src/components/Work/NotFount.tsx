@@ -1,10 +1,9 @@
 import React, { useState, useRef } from "react"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import works from "~/data/works"
 import { navigate } from "@reach/router"
-import { Page } from "."
+import { Page, BackButton } from "."
 import NotFoundIcon from "~/components/Icons/NotFoundIcon"
-import { customBlinking } from "~/lib/style"
 import { useWindowSize } from "~/lib/redux"
 import { setSize } from "~/lib/scroll"
 type Props = {
@@ -21,8 +20,6 @@ const worksName = () => {
   return name
 }
 
-
-
 const Component: React.FC<Props> = props => {
   const { state } = useWindowSize()
   const { className, name } = props
@@ -38,9 +35,7 @@ const Component: React.FC<Props> = props => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     !ok && setWork(event.target.value)
   }
-  const gotoHome = () => {
-    navigate(`/`)
-  }
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
@@ -73,7 +68,6 @@ const Component: React.FC<Props> = props => {
         `no such work_name or command: ${work}`,
       ])
     }
-
     setWork("")
   }
 
@@ -86,27 +80,29 @@ const Component: React.FC<Props> = props => {
   return ok ? (
     <Page name={work} />
   ) : (
-      <div className={className}>
-        <div className="button" onClick={gotoHome}>HOME</div>
-        <NotFoundIcon style={IconStyle} size={setSize(state.type, 500, 450, 350)} />
-        <form onSubmit={handleSubmit}>
-          {mapArticles}
-          <p>
-            {"> "}
-            <Cursor
-              ref={ref}
-              onBlur={() => {
-                ref.current?.focus()
-              }}
-              value={work}
-              onChange={handleChange}
-              autoFocus
-            />
-          </p>
-        </form>
-
-      </div>
-    )
+    <div className={className}>
+      <BackButton size={`${setSize(state.type, 6, 5, 4)}rem`} />
+      <NotFoundIcon
+        style={IconStyle}
+        size={setSize(state.type, 650, 500, 350)}
+      />
+      <form onSubmit={handleSubmit}>
+        {mapArticles}
+        <p>
+          {"> "}
+          <Cursor
+            ref={ref}
+            onBlur={() => {
+              ref.current?.focus()
+            }}
+            value={work}
+            onChange={handleChange}
+            autoFocus
+          />
+        </p>
+      </form>
+    </div>
+  )
 }
 
 const Cursor = styled.input`
@@ -115,35 +111,16 @@ const Cursor = styled.input`
   border: none;
   outline: none;
   color: #fff;
+  font-size: 0.8rem;
+  font-family: Consolas, Menlo, "Liberation Mono", Courier, monospace;
+  font-weight: 200;
 `
 
 export default styled(Component)`
   color: #fff;
   position: relative;
-  .button {
-    font-size: 1rem;
-    color: #fff;
-    position: absolute;
-    top: 3rem;
-    right: 5%;
-    background: #fb496d;
-    border: 1px solid #000;
-    border-radius: 5rem;
-    width: 5rem;
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    animation: ${customBlinking(["#fff", "#fb496d"], ["#000", "#fff"])} 2s infinite; 
-    cursor: pointer;
-    z-index: 999;
-  }
   p {
     display: flex;
-    
-  }
-  * {
     font-size: 0.8rem;
     font-family: Consolas, Menlo, "Liberation Mono", Courier, monospace;
     font-weight: 200;
