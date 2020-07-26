@@ -4,6 +4,8 @@ import A from "~/components/Work/NotFount"
 import "~/components/index.css"
 import EventListener from "react-event-listener"
 import { useWindowSize } from "~/lib/redux"
+import SEO from "~/components/SEO"
+
 type Props = {
   "*"?: string
 }
@@ -22,6 +24,7 @@ const Component: React.FC<Props> = props => {
   return (
     <div>
       <EventListener target="window" onResize={handleResize} />
+      <SEO title={"404!!"} description={"page not found!"} />
 
       <A name={props["*"] || "404"} />
     </div>

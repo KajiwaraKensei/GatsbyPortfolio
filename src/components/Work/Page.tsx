@@ -23,7 +23,7 @@ const Component: React.FC<Props> = props => {
   const size = setSize(state.type, "4rem", "3.5rem", "3rem")
   const Page = work && (
     <Fragment>
-      <SEO title={work.name} />
+      <SEO title={work.name} description={work.name + "のページです。" + work.briefDescription} />
       <Header url={work.backgroundImage} />
       <Contents work={work} />
       <Footer />
@@ -43,7 +43,7 @@ const Component: React.FC<Props> = props => {
             ["#6b62fd", "#fff"]
           )}
           text="DEMO"
-          onClick={() => {}}
+          onClick={() => { }}
         />
       </a>
       <a href={work.github} rel="noopener noreferrer" target="_blank">
@@ -56,7 +56,7 @@ const Component: React.FC<Props> = props => {
             ["#000", "#fff"]
           )}
           text="Github"
-          onClick={() => {}}
+          onClick={() => { }}
         />
       </a>
     </Fragment>
