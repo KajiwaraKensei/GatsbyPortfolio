@@ -6,14 +6,15 @@ import { navigate } from "@reach/router"
 type Props = {
   className?: string
   text?: string
+  onClick?: () => void
 }
 
 const DEFAULT_SIZE = "5rem"
 
 const Component: React.FC<Props> = props => {
-  const { className, text } = props
+  const { className, text, onClick } = props
   const gotoHome = () => {
-    navigate(`/`)
+    onClick ? onClick() : navigate(`/`)
   }
   return (
     <div onClick={gotoHome} className={className}>
@@ -45,5 +46,9 @@ export default styled(Component)<{
   cursor: pointer;
   z-index: 999;
   box-shadow: -1px 1px 4px 1px #00000069;
+  &:hover {
+    color: #fb496d;
+    background: #fff;
+  }
   ${({ position }) => position}
 `

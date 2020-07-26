@@ -19,6 +19,8 @@ const Component: React.FC<Props> = props => {
     return works.find(e => e.name.toLowerCase() === name.toLowerCase())
   })
   const { state } = useWindowSize()
+  const fontSize = setSize(state.type, ".75rem", ".7rem", ".65rem")
+  const size = setSize(state.type, "4rem", "3.5rem", "3rem")
   const Page = work && (
     <Fragment>
       <SEO title={work.name} />
@@ -26,11 +28,37 @@ const Component: React.FC<Props> = props => {
       <Contents work={work} />
       <Footer />
       <BackButton
-        font={setSize(state.type, ".9rem", ".7rem", ".65rem")}
-        size={setSize(state.type, "4rem", "3.5rem", "3rem")}
-        position={backButtonPosition}
-        text="HOME"
+        font={fontSize}
+        size={size}
+        position={backButtonPosition("calc(100% - 13%)")}
+        text="BACK"
       />
+      <a href={work.demo} rel="noopener noreferrer" target="_blank">
+        <BackButton
+          font={fontSize}
+          size={size}
+          position={backButtonPosition(
+            "calc(100% - 23%)",
+            ["#fff", "#6b62fd"],
+            ["#6b62fd", "#fff"]
+          )}
+          text="DEMO"
+          onClick={() => {}}
+        />
+      </a>
+      <a href={work.github} rel="noopener noreferrer" target="_blank">
+        <BackButton
+          font={fontSize}
+          size={size}
+          position={backButtonPosition(
+            "calc(100% - 33%)",
+            ["#fff", "#000"],
+            ["#000", "#fff"]
+          )}
+          text="Github"
+          onClick={() => {}}
+        />
+      </a>
     </Fragment>
   )
 
@@ -43,8 +71,19 @@ export default styled(Component)`
   color: #000;
 `
 
-const backButtonPosition = `
+const backButtonPosition = (
+  top: string,
+  color?: [string, string],
+  hover?: [string, string]
+) => `
 animation: none;
-top: calc(100vh - 6rem);
-left: 1.5rem;
+top: ${top};
+left: 6%;
+transition: .5s;
+${color && "color: " + color[0] + ";"}
+${color && "background: " + color[1] + ";"}
+&:hover{
+  ${hover && "color: " + hover[0] + ";"}
+  ${hover && "background: " + hover[1] + ";"} 
+}
 `

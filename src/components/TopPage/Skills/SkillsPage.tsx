@@ -5,6 +5,7 @@ import { Element } from "react-scroll"
 import skills from "~/data/skills"
 import { Hologram } from "~/icon"
 import { setSize } from "~/lib/scroll"
+import Next from "~/Parts/ScrollButton"
 type Props = {
   className?: string
 }
@@ -31,6 +32,7 @@ const Component: React.FC<Props> = props => {
           style={HologramIcon}
           size={setSize(state.type, 300, 250, 200)}
         />
+        <Next to="works" />
       </div>
     </Element>
   )
@@ -49,9 +51,7 @@ export default styled(Component)`
   }
   text-align: center;
   padding: 3rem 2rem;
-  background-color: #000;
   color: #fff;
-  z-index: -2;
 `
 
 const HologramIcon = `

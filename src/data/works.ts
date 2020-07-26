@@ -32,8 +32,8 @@ export type Article = {
 }
 const works: worksType = [
   {
-    github: "",
-    demo: "",
+    github: "https://github.com/KajiwaraKensei/GatsbyPortFolio",
+    demo: "https://kaji-portfolio.netlify.app/",
     platform: "web",
     name: "Portfolio2",
     workDay: "2020 07",
@@ -135,20 +135,8 @@ const works: worksType = [
     ],
   },
   {
-    github: "",
-    demo: "",
-    platform: "web",
-    name: "ごちナビ",
-    workDay: "2020 07",
-    briefDescription: "",
-    icon: "goti_icon.png",
-    backgroundImage: "gotinabi/gotinavi-kate.png",
-    languages: [],
-    contents: [],
-  },
-  {
-    github: "",
-    demo: "",
+    github: "https://github.com/KajiwaraKensei/Makers",
+    demo: "https://ms-0201-sc.herokuapp.com",
     platform: "web",
     name: "Makers",
     briefDescription: "文章をテンプレート化し、作業効率UP↑",
@@ -220,8 +208,61 @@ const works: worksType = [
     ],
   },
   {
-    github: "",
-    demo: "",
+    github: "https://github.com/KajiwaraKensei/gurunaviTask",
+    demo: "https://whtite-bd4f.web.app/",
+    platform: "web",
+    name: "ごちナビ",
+    workDay: "2019 07",
+    briefDescription: "",
+    icon: "goti_icon.png",
+    backgroundImage: "gotinabi/gotinavi-kate.png",
+    languages: [
+      {
+        name: "React.js",
+        reason: [
+          "初めてのWebアプリの制作で、就活に生かせそうな言語なので、それの勉強。",
+          "API と通信やマップの利用を簡単に実装したかったため。",
+        ],
+      },
+      {
+        name: "Firebase",
+        reason: [
+          "RealtimeDatabase を使用。評価やコメントを書き込めるように。",
+          "ホスティングにも使用。特に困ることなく利用できた。",
+        ],
+      },
+      {
+        name: "ぐるなびAPI",
+        reason: ["飲食店の情報を取得に利用。"],
+      },
+    ],
+    contents: [
+      {
+        type: "article",
+        image: "gotinabi/goti_t.png",
+        imagePosition: "bottom",
+        value:
+          "現在地を取得し、その周辺の飲食店を検索できるアプリです。ジャンルや検索範囲を変更できます。",
+        headline: "ごちナビとは",
+      },
+      {
+        type: "article",
+        value:
+          "フェンリル株式会社のサマーインターンシップの課題のために作成しました。とにかく形にしないといけなかったので調べながら作成しました。",
+        headline: "きっかけ",
+      },
+      {
+        type: "article",
+        value:
+          "Typescript を習得した今だから思うんですけど、エラー処理が大変でした。初心者なのも相まって実装部分をかなりの頻度で変更していて、実際に実行しないとエラーが出ないので、動作確認が大変でした。\n",
+        headline: "感想",
+      },
+    ],
+  },
+
+  {
+    github: "https://github.com/KajiwaraKensei/portfolio",
+    demo: "https://portfolio-kaji.firebaseapp.com",
     platform: "web",
     name: "Portfolio1",
     briefDescription: "変数いじるだけでポートフォリオサイトが作れます。",
