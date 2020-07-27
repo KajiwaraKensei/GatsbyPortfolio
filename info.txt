@@ -1,0 +1,23 @@
+テーマ：　
+  自分
+
+ターゲット：
+  企業
+
+キーワード：
+  React | ポートフォリオ | Typescript
+
+画像の出典: 
+  https://unsplash.com/ 
+
+開発環境: 
+  node v14.1.0
+  yarn v1.22.4
+
+動作確認:
+  yarn install
+  npm start
+  http://localhost:8000
+
+公開
+  https://kaji-portfolio.netlify.app/
