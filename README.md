@@ -13,7 +13,7 @@
 
 ```bash
 git clone https://github.com/KajiwaraKensei/GatsbyPortFolio.git
-npm install
+yarn install
 npm start
 ```
 
