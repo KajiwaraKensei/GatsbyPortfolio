@@ -73,8 +73,9 @@ const BottomBack = styled.div<BottomBack>`
   position: absolute;
   bottom: 0;
   left: 0;
+  right: 0;
   height: ${({ toggle }) => (toggle ? `0` : `50%`)};
-  width: 100vw;
+  width: 100%;
   background-color: #fefffe;
   transition: 0.5s;
 `
