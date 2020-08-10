@@ -19,15 +19,11 @@ const Component: React.FC<Props> = props => {
   return (
     <div className={className}>
       <div className="self_introduction">
-        <Fade direction="top" triggerOnce>
-          <h2 className="title width_material_icon" style={{ color: "#000", backgroundColor: "#f6f6f666;" }}>
-            Self-introduction
+        <h2 className="title width_material_icon" style={{ color: "#000", backgroundColor: "#f6f6f666;" }}>
+          Self-introduction
             <RecordVoiceOverIcon />
-          </h2>
-        </Fade>
-        <Fade direction="top" delay={200} triggerOnce>
-          <div className="value">{profile.selfIntroduction}</div>
-        </Fade>
+        </h2>
+        <div className="value">{profile.selfIntroduction}</div>
       </div>
 
       <MapIntroduction introductions={profile.introductions} />
