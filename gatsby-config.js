@@ -48,7 +48,7 @@ module.exports = {
         short_name: `Portfolio`,
         start_url: `/`,
         background_color: `#000`,
-        theme_color: `#0088b187`,
+        theme_color: `#000`,
         display: `standalone`,
         icon: `src/images/pwa.jpg`,
         icon_options: {
