@@ -20,7 +20,7 @@ const Component: React.FC<Props> = props => {
     <div className={className}>
       <div className="self_introduction">
         <Fade direction="top" triggerOnce>
-          <h2 className="title width_material_icon">
+          <h2 className="title width_material_icon" style={{ color: "#000", backgroundColor: "#f6f6f666;" }}>
             Self-introduction
             <RecordVoiceOverIcon />
           </h2>
