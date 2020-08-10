@@ -14,7 +14,7 @@ const Component: React.FC<Props> = props => {
 
   const mapIntroductions = introductions.map(introduction => (
     <Fragment key={"map_introduction_" + introduction.year}>
-      <h4 className="year">{introduction.year}</h4>
+      <h3 className="year">{introduction.year}</h3>
       <div className="event">{introduction.event}</div>
     </Fragment>
   ))
@@ -32,4 +32,5 @@ const Component: React.FC<Props> = props => {
   )
 }
 
-export default styled(Component)``
+export default styled(Component)`
+`
