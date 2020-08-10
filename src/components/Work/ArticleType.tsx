@@ -37,7 +37,7 @@ const Component: React.FC<Props> = props => {
   )
 }
 
-export default styled(Component) <{ content: Article }>`
+export default styled(Component)<{ content: Article }>`
   width: 100%;
   max-width: 50rem;
   padding: 0 2rem 2rem;

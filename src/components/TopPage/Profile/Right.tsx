@@ -46,7 +46,8 @@ export default styled(Component)`
   flex-direction: column;
   justify-content: space-between;
   text-align: justify;
-  background-color: #fff;
+  background: #f6f6f666;
+
   .self_introduction {
     & > .title {
       margin-top: 0;

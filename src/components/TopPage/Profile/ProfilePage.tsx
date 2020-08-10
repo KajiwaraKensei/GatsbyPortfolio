@@ -84,7 +84,7 @@ export default styled(Component)`
 
   & h3 {
     margin: 0.5rem 0rem 0.25rem;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   & h2 {

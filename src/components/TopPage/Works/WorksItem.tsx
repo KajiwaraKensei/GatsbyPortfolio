@@ -51,7 +51,7 @@ type StyledProps = {
   opacity?: string | number // 透明度指定
   animation: boolean // アニメーションをするか
 }
-export default styled(Component) <StyledProps>`
+export default styled(Component)<StyledProps>`
   pointer-events: none;
   ${({ focus }) =>
     focus === false
@@ -101,7 +101,7 @@ export default styled(Component) <StyledProps>`
     display: flex;
     justify-content: space-between;
     & > span:last-child{
-      color: #b3c7ff;
+
     }
   }
 
