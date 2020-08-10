@@ -9,7 +9,7 @@ type Props = {
 
 const Component: React.FC<Props> = props => {
   const { className, content } = props
-  const { headline, value, imagePosition, image, width } = content
+  const { headline, value, imagePosition, image, width, alt } = content
   const _imgPosition = imagePosition || "top"
 
   const displayImage = image && (
@@ -23,6 +23,7 @@ const Component: React.FC<Props> = props => {
       filename={image}
       width={"96%"}
       height={"auto"}
+      alt={alt || ""}
     />
   )
   return (
@@ -36,7 +37,7 @@ const Component: React.FC<Props> = props => {
   )
 }
 
-export default styled(Component)<{ content: Article }>`
+export default styled(Component) <{ content: Article }>`
   width: 100%;
   max-width: 50rem;
   padding: 0 2rem 2rem;

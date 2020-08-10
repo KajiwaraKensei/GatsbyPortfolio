@@ -48,6 +48,7 @@ const Component: React.FC<Props> = props => {
               }
               width="100%"
               height="100%"
+              alt="works_background_image"
             />
           </div>
           <BottomBack toggle={toggle} />

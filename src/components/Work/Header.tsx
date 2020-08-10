@@ -10,7 +10,7 @@ const Component: React.FC<Props> = props => {
   const { className, url } = props
   return (
     <div className={className}>
-      <Image width={"100%"} height={"100%"} filename={url || "01f.jpg"} />
+      <Image alt="header_画像" width={"100%"} height={"100%"} filename={url || "01f.jpg"} />
     </div>
   )
 }

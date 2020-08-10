@@ -3,7 +3,7 @@
 import React from "react"
 import styled from "styled-components"
 import { workType } from "~/data/works"
-
+import Image from "~/Parts/Image"
 export const CARD_SIZE = 24
 
 type Props = {
@@ -22,12 +22,19 @@ const Component: React.FC<Props> = props => {
   return (
     <div className={className}>
       <div className="work_image">
-        <img
-          src={icon}
+        <div
           onClick={onClick}
           onMouseOver={onMouseOver}
           onMouseOut={onMouseOut}
-        />
+        >
+          <Image
+            width={"100%"}
+            height={"100%"}
+            filename={icon}
+            alt={work.name + "のアイコン"}
+          />
+        </div>
+
         <h4 className="work_name">
           <span>{name}</span>
           <span>{platform}</span>
@@ -44,7 +51,7 @@ type StyledProps = {
   opacity?: string | number // 透明度指定
   animation: boolean // アニメーションをするか
 }
-export default styled(Component)<StyledProps>`
+export default styled(Component) <StyledProps>`
   pointer-events: none;
   ${({ focus }) =>
     focus === false
@@ -69,7 +76,7 @@ export default styled(Component)<StyledProps>`
     padding: 3.5rem;
     transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
     pointer-events: none;
-    & img {
+    & div {
       background-color: #fff;
       width: 100%;
       height: 100%;
