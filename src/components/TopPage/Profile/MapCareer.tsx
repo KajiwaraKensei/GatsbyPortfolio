@@ -14,7 +14,7 @@ const Component: React.FC<Props> = props => {
 
   const mapCareers = careers.map(career => (
     <Fragment key={"map_career_" + career.year}>
-      <h4 className="year">{career.year}</h4>
+      <h3 className="year">{career.year}</h3>
       <div className="event">{career.event}</div>
     </Fragment>
   ))

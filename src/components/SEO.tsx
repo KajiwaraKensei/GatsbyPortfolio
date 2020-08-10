@@ -12,7 +12,7 @@ const Component: React.FC<Props> = props => {
   return (
     <div className={className}>
       <Helmet>
-        <html lang="jp" />
+        <html lang="ja" />
         <meta name="google-site-verification" content="oWT-LOh_wCJkHuXCs7MYcN53UHRjumOfXYe0wqF67I8" />
         <meta charSet="utf-8" />
         <meta name="description" content={description} />

@@ -82,8 +82,9 @@ export default styled(Component)`
     flex-wrap: wrap;
   }
 
-  & h4 {
+  & h3 {
     margin: 0.5rem 0rem 0.25rem;
+    font-size: .9rem;
   }
 
   & h2 {
