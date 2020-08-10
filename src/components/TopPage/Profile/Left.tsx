@@ -87,7 +87,7 @@ const Component: React.FC<Props> = props => {
 // ______________________________________________________
 // スタイル
 export default styled(Component)`
-  background-color: #fff;
+  background: #fff;
   flex-basis: 25rem;
   flex-grow: 1;
   display: flex;
@@ -96,6 +96,7 @@ export default styled(Component)`
   padding: 2rem 2rem 3rem;
   & h2 {
     font-weight: 200;
+    color: #000;
   }
   & h3 {
     justify-content: center;

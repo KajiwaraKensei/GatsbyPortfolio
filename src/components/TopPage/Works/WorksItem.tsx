@@ -101,7 +101,7 @@ export default styled(Component) <StyledProps>`
     display: flex;
     justify-content: space-between;
     & > span:last-child{
-      color: #003be8;
+      color: #b3c7ff;
     }
   }
 

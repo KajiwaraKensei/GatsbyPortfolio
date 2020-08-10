@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 import CircleSVG, { Props as SVGProps } from "components/Parts/CircleSVG"
 import { Fade } from "react-awesome-reveal"
+import { useWindowSize } from "~/lib/redux"
 
 export type Skill = {
   name: string
@@ -60,8 +61,9 @@ const SetSVG = (skill: Skill): SVGProps => {
 
 const Component: React.FC<Props> = props => {
   const { className, skill, index } = props
+  const { state } = useWindowSize();
   return (
-    <Fade className={className} direction="top" delay={200 * index} triggerOnce>
+    <Fade className={className} direction="top" delay={state.type === "phone" ? 200 : 200 * index} triggerOnce>
       <div className="card">
         <div className="circle">
           <div>
