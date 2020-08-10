@@ -12,6 +12,7 @@ const Component: React.FC<Props> = props => {
   return (
     <div className={className}>
       <Helmet>
+        <html lang="jp" />
         <meta charSet="utf-8" />
         <meta name="description" content={description} />
         <title>{title}</title>
