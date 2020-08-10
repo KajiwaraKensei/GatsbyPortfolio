@@ -23,6 +23,7 @@ const Component: React.FC<Props> = props => {
     <div className={className}>
       <div className="profile_image">
         <Image
+          alt="プロフィール画像"
           filename={profile.image}
           height={"15rem"}
           width={"15rem"}

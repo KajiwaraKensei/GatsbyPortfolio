@@ -31,6 +31,7 @@ const Component: React.FC<Props> = props => {
             width={"100%"}
             height={"100%"}
             filename={icon}
+            alt={work.name + "のアイコン"}
           />
         </div>
 

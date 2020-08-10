@@ -19,6 +19,7 @@ export type ImageContent = {
   width?: string
   height?: string
   styled?: string
+  alt?: string
 }
 
 export type Article = {
@@ -29,6 +30,7 @@ export type Article = {
   image?: string // 画像　タイトルのした
   imagePosition?: "top" | "bottom" | "underHeadline"
   width?: string | number
+  alt?: string
 }
 const works: worksType = [
   {
@@ -79,6 +81,7 @@ const works: worksType = [
         headline: "動機",
         type: "article",
         styled: "padding-bottom: 0;",
+        alt: "",
         value:
           "「自分のホームページを作りなさい」という学校の授業の一貫で制作しました。自分のためになるサイトを作りたかったので、以前に作ったポートフォリオサイトをパワーアップすることにしました。",
       },
