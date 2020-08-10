@@ -20,16 +20,15 @@ const Component: React.FC<Props> = props => {
   ))
   return (
     <div className={className}>
-      <Fade direction="top" delay={400} triggerOnce>
-        <h2 className="title width_material_icon">
-          Academic background <LocationCityIcon />
-        </h2>
-      </Fade>
-      <Fade direction="top" delay={600} triggerOnce>
-        <div className="content">{mapIntroductions}</div>
-      </Fade>
+      <h2 className="title width_material_icon">
+        Academic background <LocationCityIcon />
+      </h2>
+
+      <div className="content">{mapIntroductions}</div>
+
     </div>
   )
 }
 
-export default styled(Component)``
+export default styled(Component)`
+`

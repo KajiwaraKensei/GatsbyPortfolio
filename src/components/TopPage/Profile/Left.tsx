@@ -30,56 +30,48 @@ const Component: React.FC<Props> = props => {
           style={{ borderRadius: "50%" }}
         />
       </div>
-      <Fade direction="top" triggerOnce>
-        <h2 className="name" style={{ color: "#000", backgroundColor: "#f6f6f666;" }}>
-          {profile.name[0]} {profile.name[1]}
-        </h2>
-      </Fade>
-      <Fade direction="top" delay={200} triggerOnce>
-        <div className="info">
-          <h3 className="title width_material_icon">
-            <GitHub />
+      <h2 className="name" style={{ color: "#000", backgroundColor: "#f6f6f666;" }}>
+        {profile.name[0]} {profile.name[1]}
+      </h2>
+      <div className="info">
+        <h3 className="title width_material_icon">
+          <GitHub />
             GitHub
           </h3>
-          <a
-            href={githubLink(profile.github)}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <div className="value">{profile.github}</div>
-          </a>
-        </div>
-      </Fade>
-      <Fade direction="top" delay={400} triggerOnce>
-        <div className="info">
-          <h3 className="title width_material_icon">
-            <PhoneIcon />
+        <a
+          href={githubLink(profile.github)}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <div className="value">{profile.github}</div>
+        </a>
+      </div>
+      <div className="info">
+        <h3 className="title width_material_icon">
+          <PhoneIcon />
             Phone
           </h3>
-          <a
-            href={telLink(profile.tel)}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <div className="value">{profile.tel}</div>
-          </a>
-        </div>
-      </Fade>
-      <Fade direction="top" delay={600} triggerOnce>
-        <div className="info">
-          <h3 className="title width_material_icon">
-            <MailIcon />
+        <a
+          href={telLink(profile.tel)}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <div className="value">{profile.tel}</div>
+        </a>
+      </div>
+      <div className="info">
+        <h3 className="title width_material_icon">
+          <MailIcon />
             Email
           </h3>
-          <a
-            href={mailLink(profile.mail)}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <div className="value">{profile.mail}</div>
-          </a>
-        </div>
-      </Fade>
+        <a
+          href={mailLink(profile.mail)}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <div className="value">{profile.mail}</div>
+        </a>
+      </div>
     </div>
   )
 }

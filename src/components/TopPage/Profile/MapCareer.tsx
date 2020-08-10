@@ -20,15 +20,11 @@ const Component: React.FC<Props> = props => {
   ))
   return (
     <div className={className}>
-      <Fade direction="top" delay={800} triggerOnce>
-        <h2 className="title width_material_icon">
-          Career <BusinessIcon />
-        </h2>
-      </Fade>
+      <h2 className="title width_material_icon">
+        Career <BusinessIcon />
+      </h2>
 
-      <Fade direction="top" delay={1000} triggerOnce>
-        <div className="content">{mapCareers}</div>
-      </Fade>
+      <div className="content">{mapCareers}</div>
     </div>
   )
 }
