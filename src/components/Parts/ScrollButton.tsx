@@ -31,7 +31,7 @@ const BackButtonStyle = `
   transform: translateX(-50%)translateY(-75%);
   animation: none;
   transition: .5s;
-
+  font-weight: 500;
   &:hover{
     background: #fff;
     color: #000;
