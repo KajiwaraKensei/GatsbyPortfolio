@@ -32,7 +32,7 @@ const App: React.FC<Props> = props => {
     dispatch(actionCreator.window.setLoad())
     setTimeout(() => {
       setLoading(false)
-    }, 1500)
+    }, 100)
   }, [])
   return (
     <div className={className}>
