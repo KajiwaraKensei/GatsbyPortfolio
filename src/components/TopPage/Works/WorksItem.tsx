@@ -35,10 +35,10 @@ const Component: React.FC<Props> = props => {
           />
         </div>
 
-        <h4 className="work_name">
+        <p className="work_name">
           <span>{name}</span>
           <span>{platform}</span>
-        </h4>
+        </p>
       </div>
     </div>
   )
@@ -101,7 +101,7 @@ export default styled(Component) <StyledProps>`
     display: flex;
     justify-content: space-between;
     & > span:last-child{
-      color: #0099bd;
+      color: #003be8;
     }
   }
 

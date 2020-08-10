@@ -87,6 +87,7 @@ const Component: React.FC<Props> = props => {
 // ______________________________________________________
 // スタイル
 export default styled(Component)`
+  background-color: #fff;
   flex-basis: 25rem;
   flex-grow: 1;
   display: flex;

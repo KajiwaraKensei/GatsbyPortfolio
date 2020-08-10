@@ -23,7 +23,7 @@ const Component: React.FC<Props> = props => {
   )
 }
 
-export default styled(Component)<{
+export default styled(Component) <{
   position?: string
   size?: string
   font?: string
@@ -45,7 +45,7 @@ export default styled(Component)<{
     infinite;
   cursor: pointer;
   z-index: 999;
-  box-shadow: -1px 1px 4px 1px #00000069;
+  box-shadow: 0px 1px 4px 1px #00000069;
   &:hover {
     color: #fb496d;
     background: #fff;
