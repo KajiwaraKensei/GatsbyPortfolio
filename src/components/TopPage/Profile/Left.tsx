@@ -31,7 +31,7 @@ const Component: React.FC<Props> = props => {
         />
       </div>
       <Fade direction="top" triggerOnce>
-        <h2 className="name">
+        <h2 className="name" style={{ color: "#000", backgroundColor: "#f6f6f666;" }}>
           {profile.name[0]} {profile.name[1]}
         </h2>
       </Fade>
@@ -87,13 +87,14 @@ const Component: React.FC<Props> = props => {
 // ______________________________________________________
 // スタイル
 export default styled(Component)`
-  background: #fff;
+  background: #f6f6f666;
   flex-basis: 25rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 2rem 2rem 3rem;
+  color: #000;
   & h2 {
     font-weight: 200;
     color: #000;

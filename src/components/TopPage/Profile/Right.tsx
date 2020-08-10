@@ -47,7 +47,7 @@ export default styled(Component)`
   justify-content: space-between;
   text-align: justify;
   background: #f6f6f666;
-
+  color: #000;
   .self_introduction {
     & > .title {
       margin-top: 0;
