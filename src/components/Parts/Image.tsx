@@ -9,7 +9,7 @@ export default ({
   width,
   style,
   className,
-  alt
+  alt,
 }: {
   filename: string
   height?: number | string
@@ -18,11 +18,11 @@ export default ({
   className?: string
   alt: string
 }) => (
-    // ページじゃないコンポーネントでもGraphQLが使えるように
-    // StaticQueryタグを使う
-    <StaticQuery
-      // GraphQLのクエリ引数には何も指定しない！
-      query={graphql`
+  // ページじゃないコンポーネントでもGraphQLが使えるように
+  // StaticQueryタグを使う
+  <StaticQuery
+    // GraphQLのクエリ引数には何も指定しない！
+    query={graphql`
       {
         allFile(filter: {}) {
           edges {
@@ -44,32 +44,32 @@ export default ({
         }
       }
     `}
-      // 全画像情報がdataに代入されている
-      render={data => {
-        // 指定した画像ファイルパス（コンポーネントのプロパティ）と
-        // 一致するgatsby-image用の情報を取得
-        const image = data.allFile.edges.find((n: any) => {
-          return n.node.relativePath.includes(filename)
-        })
+    // 全画像情報がdataに代入されている
+    render={data => {
+      // 指定した画像ファイルパス（コンポーネントのプロパティ）と
+      // 一致するgatsby-image用の情報を取得
+      const image = data.allFile.edges.find((n: any) => {
+        return n.node.relativePath.includes(filename)
+      })
 
-        if (!image) {
-          return null
-        }
+      if (!image) {
+        return null
+      }
 
-        // Imgタグでgatsby-imageで最適化された画像を表示する
-        const imageSizes = image.node.childImageSharp.fluid
-        return (
-          <Img
-            className={className}
-            style={{
-              ...style,
-              height: height || "20rem",
-              width: width || "20rem",
-            }}
-            fluid={imageSizes}
-            alt={alt}
-          />
-        )
-      }}
-    />
-  )
+      // Imgタグでgatsby-imageで最適化された画像を表示する
+      const imageSizes = image.node.childImageSharp.fluid
+      return (
+        <Img
+          className={className}
+          style={{
+            ...style,
+            height: height || "20rem",
+            width: width || "20rem",
+          }}
+          fluid={imageSizes}
+          alt={alt}
+        />
+      )
+    }}
+  />
+)

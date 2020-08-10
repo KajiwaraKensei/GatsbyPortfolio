@@ -32,5 +32,4 @@ const Component: React.FC<Props> = props => {
   )
 }
 
-export default styled(Component)`
-`
+export default styled(Component)``

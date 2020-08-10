@@ -13,7 +13,12 @@ interface Props {
 //
 const Component: React.FC<Props> = props => (
   <div className={props.className}>
-    <SEO title={`${profile.name[0]}’s portfolio`} description={`${profile.name[0]}’s portfolio site. ` + profile.selfIntroduction} />
+    <SEO
+      title={`${profile.name[0]}’s portfolio`}
+      description={
+        `${profile.name[0]}’s portfolio site. ` + profile.selfIntroduction
+      }
+    />
     <App />
   </div>
 )

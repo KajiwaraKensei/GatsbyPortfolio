@@ -30,7 +30,7 @@ const Component: React.FC<Props> = props => {
   )
 }
 
-export default styled(Component) <{ content: ImageContent }>`
+export default styled(Component)<{ content: ImageContent }>`
   width: 100%;
   max-width: 50rem;
   padding: 0 2rem 2rem;

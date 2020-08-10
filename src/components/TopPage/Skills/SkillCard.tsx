@@ -61,9 +61,14 @@ const SetSVG = (skill: Skill): SVGProps => {
 
 const Component: React.FC<Props> = props => {
   const { className, skill, index } = props
-  const { state } = useWindowSize();
+  const { state } = useWindowSize()
   return (
-    <Fade className={className} direction="top" delay={state.type === "phone" ? 200 : 200 * index} triggerOnce>
+    <Fade
+      className={className}
+      direction="top"
+      delay={state.type === "phone" ? 200 : 200 * index}
+      triggerOnce
+    >
       <div className="card">
         <div className="circle">
           <div>
