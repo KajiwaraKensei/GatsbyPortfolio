@@ -5,6 +5,7 @@ import Loading from "~/Parts/Loading"
 import { actionCreator } from "~/store"
 import EventListener from "react-event-listener"
 import { useWindowSize } from "~/lib/redux"
+import Send from "~/components/SendMessage"
 // ______________________________________________________
 //
 type Props = {
@@ -38,7 +39,9 @@ const App: React.FC<Props> = props => {
     <div className={className}>
       <EventListener target="window" onResize={handleResize} />
       {loading && <Loading load={state.load} />}
+      <Send />
       <Top />
+
     </div>
   )
 }

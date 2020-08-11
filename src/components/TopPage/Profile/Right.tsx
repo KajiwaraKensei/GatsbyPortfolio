@@ -19,7 +19,7 @@ const Component: React.FC<Props> = props => {
   return (
     <div className={className}>
       <div className="self_introduction">
-        <h2 className="title width_material_icon" style={{ color: "#000", backgroundColor: "#f6f6f666;" }}>
+        <h2 className="title width_material_icon" >
           Self-introduction
             <RecordVoiceOverIcon />
         </h2>

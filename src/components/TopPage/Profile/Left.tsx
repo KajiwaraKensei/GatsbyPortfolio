@@ -30,7 +30,7 @@ const Component: React.FC<Props> = props => {
           style={{ borderRadius: "50%" }}
         />
       </div>
-      <h2 className="name" style={{ color: "#000", backgroundColor: "#f6f6f666;" }}>
+      <h2 className="name" >
         {profile.name[0]} {profile.name[1]}
       </h2>
       <div className="info">
