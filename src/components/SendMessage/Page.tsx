@@ -30,6 +30,7 @@ const Component: React.FC<Props> = props => {
   }
   return (
     <div className={className}>
+      {console.log(process.env)}
       Message
       <button onClick={sendAPI}>hoge</button>
     </div>

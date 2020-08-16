@@ -1,8 +1,15 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV || "development"}`,
+})
+console.log(
+  `Using environment config: '${process.env.NODE_ENV || "development"}'`
+)
 module.exports = {
   siteMetadata: {
     title: `Gatsby Typescript Starter`,
   },
   plugins: [
+    `gatsby-env-variables`,
     `gatsby-plugin-react-helmet`,
     // Add typescript stack into webpack
     `gatsby-plugin-typescript`,
@@ -51,9 +58,7 @@ module.exports = {
         theme_color: `#000`,
         display: `standalone`,
         icon: `src/images/pwa.jpg`,
-        icon_options: {
-          purpose: `maskable`,
-        },
+        crossOrigin: `use-credentials`,
       },
     },
     `gatsby-plugin-offline`,
