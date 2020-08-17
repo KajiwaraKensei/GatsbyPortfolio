@@ -23,8 +23,6 @@ const Component: React.FC<Props> = props => {
   )
 }
 const BackButtonStyle = `
-  color: #000;
-  background: #fff;
   position: absolute;
   top: 100%;
   left: 50%;

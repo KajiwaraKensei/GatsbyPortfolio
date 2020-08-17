@@ -1,11 +1,14 @@
 // ______________________________________________________
 // header menu
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { scroller } from "react-scroll"
 import { scrollOption } from "~/lib/scroll"
 import { Contact } from "."
 import { profile } from "~/data/profile"
+import { useWindowSize } from "~/lib/redux"
+
+
 type Props = {
   className?: string
   profile: profile // 使うプロフィール
@@ -20,24 +23,31 @@ const Component: React.FC<Props> = props => {
   }
 
   const [contactToggle, setContactToggle] = useState(false) // コンタクトを表示するか
-
+  const { state } = useWindowSize();
+  const [buttonSize, setButtonSize] = useState<"default" | "small">("default")
   // コンタクトクリック
   const clickContact = () => {
     setContactToggle(!contactToggle)
   }
+
+  useEffect(() => {
+    setButtonSize(state.type === "phone" ? "small" : "default")
+  }, [state])
   return (
     <div className={className}>
       <div className="menu_buttons">
         <Button
+          size={buttonSize}
           onClick={clickDetail("profile")}
           color="#000"
           background="#fff"
           value="PROFILE"
           border="#fff"
         />
-        <Button onClick={clickDetail("skills")} value="SKILLS" />
-        <Button onClick={clickDetail("works")} value="WORKS" />
+        <Button size={buttonSize} onClick={clickDetail("skills")} value="SKILLS" />
+        <Button size={buttonSize} onClick={clickDetail("works")} value="WORKS" />
         <Button
+          size={buttonSize}
           onClick={clickContact}
           value="CONTACT"
           backBackground="#9f9ae7"
@@ -58,10 +68,8 @@ const Button = styled.div<{
   background?: string
   backBackground?: string
   border?: string
+  size?: "small" | "default"
 }>`
-  width: 6.5rem;
-  height: 3rem;
-  margin: 1rem;
   transition: 0.25s;
   cursor: pointer;
   border: 1px solid #fff;
@@ -70,36 +78,62 @@ const Button = styled.div<{
   background: ${({ backBackground }) => backBackground || "#000"};
   transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
   border-radius: .2rem;
+  height: 3rem;
   &::before {
     content: "${({ value }) => value}";
-    border-radius: .2rem;
     position: absolute;
     pointer-events: none;
     color: ${({ color }) => color || "#fff"};
     background: ${({ background }) => background || "#000"};
-
     display:flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    top: -.6rem;
-    left: .5rem;
     border: 1px solid  ${({ border, color }) => border || color || "#fff"};
     transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
   &:hover {
     transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
-
     &::before {
       top: -.3rem;
       left: .2rem;
       transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
-      
     }
   }
+  ${({ size }) => size === "small" ? smallButton : defaultButton}
+
 `
+
+const smallButton = `
+margin: .7rem 1rem;
+flex: 1 1 6.5rem;
+&::before {
+  border-radius: .2rem;
+  top: -.6rem;
+  left: .5rem;
+}
+@media screen and (max-width: 350px) {
+  border-radius: 0;
+  margin: 0rem 1rem;
+  border: none;
+  &::before {
+    border-radius: 0;
+    top: 0rem;
+    left: 0rem;
+  }
+}
+`
+const defaultButton = `
+width: 6.5rem;
+margin: 1rem;
+&::before {
+  border-radius: .2rem;
+  top: -.6rem;
+  left: .5rem;
+}
+`;
 // 全体
 export default styled(Component)`
   & > .menu_buttons {
