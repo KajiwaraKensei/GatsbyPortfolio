@@ -39,7 +39,6 @@ const App: React.FC<Props> = props => {
     <div className={className}>
       <EventListener target="window" onResize={handleResize} />
       {loading && <Loading load={state.load} />}
-      <Send />
       <Top />
 
     </div>
