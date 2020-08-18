@@ -19,5 +19,8 @@
   npm start
   http://localhost:8000
 
+最新
+  https://github.com/KajiwaraKensei/GatsbyPortFolio
+
 公開
   https://kaji-portfolio.netlify.app/
