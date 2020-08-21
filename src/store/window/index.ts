@@ -7,6 +7,7 @@ interface State {
   type: WindowType
   breakPoint: number
   load: boolean
+  ableHome: boolean
 }
 
 export const initialState = (injects?: State): State => ({
@@ -14,6 +15,7 @@ export const initialState = (injects?: State): State => ({
   breakPoint: 770,
   type: "phone",
   load: true,
+  ableHome: false,
   ...injects,
 })
 
@@ -23,6 +25,8 @@ export const reducer = (state = initialState(), action: Actions): State => {
       return { ...state, type: changeMode(state, action.payload.nextWidth) }
     case "WINDOW_SET_LOAD":
       return { ...state, load: false }
+    case "WINDOW_SET_ABLE_HOME":
+      return { ...state, ableHome: true }
     default:
       return state
   }
