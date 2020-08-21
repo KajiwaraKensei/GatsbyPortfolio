@@ -30,6 +30,7 @@ const App: React.FC<Props> = props => {
   }
 
   useEffect(() => {
+    dispatch(actionCreator.window.setAbleHome())
     dispatch(actionCreator.window.setLoad())
     setTimeout(() => {
       setLoading(false)

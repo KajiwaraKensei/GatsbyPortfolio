@@ -2,7 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { customBlinking } from "~/lib/style"
 import { navigate } from "@reach/router"
-
+import { useSelector } from "react-redux"
+import { RootState } from "~/store"
 type Props = {
   className?: string
   text?: string
@@ -13,8 +14,10 @@ const DEFAULT_SIZE = "5rem"
 
 const Component: React.FC<Props> = props => {
   const { className, text, onClick } = props
+  const ableHome = useSelector((state: RootState) => state.window.ableHome)
   const gotoHome = () => {
-    onClick ? onClick() : navigate(`/`)
+    onClick ? onClick() : ableHome ? history.back() : navigate(`/`)
+
   }
   return (
     <div onClick={gotoHome} className={className}>
@@ -23,7 +26,7 @@ const Component: React.FC<Props> = props => {
   )
 }
 
-export default styled(Component)<{
+export default styled(Component) <{
   position?: string
   size?: string
   font?: string
