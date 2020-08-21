@@ -42,7 +42,7 @@ export default styled(Component)`
   flex-direction: column;
   justify-content: space-between;
   text-align: justify;
-  background: #f6f6f666;
+  background: inherit;
   color: #000;
   .self_introduction {
     & > .title {
@@ -53,4 +53,5 @@ export default styled(Component)`
       padding-left: 0.75rem;
     }
   }
+  z-index: 1;
 `

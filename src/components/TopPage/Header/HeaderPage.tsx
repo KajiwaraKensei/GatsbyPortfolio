@@ -1,10 +1,14 @@
 // ______________________________________________________
 // Header
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { Menus } from "."
 import profile from "~/data/profile"
-import HomeIcon from "~/icon/HomeIcon"
+import { HomeIcon } from "~/icon"
+import Scroll from "~/Parts/ScrollButton"
+import { scroller } from "react-scroll"
+import { scrollOption } from "~/lib/scroll"
+
 
 type Props = {
   className?: string
@@ -23,6 +27,33 @@ const useRedux = () => {
 
 // ______________________________________________________
 //
+const loop = keyframes`
+   0% {
+    opacity: 0;
+    transform: translateX(-50%)translateY(-150%);
+  } 
+  33%, 66%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%)translateY(100%);
+  }
+`
+const LowerTriangleComponent = ({ className }: { className?: string }) => (
+  <svg className={className} width="18" height="9" viewBox="0, 0, 50, 25" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="0,0 25,25 50,0" stroke="#fff" fill="none" />
+  </svg>
+)
+
+const LowerTriangle = styled(LowerTriangleComponent) <{ delay?: number | string }>`
+animation: ${loop} 1.8s cubic-bezier(0, 0, 1, 1) ${({ delay }) => delay || 0}s infinite;
+position: absolute;
+top: 50%;
+left: 50%;
+opacity: 0;
+`
+
 const Component: React.FC<Props> = props => {
   const { className } = props
   const { state } = useRedux()
@@ -46,6 +77,12 @@ const Component: React.FC<Props> = props => {
           <Menus profile={profile} />
         </div>
       </div>
+      <NextButton onClick={() => {
+        scroller.scrollTo("profile", scrollOption)
+      }}>
+        <LowerTriangle />
+        <LowerTriangle delay={0.9} />
+      </NextButton>
     </header>
   )
 }
@@ -53,33 +90,51 @@ const Component: React.FC<Props> = props => {
 // ______________________________________________________
 // スタイル
 
+const NextButton = styled.div`
+position: absolute;
+bottom: 1rem;
+left: 50%;
+transform: translateX(-50%);
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background: none;
+color: #fff;
+border: none;
+outline: none;
+font-size: 1rem;
+font-weight: 150;
+cursor: pointer;
+padding: .5rem;
+width: 3rem;
+height: 3rem;
+border-radius: 50%;
+transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
+border: 1px solid #000;
+&:hover{
+  background-color: #ffffff47;
+}
+`
 const HomeIconStyle = `
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateX(-50%)translateY(-42%);
   z-index: -1;
-  
 `
 export default styled(Component)`
   position: relative;
   overflow: hidden;
+  max-height: 100rem;
+  padding: 7rem 2rem 0rem;
+  color: #fff;
+  width: 100%;
   h1::first-letter {
     text-transform: capitalize;
   }
-  .profile_background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    & img {
-      object-position: 50% 20% !important;
-      filter: brightness(90%);
-    }
-  }
 
-  max-height: 100rem;
   .header_menus {
     max-height: 100rem;
     transition: all 1s;
@@ -87,9 +142,8 @@ export default styled(Component)`
   .wrap {
     display: flex;
     flex-direction: column;
+    margin-bottom: 5rem;
   }
-  padding: 6rem 2rem 3rem;
-  color: #fff;
   .header_main {
     flex: 1;
     width: 100%;

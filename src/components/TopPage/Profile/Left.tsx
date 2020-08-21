@@ -87,6 +87,7 @@ export default styled(Component)`
   justify-content: center;
   padding: 2rem 2rem 3rem;
   color: #000;
+  z-index: 1;
   & h2 {
     font-weight: 200;
     color: #000;
