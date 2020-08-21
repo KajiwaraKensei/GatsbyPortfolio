@@ -19,6 +19,17 @@ const Component: React.FC<Props> = props => {
     return works.find(e => e.name.toLowerCase() === name.toLowerCase())
   })
   const { state } = useWindowSize()
+
+  const BackPosition = (index: number) => {
+    switch (state.type) {
+      case "pc":
+        return `calc(100% - ${index * 5}rem)`
+      case "tablet":
+        return `calc(100% - ${index * 4}rem)`
+      case "phone":
+        return `calc(100% - ${index * 3.5}rem)`
+    }
+  }
   const fontSize = setSize(state.type, ".75rem", ".7rem", ".65rem")
   const size = setSize(state.type, "4rem", "3.5rem", "3rem")
   const Page = work && (
@@ -33,7 +44,7 @@ const Component: React.FC<Props> = props => {
       <BackButton
         font={fontSize}
         size={size}
-        position={backButtonPosition("calc(100% - 13%)")}
+        position={backButtonPosition(BackPosition(1),)}
         text="BACK"
       />
       <a href={work.demo} rel="noopener noreferrer" target="_blank">
@@ -41,12 +52,12 @@ const Component: React.FC<Props> = props => {
           font={fontSize}
           size={size}
           position={backButtonPosition(
-            "calc(100% - 23%)",
+            BackPosition(2),
             ["#fff", "#6b62fd"],
             ["#6b62fd", "#fff"]
           )}
           text="DEMO"
-          onClick={() => {}}
+          onClick={() => { }}
         />
       </a>
       <a href={work.github} rel="noopener noreferrer" target="_blank">
@@ -54,12 +65,12 @@ const Component: React.FC<Props> = props => {
           font={fontSize}
           size={size}
           position={backButtonPosition(
-            "calc(100% - 33%)",
+            BackPosition(3),
             ["#fff", "#000"],
             ["#000", "#fff"]
           )}
           text="Github"
-          onClick={() => {}}
+          onClick={() => { }}
         />
       </a>
     </Fragment>
