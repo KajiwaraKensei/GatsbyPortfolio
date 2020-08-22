@@ -41,7 +41,7 @@ const Component: React.FC<Props> = props => {
         <Twitter />
       </a>
 
-      <a href={telLink(profile.tel)} rel="noopener noreferrer" target="_blank">
+      <a href={telLink(profile.tel)} rel="noopener noreferrer" target="_blank" aria-label="tel">
         <Phone />
       </a>
       <a

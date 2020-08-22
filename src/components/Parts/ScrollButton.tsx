@@ -40,6 +40,7 @@ const BackButtonStyle = `
   animation: none;
   transition: .5s;
   font-weight: 500;
+  background: #e42248;
   &:hover{
     background: #fff;
     color: #000;
