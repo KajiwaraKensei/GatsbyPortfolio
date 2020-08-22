@@ -13,6 +13,9 @@ import { RootState } from "~/store"
 
 import { setSize } from "~/lib/scroll"
 import { fadeIn } from "~/lib/style"
+
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
 }
@@ -26,7 +29,7 @@ const useRedux = () => {
 }
 
 // ______________________________________________________
-//
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className } = props
   const { state } = useRedux()
@@ -43,17 +46,11 @@ const Component: React.FC<Props> = props => {
         <div className="work_background">
           {"　"}
           <div className="work_background_image">
-
-
             {
               state.select !== null
                 ? <Image
-                  className={state.select === null ? "work_bg_img" : undefined}
-                  filename={
-                    state.select !== null
-                      ? works[state.select].backgroundImage
-                      : "joshua-ness-9iqqFZ7OuwY-unsplash.jpg"
-                  }
+                  className={"work_bg_img"}
+                  filename={works[state.select].backgroundImage}
                   width="100%"
                   height="100%"
                   alt="works_background_image"
@@ -63,7 +60,6 @@ const Component: React.FC<Props> = props => {
                   <h1 className="title">WORKS</h1>
                   <WorksIcon size={setSize(state.window, 1000, 600, 425)} />
                 </div>
-
             }
 
           </div>

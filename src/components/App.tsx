@@ -1,3 +1,5 @@
+// ______________________________________________________
+// ルート
 import React, { useState, useEffect } from "react"
 import Top from "./TopPage"
 import "./index.css"
@@ -5,15 +7,15 @@ import Loading from "~/Parts/Loading"
 import { actionCreator } from "~/store"
 import EventListener from "react-event-listener"
 import { useWindowSize } from "~/lib/redux"
-import Send from "~/components/SendMessage"
+
 // ______________________________________________________
-//
+// 型
 type Props = {
   className?: string
 }
 
 // ______________________________________________________
-//
+// コンポーネント
 const App: React.FC<Props> = props => {
   const { className } = props
   const { state, dispatch } = useWindowSize()
@@ -34,8 +36,9 @@ const App: React.FC<Props> = props => {
     dispatch(actionCreator.window.setLoad())
     setTimeout(() => {
       setLoading(false)
-    }, 1000)
+    }, 1200)
   }, [])
+
   return (
     <div className={className}>
       <EventListener target="window" onResize={handleResize} />

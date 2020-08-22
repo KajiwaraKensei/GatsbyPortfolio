@@ -1,9 +1,14 @@
+// ______________________________________________________
+// 戻るボタン（丸いボタン）
 import React from "react"
 import styled from "styled-components"
 import { customBlinking } from "~/lib/style"
 import { navigate } from "@reach/router"
 import { useSelector } from "react-redux"
 import { RootState } from "~/store"
+
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
   text?: string
@@ -12,6 +17,8 @@ type Props = {
 
 const DEFAULT_SIZE = "5rem"
 
+// ______________________________________________________
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className, text, onClick } = props
   const ableHome = useSelector((state: RootState) => state.window.ableHome)
@@ -25,7 +32,9 @@ const Component: React.FC<Props> = props => {
   )
 }
 
-export default styled(Component)<{
+// ______________________________________________________
+// スタイル
+export default styled(Component) <{
   position?: string
   size?: string
   font?: string

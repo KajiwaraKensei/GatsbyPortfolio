@@ -1,9 +1,18 @@
+// ______________________________________________________
+// スキル紹介 - カード
 import React from "react"
 import styled from "styled-components"
 
 import CircleSVG, { Props as SVGProps } from "components/Parts/CircleSVG"
 import { Fade } from "react-awesome-reveal"
 import { useWindowSize } from "~/lib/redux"
+// ______________________________________________________
+// 型
+type Props = {
+  className?: string
+  skill: Skill
+  index: number
+}
 
 export type Skill = {
   name: string
@@ -14,11 +23,6 @@ export type Skill = {
     name: string
   }[]
 }
-type Props = {
-  className?: string
-  skill: Skill
-  index: number
-}
 
 // SVGの引数の生成
 const SetSVG = (skill: Skill): SVGProps => {
@@ -27,9 +31,9 @@ const SetSVG = (skill: Skill): SVGProps => {
   let color = Math.floor(256 * (proficiencyLevel * 0.01)) + 10
   color > 210 && (color = 210)
 
-  let r = color
-  let g = color * 0.9
-  let b = (color + 50) * 1.2
+  const r = color
+  const g = color * 0.9
+  const b = (color + 50) * 1.2
 
   const baseColor = `rgba(${r}, ${g}, ${b}, .5)`
   const strokeWidth =
@@ -58,7 +62,8 @@ const SetSVG = (skill: Skill): SVGProps => {
     marginalColor: "#ffffff00",
   }
 }
-
+// ______________________________________________________
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className, skill, index } = props
   const { state } = useWindowSize()
@@ -86,6 +91,8 @@ const Component: React.FC<Props> = props => {
   )
 }
 
+// ______________________________________________________
+// スタイル
 export default styled(Component)`
   display: flex;
   margin: 2rem 1rem;

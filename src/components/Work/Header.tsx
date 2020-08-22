@@ -1,11 +1,18 @@
+// ______________________________________________________
+// ヘッダー
 import React from "react"
 import styled from "styled-components"
 import Image from "~/Parts/Image"
+
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
   url?: string
 }
 
+// ______________________________________________________
+// コンポーネン
 const Component: React.FC<Props> = props => {
   const { className, url } = props
   return (
@@ -20,6 +27,8 @@ const Component: React.FC<Props> = props => {
   )
 }
 
+// ______________________________________________________
+// スタイル
 export default styled(Component)`
   position: fixed;
   z-index: -10;

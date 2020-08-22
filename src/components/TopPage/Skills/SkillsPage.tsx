@@ -1,28 +1,26 @@
+// ______________________________________________________
+// スキル紹介 - まとめ
 import React from "react"
 import styled from "styled-components"
-import SkillList from "./SkillsList"
 import { Element } from "react-scroll"
 import skills from "~/data/skills"
-import { Hologram } from "~/icon"
-import { setSize } from "~/lib/scroll"
 import Next from "~/Parts/ScrollButton"
+import { useWindowSize } from "~/lib/redux"
+import { setSize } from "~/lib/scroll"
+import { Hologram } from "~/icon"
+import SkillList from "./SkillsList"
+
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
 }
 
-import { useSelector } from "react-redux"
-import { RootState } from "~/store"
-const useRedux = () => {
-  const state = useSelector((state: RootState) => ({
-    load: state.window.load,
-    type: state.window.type,
-  }))
-  return { state }
-}
-
+// ______________________________________________________
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className } = props
-  const { state } = useRedux()
+  const { state } = useWindowSize()
   return (
     <Element name="skills">
       <div className={className}>
@@ -38,6 +36,8 @@ const Component: React.FC<Props> = props => {
   )
 }
 
+// ______________________________________________________
+// スタイル
 export default styled(Component)`
   position: relative;
   & h1 {

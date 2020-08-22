@@ -2,23 +2,24 @@
 // Profile ページ
 import React from "react"
 import styled from "styled-components"
-import profile from "~/data/profile"
-import { Left, Right } from "."
 import { Element } from "react-scroll"
-import Friend from "~/icon/Friends"
+import { Left, Right } from "."
+
 import Next from "~/Parts/ScrollButton"
+import Friend from "~/icon/Friends"
 import { useWindowSize } from "~/lib/redux"
 import { setSize } from "~/lib/scroll"
+import profile from "~/data/profile"
 
 type Props = {
   className?: string
 }
 
 // ______________________________________________________
-//
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className } = props
-  const { state } = useWindowSize()
+  const { state } = useWindowSize() // 画面サイズ
 
   return (
     <Element name="profile">
@@ -43,15 +44,7 @@ const Component: React.FC<Props> = props => {
 }
 
 // ______________________________________________________
-//
-
-const BackButtonStyle = `
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%)translateY(-50%);
-  animation: none;
-`
+// スタイル
 export default styled(Component)`
   padding: 3rem 0rem 5rem;
   position: relative;

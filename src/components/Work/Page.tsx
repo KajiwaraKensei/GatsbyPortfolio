@@ -1,23 +1,27 @@
+// ______________________________________________________
+// 作品紹介ページ - index
 import React, { Fragment } from "react"
 import styled from "styled-components"
-import works, { workType } from "~/data/works"
-import { NotFount, Header, Contents, BackButton } from "."
-import "../index.css"
-import Footer from "~/Parts/Footer"
 import SEO from "~/components/SEO"
+import { NotFount, Header, Contents, BackButton } from "."
+import works, { workType } from "~/data/works"
+import Footer from "~/Parts/Footer"
 import { setSize } from "~/lib/scroll"
 import { useWindowSize } from "~/lib/redux"
+import "../index.css"
 
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
   name: string
 }
 
+// ______________________________________________________
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className, name } = props
-  const [work, setWork] = React.useState<workType | undefined>(() => {
-    return works.find(e => e.name.toLowerCase() === name.toLowerCase())
-  })
+  const [work] = React.useState<workType | undefined>(works.find(e => e.name.toLowerCase() === name.toLowerCase()))
   const { state } = useWindowSize()
 
   const BackPosition = (index: number) => {
@@ -57,7 +61,7 @@ const Component: React.FC<Props> = props => {
             ["#6b62fd", "#fff"]
           )}
           text="DEMO"
-          onClick={() => {}}
+          onClick={() => { }}
         />
       </a>
       <a href={work.github} rel="noopener noreferrer" target="_blank">
@@ -70,7 +74,7 @@ const Component: React.FC<Props> = props => {
             ["#000", "#fff"]
           )}
           text="Github"
-          onClick={() => {}}
+          onClick={() => { }}
         />
       </a>
     </Fragment>
@@ -81,6 +85,8 @@ const Component: React.FC<Props> = props => {
   )
 }
 
+// ______________________________________________________
+// スタイル
 export default styled(Component)`
   color: #000;
 `

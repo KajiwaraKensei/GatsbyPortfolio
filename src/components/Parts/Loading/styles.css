@@ -11,7 +11,7 @@
   display: grid;
 }
 .end {
-  animation: fadeout 1s ease-out forwards;
+  animation: fadeout 0.7s ease-out 0.5s forwards;
 }
 @keyframes fadeout {
   0% {

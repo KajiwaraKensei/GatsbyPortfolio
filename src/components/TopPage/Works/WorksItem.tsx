@@ -6,6 +6,8 @@ import { workType } from "~/data/works"
 import Image from "~/Parts/Image"
 export const CARD_SIZE = 24
 
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
   work: workType
@@ -14,8 +16,13 @@ type Props = {
   onClick?: () => void
 } & StyledProps
 
+type StyledProps = {
+  focus?: boolean | 0 | null // フォーカスが当たっているか
+  opacity?: string | number // 透明度指定
+  animation: boolean // アニメーションをするか
+}
 // ______________________________________________________
-//
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className, work, onMouseOver, onMouseOut, onClick } = props
   const { name, icon, platform } = work
@@ -46,12 +53,7 @@ const Component: React.FC<Props> = props => {
 
 // ______________________________________________________
 // スタイル
-type StyledProps = {
-  focus?: boolean | 0 | null // フォーカスが当たっているか
-  opacity?: string | number // 透明度指定
-  animation: boolean // アニメーションをするか
-}
-export default styled(Component)<StyledProps>`
+export default styled(Component) <StyledProps>`
   pointer-events: none;
   ${({ focus }) =>
     focus === false

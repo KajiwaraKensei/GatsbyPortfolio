@@ -1,22 +1,21 @@
 // ______________________________________________________
-// Profile no 左側
+// Profile の 左側
 import React from "react"
 import styled from "styled-components"
 import { profile } from "~/data/profile"
 import Image from "~/Parts/Image"
-import { Fade } from "react-awesome-reveal"
-import GitHub from "@material-ui/icons/GitHub"
-import MailIcon from "@material-ui/icons/Mail"
-import PhoneIcon from "@material-ui/icons/Phone"
+import { GitHub, Mail as MailIcon, Phone as PhoneIcon } from "@material-ui/icons"
 import { githubLink, telLink, mailLink, twitterLink } from "~/lib/index"
 
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
   profile: profile
 }
 
 // ______________________________________________________
-//
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className, profile } = props
   return (

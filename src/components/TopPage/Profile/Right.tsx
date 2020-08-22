@@ -1,5 +1,5 @@
 // ______________________________________________________
-// Profile no 右側
+// Profile の 右側
 import React from "react"
 import styled from "styled-components"
 import { profile } from "~/data/profile"
@@ -7,13 +7,15 @@ import { MapCareer, MapIntroduction } from "."
 import RecordVoiceOverIcon from "@material-ui/icons/RecordVoiceOver"
 import { Fade } from "react-awesome-reveal"
 
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
   profile: profile
 }
 
 // ______________________________________________________
-//
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className, profile } = props
   return (

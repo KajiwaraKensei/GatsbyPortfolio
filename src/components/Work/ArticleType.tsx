@@ -1,12 +1,19 @@
+// ______________________________________________________
+// 作品紹介 - 記事
 import React from "react"
 import styled from "styled-components"
 import { Article } from "~/data/works"
 import Image from "~/Parts/Image"
+
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
   content: Article
 }
 
+// ______________________________________________________
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className, content } = props
   const { headline, value, imagePosition, image, width, alt } = content
@@ -37,7 +44,9 @@ const Component: React.FC<Props> = props => {
   )
 }
 
-export default styled(Component)<{ content: Article }>`
+// ______________________________________________________
+// スタイル
+export default styled(Component) <{ content: Article }>`
   width: 100%;
   max-width: 50rem;
   padding: 0 2rem 2rem;

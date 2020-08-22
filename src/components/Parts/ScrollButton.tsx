@@ -1,12 +1,19 @@
+// ______________________________________________________
+// 任意の場所にスクロールさせるボタン
 import React from "react"
 import BackButton from "~/components/Work/BackButton"
 import { scroller } from "react-scroll"
 import { scrollOption } from "~/lib/scroll"
 
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
-  to: string
+  to: string // スクロール先
 }
+
+// ______________________________________________________
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { to } = props
   const doClick = () => {
@@ -22,8 +29,10 @@ const Component: React.FC<Props> = props => {
     />
   )
 }
+
+// ______________________________________________________
+// スタイル(BackButton をオーバーロード)
 const BackButtonStyle = `
-  
   position: absolute;
   top: 100%;
   left: 50%;

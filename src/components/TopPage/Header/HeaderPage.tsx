@@ -1,5 +1,5 @@
 // ______________________________________________________
-// Header
+// ヘッダー
 import React from "react"
 import styled, { keyframes } from "styled-components"
 import { Menus } from "."
@@ -8,51 +8,12 @@ import { HomeIcon } from "~/icon"
 import { scroller } from "react-scroll"
 import { scrollOption, setSize } from "~/lib/scroll"
 import { useWindowSize } from "~/lib/redux"
+
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
 }
-
-
-// ______________________________________________________
-// 三角形SVG
-const loop = keyframes`
-   0% {
-    opacity: 0;
-    transform: translateX(-50%)translateY(-150%);
-  } 
-  33%, 66%{
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-50%)translateY(100%);
-  }
-`
-
-// 下三角SVG
-const LowerTriangleComponent = ({ className }: { className?: string }) => (
-  <svg
-    className={className}
-    width="18"
-    height="9"
-    viewBox="0, 0, 50, 25"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <polyline points="0,0 25,25 50,0" stroke="#fff" fill="none" />
-  </svg>
-)
-
-// 下三角のスタイル
-const LowerTriangle = styled(LowerTriangleComponent) <{
-  delay?: number | string
-}>`
-  animation: ${loop} 1.8s cubic-bezier(0, 0, 1, 1) ${({ delay }) => delay || 0}s
-    infinite;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  opacity: 0;
-`
 
 // ______________________________________________________
 // コンポーネント
@@ -92,8 +53,46 @@ const Component: React.FC<Props> = props => {
 }
 
 // ______________________________________________________
-// スタイル
+// 三角形SVG
+const loop = keyframes`
+   0% {
+    opacity: 0;
+    transform: translateX(-50%)translateY(-150%);
+  } 
+  33%, 66%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%)translateY(100%);
+  }
+`
+// 下三角SVG
+const LowerTriangleComponent = ({ className }: { className?: string }) => (
+  <svg
+    className={className}
+    width="18"
+    height="9"
+    viewBox="0, 0, 50, 25"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <polyline points="0,0 25,25 50,0" stroke="#fff" fill="none" />
+  </svg>
+)
+// 下三角のスタイル
+const LowerTriangle = styled(LowerTriangleComponent) <{
+  delay?: number | string
+}>`
+  animation: ${loop} 1.8s cubic-bezier(0, 0, 1, 1) ${({ delay }) => delay || 0}s
+    infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+`
 
+// ______________________________________________________
+// スタイル
 const NextButton = styled.div`
   position: absolute;
   bottom: 1rem;
