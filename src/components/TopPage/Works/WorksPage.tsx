@@ -5,11 +5,14 @@ import styled from "styled-components"
 import { WorksList } from "."
 import works from "~/data/works"
 import Image from "~/Parts/Image"
+import WorksIcon from "~/icon/Works"
 import { Element } from "react-scroll"
-import { fadeIn } from "~/lib/style"
+
 import { useSelector } from "react-redux"
 import { RootState } from "~/store"
 
+import { setSize } from "~/lib/scroll"
+import { fadeIn } from "~/lib/style"
 type Props = {
   className?: string
 }
@@ -17,6 +20,7 @@ type Props = {
 const useRedux = () => {
   const state = useSelector((state: RootState) => ({
     select: state.style.select,
+    window: state.window.type
   }))
   return { state }
 }
@@ -39,22 +43,31 @@ const Component: React.FC<Props> = props => {
         <div className="work_background">
           {"　"}
           <div className="work_background_image">
-            <Image
-              className={state.select === null ? "work_bg_img" : undefined}
-              filename={
-                state.select !== null
-                  ? works[state.select].backgroundImage
-                  : "joshua-ness-9iqqFZ7OuwY-unsplash.jpg"
-              }
-              width="100%"
-              height="100%"
-              alt="works_background_image"
-            />
+
+
+            {
+              state.select !== null
+                ? <Image
+                  className={state.select === null ? "work_bg_img" : undefined}
+                  filename={
+                    state.select !== null
+                      ? works[state.select].backgroundImage
+                      : "joshua-ness-9iqqFZ7OuwY-unsplash.jpg"
+                  }
+                  width="100%"
+                  height="100%"
+                  alt="works_background_image"
+                />
+                :
+                <div className="works_icon">
+                  <h1 className="title">WORKS</h1>
+                  <WorksIcon size={setSize(state.window, 1000, 600, 425)} />
+                </div>
+
+            }
+
           </div>
           <BottomBack toggle={toggle} />
-          <div className="work_head_title">
-            {state.select === null && <h1 className="title">WORKS</h1>}
-          </div>
         </div>
 
         <div className="works_list">
@@ -103,6 +116,15 @@ export default styled(Component)`
       right: 0;
       width: 100%;
       height: 100%;
+      & > .works_icon{
+        overflow: hidden;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: ${fadeIn} .7s ease-in-out;
+      }
     }
 
     & img {
@@ -113,7 +135,10 @@ export default styled(Component)`
     top: 0;
     left: 0;
     z-index: -10;
+    background: #fff;
+
     & h1 {
+      margin-top: 5rem;
       text-align: center;
       color: #000;
       font-weight: 200;
@@ -129,12 +154,7 @@ export default styled(Component)`
       }
     }
   }
-  .work_head_title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-  }
+
   & > .title {
     text-align: center;
   }

@@ -41,7 +41,6 @@ const App: React.FC<Props> = props => {
       <EventListener target="window" onResize={handleResize} />
       {loading && <Loading load={state.load} />}
       <Top />
-
     </div>
   )
 }

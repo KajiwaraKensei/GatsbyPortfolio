@@ -19,9 +19,9 @@ const Component: React.FC<Props> = props => {
   return (
     <div className={className}>
       <div className="self_introduction">
-        <h2 className="title width_material_icon" >
+        <h2 className="title width_material_icon">
           Self-introduction
-            <RecordVoiceOverIcon />
+          <RecordVoiceOverIcon />
         </h2>
         <div className="value">{profile.selfIntroduction}</div>
       </div>

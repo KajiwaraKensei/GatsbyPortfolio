@@ -17,7 +17,6 @@ const Component: React.FC<Props> = props => {
   const ableHome = useSelector((state: RootState) => state.window.ableHome)
   const gotoHome = () => {
     onClick ? onClick() : ableHome ? history.back() : navigate(`/`)
-
   }
   return (
     <div onClick={gotoHome} className={className}>
@@ -26,7 +25,7 @@ const Component: React.FC<Props> = props => {
   )
 }
 
-export default styled(Component) <{
+export default styled(Component)<{
   position?: string
   size?: string
   font?: string

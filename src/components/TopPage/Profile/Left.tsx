@@ -30,14 +30,14 @@ const Component: React.FC<Props> = props => {
           style={{ borderRadius: "50%" }}
         />
       </div>
-      <h2 className="name" >
+      <h2 className="name">
         {profile.name[0]} {profile.name[1]}
       </h2>
       <div className="info">
         <h3 className="title width_material_icon">
           <GitHub />
-            GitHub
-          </h3>
+          GitHub
+        </h3>
         <a
           href={githubLink(profile.github)}
           rel="noopener noreferrer"
@@ -49,8 +49,8 @@ const Component: React.FC<Props> = props => {
       <div className="info">
         <h3 className="title width_material_icon">
           <PhoneIcon />
-            Phone
-          </h3>
+          Phone
+        </h3>
         <a
           href={telLink(profile.tel)}
           rel="noopener noreferrer"
@@ -62,8 +62,8 @@ const Component: React.FC<Props> = props => {
       <div className="info">
         <h3 className="title width_material_icon">
           <MailIcon />
-            Email
-          </h3>
+          Email
+        </h3>
         <a
           href={mailLink(profile.mail)}
           rel="noopener noreferrer"

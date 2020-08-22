@@ -25,10 +25,8 @@ const Component: React.FC<Props> = props => {
       </h2>
 
       <div className="content">{mapIntroductions}</div>
-
     </div>
   )
 }
 
-export default styled(Component)`
-`
+export default styled(Component)``

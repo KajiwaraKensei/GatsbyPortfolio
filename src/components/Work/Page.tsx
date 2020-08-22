@@ -44,7 +44,7 @@ const Component: React.FC<Props> = props => {
       <BackButton
         font={fontSize}
         size={size}
-        position={backButtonPosition(BackPosition(1),)}
+        position={backButtonPosition(BackPosition(1))}
         text="BACK"
       />
       <a href={work.demo} rel="noopener noreferrer" target="_blank">
@@ -57,7 +57,7 @@ const Component: React.FC<Props> = props => {
             ["#6b62fd", "#fff"]
           )}
           text="DEMO"
-          onClick={() => { }}
+          onClick={() => {}}
         />
       </a>
       <a href={work.github} rel="noopener noreferrer" target="_blank">
@@ -70,7 +70,7 @@ const Component: React.FC<Props> = props => {
             ["#000", "#fff"]
           )}
           text="Github"
-          onClick={() => { }}
+          onClick={() => {}}
         />
       </a>
     </Fragment>
