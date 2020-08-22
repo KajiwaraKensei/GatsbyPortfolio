@@ -1,22 +1,21 @@
 // ______________________________________________________
-// Profile no 左側
+// Profile の 左側
 import React from "react"
 import styled from "styled-components"
 import { profile } from "~/data/profile"
 import Image from "~/Parts/Image"
-import { Fade } from "react-awesome-reveal"
-import GitHub from "@material-ui/icons/GitHub"
-import MailIcon from "@material-ui/icons/Mail"
-import PhoneIcon from "@material-ui/icons/Phone"
+import { GitHub, Mail as MailIcon, Phone as PhoneIcon } from "@material-ui/icons"
 import { githubLink, telLink, mailLink, twitterLink } from "~/lib/index"
 
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
   profile: profile
 }
 
 // ______________________________________________________
-//
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className, profile } = props
   return (
@@ -30,14 +29,14 @@ const Component: React.FC<Props> = props => {
           style={{ borderRadius: "50%" }}
         />
       </div>
-      <h2 className="name" >
+      <h2 className="name">
         {profile.name[0]} {profile.name[1]}
       </h2>
       <div className="info">
         <h3 className="title width_material_icon">
           <GitHub />
-            GitHub
-          </h3>
+          GitHub
+        </h3>
         <a
           href={githubLink(profile.github)}
           rel="noopener noreferrer"
@@ -49,8 +48,8 @@ const Component: React.FC<Props> = props => {
       <div className="info">
         <h3 className="title width_material_icon">
           <PhoneIcon />
-            Phone
-          </h3>
+          Phone
+        </h3>
         <a
           href={telLink(profile.tel)}
           rel="noopener noreferrer"
@@ -62,8 +61,8 @@ const Component: React.FC<Props> = props => {
       <div className="info">
         <h3 className="title width_material_icon">
           <MailIcon />
-            Email
-          </h3>
+          Email
+        </h3>
         <a
           href={mailLink(profile.mail)}
           rel="noopener noreferrer"

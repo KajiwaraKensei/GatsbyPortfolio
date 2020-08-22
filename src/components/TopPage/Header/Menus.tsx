@@ -8,14 +8,18 @@ import { Contact } from "."
 import { profile } from "~/data/profile"
 import { useWindowSize } from "~/lib/redux"
 
-
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
   profile: profile // 使うプロフィール
 }
 
+// ______________________________________________________
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className, profile } = props
+  const { state } = useWindowSize()
 
   // クリックイベント
   const clickDetail = (to: string) => (event: React.MouseEvent) => {
@@ -23,16 +27,18 @@ const Component: React.FC<Props> = props => {
   }
 
   const [contactToggle, setContactToggle] = useState(false) // コンタクトを表示するか
-  const { state } = useWindowSize();
-  const [buttonSize, setButtonSize] = useState<"default" | "small">("default")
+  const [buttonSize, setButtonSize] = useState<"default" | "small">("default") // ボタンのサイズ
+
   // コンタクトクリック
   const clickContact = () => {
     setContactToggle(!contactToggle)
   }
 
+  // state.type を監視
   useEffect(() => {
     setButtonSize(state.type === "phone" ? "small" : "default")
-  }, [state])
+  }, [state.type])
+
   return (
     <div className={className}>
       <div className="menu_buttons">
@@ -44,8 +50,16 @@ const Component: React.FC<Props> = props => {
           value="PROFILE"
           border="#fff"
         />
-        <Button size={buttonSize} onClick={clickDetail("skills")} value="SKILLS" />
-        <Button size={buttonSize} onClick={clickDetail("works")} value="WORKS" />
+        <Button
+          size={buttonSize}
+          onClick={clickDetail("skills")}
+          value="SKILLS"
+        />
+        <Button
+          size={buttonSize}
+          onClick={clickDetail("works")}
+          value="WORKS"
+        />
         <Button
           size={buttonSize}
           onClick={clickContact}
@@ -102,7 +116,7 @@ const Button = styled.div<{
       transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
     }
   }
-  ${({ size }) => size === "small" ? smallButton : defaultButton}
+  ${({ size }) => (size === "small" ? smallButton : defaultButton)}
 
 `
 
@@ -133,7 +147,7 @@ margin: 1rem;
   top: -.6rem;
   left: .5rem;
 }
-`;
+`
 // 全体
 export default styled(Component)`
   & > .menu_buttons {

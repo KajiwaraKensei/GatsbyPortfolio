@@ -1,3 +1,5 @@
+// ______________________________________________________
+// 404 
 import React, { useState, useRef } from "react"
 import styled from "styled-components"
 import works from "~/data/works"
@@ -6,6 +8,9 @@ import { Page, BackButton } from "."
 import NotFoundIcon from "~/components/Icons/NotFoundIcon"
 import { useWindowSize } from "~/lib/redux"
 import { setSize } from "~/lib/scroll"
+
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
   name: string
@@ -20,6 +25,8 @@ const worksName = () => {
   return name
 }
 
+// ______________________________________________________
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { state } = useWindowSize()
   const { className, name } = props
@@ -80,31 +87,32 @@ const Component: React.FC<Props> = props => {
   return ok ? (
     <Page name={work} />
   ) : (
-    <div className={className}>
-      <BackButton size={`${setSize(state.type, 6, 5, 4)}rem`} />
-      <NotFoundIcon
-        style={IconStyle}
-        size={setSize(state.type, 650, 500, 350)}
-      />
-      <form onSubmit={handleSubmit}>
-        {mapArticles}
-        <p>
-          {"> "}
-          <Cursor
-            ref={ref}
-            onBlur={() => {
-              ref.current?.focus()
-            }}
-            value={work}
-            onChange={handleChange}
-            autoFocus
-          />
-        </p>
-      </form>
-    </div>
-  )
+      <div className={className}>
+        <BackButton size={`${setSize(state.type, 6, 5, 4)}rem`} />
+        <NotFoundIcon
+          style={IconStyle}
+          size={setSize(state.type, 650, 500, 350)}
+        />
+        <form onSubmit={handleSubmit}>
+          {mapArticles}
+          <p>
+            {"> "}
+            <Cursor
+              ref={ref}
+              onBlur={() => {
+                ref.current?.focus()
+              }}
+              value={work}
+              onChange={handleChange}
+              autoFocus
+            />
+          </p>
+        </form>
+      </div>
+    )
 }
-
+// ______________________________________________________
+// スタイル
 const Cursor = styled.input`
   width: 100%;
   background: none;

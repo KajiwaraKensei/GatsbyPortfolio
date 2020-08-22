@@ -4,8 +4,9 @@
 import React from "react"
 import "./styles.css"
 import { Coffee } from ".."
+
 type Props = {
-  load: boolean
+  load: boolean //true: ロード中
 }
 
 const Component: React.FC<Props> = props => {

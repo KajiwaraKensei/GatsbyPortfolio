@@ -1,3 +1,5 @@
+// ______________________________________________________
+// フッター
 import React from "react"
 import styled from "styled-components"
 import profile from "~/data/profile"
@@ -5,6 +7,8 @@ type Props = {
   className?: string
 }
 
+// ______________________________________________________
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className } = props
   return (
@@ -14,6 +18,8 @@ const Component: React.FC<Props> = props => {
   )
 }
 
+// ______________________________________________________
+// スタイル
 export default styled(Component)`
   text-transform: uppercase;
   font-weight: 150;

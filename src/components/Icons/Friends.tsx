@@ -1,11 +1,17 @@
+// ______________________________________________________
+// SVGアイコン
 import React from "react"
 import styled from "styled-components"
-
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
-  size?: number
+  size?: number //カードのサイズ
 }
-const ICON_SIZE = 500
+const ICON_SIZE = 500 // デフォルトのサイズ
+
+// ______________________________________________________
+//
 const Component: React.FC<Props> = props => {
   const { className, size } = props
   return (
@@ -206,7 +212,8 @@ const Component: React.FC<Props> = props => {
     </svg>
   )
 }
-
-export default styled(Component)<{ style?: string }>`
+// ______________________________________________________
+// スタイル
+export default styled(Component) <{ style?: string }>`
   ${({ style }) => style}
 `

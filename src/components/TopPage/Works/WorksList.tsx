@@ -11,10 +11,15 @@ import { navigate } from "@reach/router"
 
 const MAX_ON_LINE = 4 // 一列に表示する最大個数
 
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
   works: worksType
   onCardClick?: () => void // カードをクリックしたときの処理
+}
+type StyledProps = {
+  works: worksType
 }
 
 // Redux の設定
@@ -28,8 +33,7 @@ const useRedux = () => {
 }
 
 // ______________________________________________________
-//
-
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { state, dispatch } = useRedux()
   const { select, type } = state
@@ -75,13 +79,11 @@ const Component: React.FC<Props> = props => {
   return <div className={className}>{mapWorks}</div>
 }
 
-type StyledProps = {
-  works: worksType
-}
+
+
 // ______________________________________________________
 // スタイル
-
-export default styled(Component)<StyledProps>`
+export default styled(Component) <StyledProps>`
   height: 100%;
 
   display: flex;
@@ -103,7 +105,7 @@ const flexLeft = (works: any[]) => {
       (word += `
     @media only screen and (min-width: ${CARD_SIZE * i}rem) and ( max-width: ${
         CARD_SIZE * (i + 1)
-      }rem){
+        }rem){
       justify-content: left;
       width: ${CARD_SIZE * i}rem;
     }`)

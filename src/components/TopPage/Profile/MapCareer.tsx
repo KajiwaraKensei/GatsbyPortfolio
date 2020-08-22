@@ -1,14 +1,19 @@
+// ______________________________________________________
+// キャリア
 import React, { Fragment } from "react"
 import styled from "styled-components"
 import { Career } from "~/data/profile"
 import BusinessIcon from "@material-ui/icons/Business"
-import { Fade } from "react-awesome-reveal"
 
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
   careers: Career[]
 }
 
+// ______________________________________________________
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className, careers } = props
 
@@ -18,6 +23,7 @@ const Component: React.FC<Props> = props => {
       <div className="event">{career.event}</div>
     </Fragment>
   ))
+
   return (
     <div className={className}>
       <h2 className="title width_material_icon">
@@ -29,4 +35,6 @@ const Component: React.FC<Props> = props => {
   )
 }
 
+// ______________________________________________________
+// スタイル
 export default styled(Component)``

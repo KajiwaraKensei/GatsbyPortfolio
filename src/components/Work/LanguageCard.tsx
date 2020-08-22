@@ -3,13 +3,15 @@
 import React from "react"
 import styled from "styled-components"
 
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
   language: { name: string; reason: string[] }
 }
 
 // ______________________________________________________
-//
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className, language } = props
   const mapReasons = language.reason.map(reason => (
@@ -24,7 +26,7 @@ const Component: React.FC<Props> = props => {
 }
 
 // ______________________________________________________
-//
+// スタイル
 export default styled(Component)`
   flex-basis: 20rem;
   flex-grow: 1;

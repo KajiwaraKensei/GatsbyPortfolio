@@ -1,16 +1,19 @@
 // ______________________________________________________
-//
+// 作品紹介 - 中身
 import React from "react"
 import styled, { keyframes } from "styled-components"
 import works, { workType } from "~/data/works"
 import { ArticleType, LanguageCard, ImageType } from "."
+
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
   work: workType
 }
 
 // ______________________________________________________
-//
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className, work } = props
 
@@ -54,17 +57,15 @@ const Component: React.FC<Props> = props => {
   )
 }
 
-const up = keyframes`
-0% {
-  margin-top: 100vh;
-}
-100% {
-  margin-top: 50vh;
-}
-`
+
 
 // ______________________________________________________
-//
+// スタイル
+const up = keyframes`
+0% {margin-top: 100vh;}
+100% {margin-top: 50vh;}
+`
+
 export default styled(Component)`
   animation: ${up} 1s forwards;
   margin-top: 50vh;

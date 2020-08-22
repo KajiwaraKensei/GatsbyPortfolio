@@ -1,14 +1,20 @@
+// ______________________________________________________
+// 学歴
 import React, { Fragment } from "react"
 import styled from "styled-components"
 import { Career } from "~/data/profile"
 import LocationCityIcon from "@material-ui/icons/LocationCity"
 import { Fade } from "react-awesome-reveal"
 
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
   introductions: Career[]
 }
 
+// ______________________________________________________
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className, introductions } = props
 
@@ -18,6 +24,7 @@ const Component: React.FC<Props> = props => {
       <div className="event">{introduction.event}</div>
     </Fragment>
   ))
+
   return (
     <div className={className}>
       <h2 className="title width_material_icon">
@@ -25,10 +32,10 @@ const Component: React.FC<Props> = props => {
       </h2>
 
       <div className="content">{mapIntroductions}</div>
-
     </div>
   )
 }
 
-export default styled(Component)`
-`
+// ______________________________________________________
+// スタイル
+export default styled(Component)``

@@ -1,15 +1,22 @@
+// ______________________________________________________
+// 画像を背景でループせさる
 import React from "react"
 import styled, { keyframes } from "styled-components"
 type Props = {
   className?: string
-  images: string[]
+  images: string[] // ループさせる画像のパス
 }
 
+// ______________________________________________________
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className, images } = props
+
+  // 画像展開
   const mapImages = images.map((image, index) => (
     <Li url={image} key={"loop_" + image + index}></Li>
   ))
+
   return (
     <div className={className}>
       <ul className="ho1">{mapImages}</ul>
@@ -17,7 +24,8 @@ const Component: React.FC<Props> = props => {
     </div>
   )
 }
-
+// ______________________________________________________
+// スタイル
 const loop = keyframes`
   0% {
     transform: translateX(100%);
@@ -35,8 +43,8 @@ const loop2 = keyframes`
 }
 `
 const fadeIn = keyframes`
-  0% {opacity: 0} /*アニメーション開始時は不透明度0%*/
-  100% {opacity: 1} /*アニメーション終了時は不透明度100%*/
+  0% {opacity: 0}
+  100% {opacity: 1}
 `
 export default styled(Component)`
   position: fixed;

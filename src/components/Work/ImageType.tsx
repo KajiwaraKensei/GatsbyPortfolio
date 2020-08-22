@@ -1,8 +1,12 @@
+// ______________________________________________________
+// 
 import React from "react"
 import styled from "styled-components"
 import { ImageContent } from "~/data/works"
 import Image from "~/Parts/Image"
 
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
   content: ImageContent
@@ -19,6 +23,9 @@ const MapImages = (props: ImageContent) =>
       filename={image}
     />
   ))
+
+// ______________________________________________________
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className, content } = props
   const { headline } = content
@@ -30,7 +37,9 @@ const Component: React.FC<Props> = props => {
   )
 }
 
-export default styled(Component)<{ content: ImageContent }>`
+// ______________________________________________________
+// スタイル
+export default styled(Component) <{ content: ImageContent }>`
   width: 100%;
   max-width: 50rem;
   padding: 0 2rem 2rem;

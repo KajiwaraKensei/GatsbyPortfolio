@@ -1,5 +1,5 @@
 // ______________________________________________________
-// Profile no 右側
+// Profile の 右側
 import React from "react"
 import styled from "styled-components"
 import { profile } from "~/data/profile"
@@ -7,21 +7,23 @@ import { MapCareer, MapIntroduction } from "."
 import RecordVoiceOverIcon from "@material-ui/icons/RecordVoiceOver"
 import { Fade } from "react-awesome-reveal"
 
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
   profile: profile
 }
 
 // ______________________________________________________
-//
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className, profile } = props
   return (
     <div className={className}>
       <div className="self_introduction">
-        <h2 className="title width_material_icon" >
+        <h2 className="title width_material_icon">
           Self-introduction
-            <RecordVoiceOverIcon />
+          <RecordVoiceOverIcon />
         </h2>
         <div className="value">{profile.selfIntroduction}</div>
       </div>

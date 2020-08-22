@@ -1,62 +1,25 @@
 // ______________________________________________________
-// Header
+// ヘッダー
 import React from "react"
 import styled, { keyframes } from "styled-components"
 import { Menus } from "."
 import profile from "~/data/profile"
 import { HomeIcon } from "~/icon"
-import Scroll from "~/Parts/ScrollButton"
 import { scroller } from "react-scroll"
-import { scrollOption } from "~/lib/scroll"
+import { scrollOption, setSize } from "~/lib/scroll"
+import { useWindowSize } from "~/lib/redux"
 
-
+// ______________________________________________________
+// 型
 type Props = {
   className?: string
 }
 
-import { setSize } from "~/lib/scroll"
-import { useSelector } from "react-redux"
-import { RootState } from "~/store"
-const useRedux = () => {
-  const state = useSelector((state: RootState) => ({
-    load: state.window.load,
-    type: state.window.type,
-  }))
-  return { state }
-}
-
 // ______________________________________________________
-//
-const loop = keyframes`
-   0% {
-    opacity: 0;
-    transform: translateX(-50%)translateY(-150%);
-  } 
-  33%, 66%{
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-50%)translateY(100%);
-  }
-`
-const LowerTriangleComponent = ({ className }: { className?: string }) => (
-  <svg className={className} width="18" height="9" viewBox="0, 0, 50, 25" xmlns="http://www.w3.org/2000/svg">
-    <polyline points="0,0 25,25 50,0" stroke="#fff" fill="none" />
-  </svg>
-)
-
-const LowerTriangle = styled(LowerTriangleComponent) <{ delay?: number | string }>`
-animation: ${loop} 1.8s cubic-bezier(0, 0, 1, 1) ${({ delay }) => delay || 0}s infinite;
-position: absolute;
-top: 50%;
-left: 50%;
-opacity: 0;
-`
-
+// コンポーネント
 const Component: React.FC<Props> = props => {
   const { className } = props
-  const { state } = useRedux()
+  const { state } = useWindowSize()
   return (
     <header className={className}>
       <div className="profile_background">
@@ -77,9 +40,11 @@ const Component: React.FC<Props> = props => {
           <Menus profile={profile} />
         </div>
       </div>
-      <NextButton onClick={() => {
-        scroller.scrollTo("profile", scrollOption)
-      }}>
+      <NextButton
+        onClick={() => {
+          scroller.scrollTo("profile", scrollOption)
+        }}
+      >
         <LowerTriangle />
         <LowerTriangle delay={0.9} />
       </NextButton>
@@ -88,34 +53,71 @@ const Component: React.FC<Props> = props => {
 }
 
 // ______________________________________________________
+// 三角形SVG
+const loop = keyframes`
+   0% {
+    opacity: 0;
+    transform: translateX(-50%)translateY(-150%);
+  } 
+  33%, 66%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%)translateY(100%);
+  }
+`
+// 下三角SVG
+const LowerTriangleComponent = ({ className }: { className?: string }) => (
+  <svg
+    className={className}
+    width="18"
+    height="9"
+    viewBox="0, 0, 50, 25"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <polyline points="0,0 25,25 50,0" stroke="#fff" fill="none" />
+  </svg>
+)
+// 下三角のスタイル
+const LowerTriangle = styled(LowerTriangleComponent) <{
+  delay?: number | string
+}>`
+  animation: ${loop} 1.8s cubic-bezier(0, 0, 1, 1) ${({ delay }) => delay || 0}s
+    infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+`
+
+// ______________________________________________________
 // スタイル
-
 const NextButton = styled.div`
-position: absolute;
-bottom: 1rem;
-left: 50%;
-transform: translateX(-50%);
-
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-background: none;
-color: #fff;
-border: none;
-outline: none;
-font-size: 1rem;
-font-weight: 150;
-cursor: pointer;
-padding: .5rem;
-width: 3rem;
-height: 3rem;
-border-radius: 50%;
-transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
-border: 1px solid #000;
-&:hover{
-  background-color: #ffffff47;
-}
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 150;
+  cursor: pointer;
+  padding: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
+  border: 1px solid #000;
+  &:hover {
+    background-color: #ffffff47;
+  }
 `
 const HomeIconStyle = `
   position: absolute;
@@ -128,13 +130,12 @@ export default styled(Component)`
   position: relative;
   overflow: hidden;
   max-height: 100rem;
-  padding: 7rem 2rem 0rem;
+  padding: 6rem 2rem 0rem;
   color: #fff;
   width: 100%;
   h1::first-letter {
     text-transform: capitalize;
   }
-
   .header_menus {
     max-height: 100rem;
     transition: all 1s;
