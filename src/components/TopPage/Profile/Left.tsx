@@ -41,6 +41,7 @@ const Component: React.FC<Props> = props => {
           href={githubLink(profile.github)}
           rel="noopener noreferrer"
           target="_blank"
+          aria-label="gitHub"
         >
           <div className="value">{profile.github}</div>
         </a>
@@ -54,6 +55,7 @@ const Component: React.FC<Props> = props => {
           href={telLink(profile.tel)}
           rel="noopener noreferrer"
           target="_blank"
+          aria-label="tel"
         >
           <div className="value">{profile.tel}</div>
         </a>
@@ -67,6 +69,7 @@ const Component: React.FC<Props> = props => {
           href={mailLink(profile.mail)}
           rel="noopener noreferrer"
           target="_blank"
+          aria-label="mail"
         >
           <div className="value">{profile.mail}</div>
         </a>
