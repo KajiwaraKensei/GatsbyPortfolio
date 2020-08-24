@@ -82,7 +82,7 @@ export default styled(Component)`
   }
 
   .content_headline {
-    color: #96bdb9;
+    color: #009c8c;
     text-align: center;
     font-size: 1.2rem;
     font-weight: 150;
@@ -103,7 +103,7 @@ export default styled(Component)`
   & > .work_day,
   .work_platform {
     text-align: center;
-    color: #96bdb9;
+    color: #009c8c;
     font-size: 0.65rem;
     margin-bottom: 0.5rem;
     letter-spacing: 0.2em;

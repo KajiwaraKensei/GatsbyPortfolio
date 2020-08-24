@@ -35,19 +35,26 @@ export type Article = {
 const works: worksType = [
   {
     github: "https://github.com/KajiwaraKensei/GatsbyPortFolio",
-    demo: "https://kaji-portfolio.netlify.app/",
+    demo: "https://kaji-pf.netlify.app/",
     platform: "web",
     name: "Portfolio2",
     workDay: "2020 07",
     briefDescription: "",
-    icon: "gat_icon.png",
-    backgroundImage: "gatsby/not_found.png",
+    icon: "profile.jpg",
+    backgroundImage: "gatsby/back.png",
     languages: [
       {
         name: "Gatsby.js",
         reason: [
-          "SSG(Static Site Generator)のお試し。Next.jsでもできるとのこと。",
+          "SSG(Static Site Generator)のお勉強。最近よくGatsby.jsの情報を見かけるので。",
           "Graphql が組み込まれていて画像の最適化が簡単に実装可能。",
+        ],
+      },
+      {
+        name: "Styled-Component",
+        reason: [
+          "CSS in Javascript。CSSに変数を埋め込めれるので、レスポンシブやアニメーションに対応しやすい。",
+          "今回はパフォーマンスを意識したサイトなので、若干動作が気になった。",
         ],
       },
       {
@@ -60,7 +67,8 @@ const works: worksType = [
       {
         name: "Typescript",
         reason: [
-          "Gatsby.js を Javascript ではなく、Typescript で開発することで、型の恩恵を受けながら開発しました。",
+          "Typescript で開発することで、型の恩恵を受けながら開発しました。",
+          "ファイルパスを短縮して絶対パスで記述できます。",
         ],
       },
     ],
@@ -89,7 +97,7 @@ const works: worksType = [
         type: "article",
 
         value:
-          "そのまま HTML と CSS , Javascript で制作は芸がないですし、面倒そうだったので、Gatsby.js を使うことにしました。\nGatsby.js は React ベースとなっており、部品単位にファイルを区切れるので、管理がしやすいです。また繰り返しの部分を変数や関数を使って簡略化でき、変更に強いです。",
+          "そのまま HTML と CSS , Javascript で制作は芸がないですし、面倒そうだったので、フレームワークにGatsby.js を使うことにしました。\nGatsby.js は React ベースとなっており、React を勉強していたので比較的簡単に習得できました。また JSX 表記で繰り返しの部分を簡略化でき、変更や修正に強いです。",
       },
       {
         headline: "力を入れた点",
@@ -105,7 +113,7 @@ const works: worksType = [
         type: "article",
         headline: "PWA対応",
         value:
-          "PWA(Progressive Web App) に対応したと言っても、gatsby はプラグインが充実しているので、PWAのプラグインをインストールし、設定を少しした程度で、導入は簡単です。\nService Worker によってキャッシュが効くようになるので、２回目以降のロードがかなり早くなったり、オフラインでも利用可能です。",
+          "PWA(Progressive Web App) に対応したと言っても、gatsby はプラグインが充実しているので、PWAのプラグインをインストールし、設定を少しした程度で、導入は簡単です。\nブラウザのキャッシュが効くようになるので、２回目以降のロードがかなり早くなったり、オフラインでも利用可能です。",
       },
       {
         type: "image",
@@ -122,9 +130,19 @@ const works: worksType = [
         headline: "404ページ",
         image: "gatsby/404.png",
         imagePosition: "bottom",
-
         value:
           "404ページをコマンドライン風にしてみました。作品名 か home と入力することで正常のページに移動できます。\nコマンドラインになれていない人用に HOME ボタンを置いています。わかりやすいように点滅させるようにしています。",
+      },
+      {
+        type: "article",
+        headline: "画像の最適化",
+        value:
+          "Gatsby.js には GraphQL がデフォルトで組み込まれており画像の最適化が簡単に実装できます。読み込み時は小さい画像を表示し、必要になった時点で元のサイズの画像を読み込んで置き換えてくれます。",
+      },
+      {
+        type: "image",
+        image: ["gatsby/cash2.png", "gatsby/cash1.png"],
+        width: "15rem",
       },
       {
         headline: "アニメーション",
@@ -143,72 +161,28 @@ const works: worksType = [
     platform: "web",
     name: "Makers",
     briefDescription: "文章をテンプレート化し、作業効率UP↑",
-    workDay: 2020,
-    icon: "makers-icon.png",
+    workDay: "2020 02",
+    icon: "favicon.png",
     backgroundImage: "makersicon.png",
     languages: [
       {
         name: "Next.js",
-        reason: [
-          "Because I wanted to do SSR(ServerSideRendering). Also, since I had learned React, I wanted to step up to the next level.",
-          "Used in the front end",
-          "Developed in Typescript",
-        ],
+        reason: [],
       },
       {
         name: "Docker",
-        reason: [
-          "I wanted to get all the servers up and running with one command.",
-          "Used in development environments",
-          "As long as you have Docker on other people's computers, you can easily build apps.",
-        ],
+        reason: [],
       },
       {
         name: "Express",
-        reason: [
-          "Used for the API server",
-          "I wanted to develop the backend with Javascript because I had learned Javascript in the front end first.",
-          "Developed in Typescript",
-          "Transpile with webpack",
-        ],
+        reason: [],
       },
       {
         name: "MongoDB",
-        reason: [
-          "Used for database",
-          "I wanted to touch No-SQl. And because there were many reference materials.",
-        ],
+        reason: [],
       },
     ],
-    contents: [
-      {
-        type: "article",
-        value:
-          "The best thing about this app is that it allows you to turn your text into a template. You can template your daily work reports and create sentences effortlessly.",
-        headline: "Differentiation",
-        styled: "",
-        image: "makers_ii.png",
-        imagePosition: "bottom",
-      },
-      {
-        type: "article",
-        value:
-          'This site is responsive.  It uses a CSS in Javascript called "Styled-Components" to make the site responsive. It dynamically generates CSS to fit the width of the screen.',
-        headline: "Responsive Support",
-        styled: "margin-top: 5rem;",
-      },
-      {
-        type: "image",
-        image: ["maker_r_1.png"],
-        width: "100%",
-      },
-      {
-        type: "image",
-        image: ["maker_r_2.png"],
-        width: "60%",
-        styled: "padding: 0;",
-      },
-    ],
+    contents: [],
   },
   {
     github: "https://github.com/KajiwaraKensei/gurunaviTask",
@@ -257,7 +231,7 @@ const works: worksType = [
       {
         type: "article",
         value:
-          "Typescript を習得した今だから思うんですけど、エラー処理が大変でした。初心者なのも相まって実装部分をかなりの頻度で変更していて、実際に実行しないとエラーが出ないので、動作確認が大変でした。\n",
+          "エラー処理が大変でした。初心者なのも相まって実装部分をかなりの頻度で変更していて、実際に実行しないとエラーが出ないので、動作確認が大変でした。\n",
         headline: "感想",
       },
     ],
@@ -270,7 +244,7 @@ const works: worksType = [
     name: "Portfolio1",
     briefDescription: "変数いじるだけでポートフォリオサイトが作れます。",
     workDay: 2020,
-    icon: "portfolio_template_icon.png",
+    icon: "my.jpg",
     backgroundImage: "portfolio_template_back.png",
     languages: [
       {

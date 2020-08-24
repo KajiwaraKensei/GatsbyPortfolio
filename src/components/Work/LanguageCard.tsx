@@ -33,7 +33,8 @@ export default styled(Component)`
   padding: 1rem;
   & > p {
     font-size: 1rem;
-    font-weight: 250;
+    font-weight: 500;
+    color: #555;
     margin: 0.25rem 0;
   }
   ul {
@@ -53,8 +54,8 @@ export default styled(Component)`
     position: absolute;
     top: 0.65em;
     left: -1em;
-    width: 8px;
+    width: 6px;
     height: 1px;
-    background-color: #666;
+    background-color: #555;
   }
 `

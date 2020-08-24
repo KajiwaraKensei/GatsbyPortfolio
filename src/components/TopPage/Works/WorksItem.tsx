@@ -79,7 +79,6 @@ export default styled(Component) <StyledProps>`
     transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
     pointer-events: none;
     & div {
-      background-color: #fff;
       width: 100%;
       height: 100%;
       transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);

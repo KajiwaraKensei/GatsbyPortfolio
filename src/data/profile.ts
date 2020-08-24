@@ -24,7 +24,7 @@ export const profile: profile = {
   image: "profile.jpg",
   careers: [{ year: "2021 ~ ", event: "とある会社に内定済み" }],
   introductions: [
-    { year: "2017", event: "岡山県立岡山操山高等学校 卒業" },
+    { year: "2018", event: "岡山県立岡山操山高等学校 卒業" },
     { year: "2018", event: "神戸電子専門学校 ITスペシャリリスト学科 入学" },
     { year: "2021 ", event: "神戸電子専門学校 卒業見込み" },
   ],
