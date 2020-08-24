@@ -7,7 +7,7 @@
 
 > src/data の中にあるファイルの変数をいじるだけでポートフォリオサイトが作れます
 
-### ✨ [Demo](https://kaji-portfolio.netlify.app/)
+### ✨ [Demo](https://kaji-pf.netlify.app/)
 
 自分の環境に持ってくる。
 
