@@ -19,7 +19,7 @@ const MapImages = (props: ImageContent) =>
       key={"map_image_content_" + image}
       width={props.width || "100%"}
       height={props.height || "auto"}
-      style={{ borderRadius: ".3rem", boxShadow: "#7373735c 0px 5px 11px 2px" }}
+      style={{ borderRadius: ".3rem", boxShadow: "#7373735c 0px 5px 11px 2px", margin: ".5rem" }}
       filename={image}
     />
   ))
@@ -29,8 +29,10 @@ const MapImages = (props: ImageContent) =>
 const Component: React.FC<Props> = props => {
   const { className, content } = props
   const { headline } = content
+
   return (
     <div className={className}>
+
       {headline && <h2>{headline}</h2>}
       <div className="map_image_content">{MapImages(content)}</div>
     </div>
@@ -43,6 +45,7 @@ export default styled(Component) <{ content: ImageContent }>`
   width: 100%;
   max-width: 50rem;
   padding: 0 2rem 2rem;
+  text-align: center;
   .map_image_content {
     display: flex;
     flex-wrap: wrap;
