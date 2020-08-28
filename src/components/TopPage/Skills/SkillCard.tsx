@@ -108,6 +108,7 @@ export default styled(Component)`
         top: 50%;
         left: 50%;
         transform: translateY(-50%) translateX(-50%);
+        z-index: -1;
       }
     }
   }
