@@ -65,6 +65,28 @@ const circle2 = (p: StyleProps) => keyframes`
   };
   }
 `
+const circle2Hover = (p: StyleProps) => keyframes`
+0%{
+  stroke-dasharray:0 ${p.circumference || CIRCUMFERENCE};
+}
+80%, 100%{
+  stroke-dasharray:${p.circumference || CIRCUMFERENCE} ${
+  p.circumference || CIRCUMFERENCE
+  };
+}
+`;
+const circle1Hover = (p: StyleProps) => keyframes`
+0%{
+  stroke-dasharray:0, ${p.circumference || CIRCUMFERENCE};
+}
+80%, 100%{
+  stroke-dasharray: ${
+  (p.circumference || CIRCUMFERENCE) * (p.percent * 0.01) +
+  " " +
+  (p.circumference || CIRCUMFERENCE)
+  };
+}
+`;
 
 export default styled(Component) <StyleProps>`
   & .circle {
@@ -87,4 +109,13 @@ export default styled(Component) <StyleProps>`
     )};
     animation: ${circle2} 0.5s forwards;
   }
+  &:hover{
+    & .type1 {
+    animation: ${circle1Hover} 2s ease-in 0s forwards;
+  }
+    & .type2{
+      animation: ${circle2Hover} 2s ease-in 0s forwards;
+    }
+      
+    }
 `
