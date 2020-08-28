@@ -72,12 +72,14 @@ export default styled(Component) <StyledProps>`
   flex-direction: column;
   transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
   position: relative;
+ 
   .work_image {
-    width: ${CARD_SIZE}rem;
-    height: ${CARD_SIZE}rem;
-    padding: 3.5rem;
+    width: ${CARD_SIZE - 7}rem;
+    height: ${CARD_SIZE - 7}rem;
+    margin: 3.5rem;
     transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
     pointer-events: none;
+    box-shadow: 2px 2px 15px 5px #0000003d;
     & div {
       width: 100%;
       height: 100%;
@@ -86,6 +88,7 @@ export default styled(Component) <StyledProps>`
       object-fit: cover;
       cursor: pointer;
       margin: 0 auto;
+      
     }
   }
 
@@ -107,7 +110,9 @@ export default styled(Component) <StyledProps>`
   }
 
   & .work_image:hover {
-    padding: 2.5rem;
+    width: ${CARD_SIZE - 5}rem;
+    height: ${CARD_SIZE - 5}rem;
+    margin: 2.5rem;
     z-index: 2;
     transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
   }
