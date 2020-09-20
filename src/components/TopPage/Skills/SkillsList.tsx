@@ -16,9 +16,7 @@ type Props = {
 const Component: React.FC<Props> = props => {
   const { className, skills } = props
   const mapSkills = skills.map((skill, i) => (
-    <React.Fragment key={"skill_card_" + skill.name}>
-      <SkillCard skill={skill} index={i} />
-    </React.Fragment>
+    <SkillCard key={"skill_card_" + skill.name} skill={skill} index={i} />
   ))
   return <div className={className}>{mapSkills}</div>
 }

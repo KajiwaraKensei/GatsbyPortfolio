@@ -88,7 +88,6 @@ export default styled(Component) <StyledProps>`
       object-fit: cover;
       cursor: pointer;
       margin: 0 auto;
-      
     }
   }
 
@@ -104,9 +103,6 @@ export default styled(Component) <StyledProps>`
     letter-spacing: 0.02em;
     display: flex;
     justify-content: space-between;
-    & > span:last-child{
-
-    }
   }
 
   & .work_image:hover {
