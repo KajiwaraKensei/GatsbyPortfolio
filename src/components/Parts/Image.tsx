@@ -35,13 +35,7 @@ export default ({
               relativePath
               childImageSharp {
                 fluid(maxWidth: 1600) {
-                  base64
-                  src
-                  srcSet
-                  srcSetWebp
-                  srcWebp
-                  aspectRatio
-                  sizes
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
             }
