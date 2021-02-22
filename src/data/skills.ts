@@ -19,7 +19,7 @@ export const skills: SkillTypes = [
   },
   {
     name: "Next.js",
-    proficiencyLevel: 60,
+    proficiencyLevel: 70,
     description:
       "React の学習の延長。SSR の勉強のために学習しました。 Typescript の導入が非常に楽でした。",
     works: [],
