@@ -1,5 +1,5 @@
 export type workType = {
-  platform: "web" | "mobile"
+  platform: "web" | "mobile" | "pc"
   name: string
   icon: string
   backgroundImage: string
@@ -33,6 +33,108 @@ export type Article = {
   alt?: string
 }
 const works: worksType = [
+  {
+    github: "https://github.com/KajiwaraKensei/WorkPACK",
+    demo: "https://euchre.jimdosite.com/",
+    platform: "pc",
+    name: "WorkPACK",
+    workDay: "2021 01",
+    briefDescription: "",
+    icon: "workPack/logo.png",
+    backgroundImage: "workPack/linkedin_banner_image_1.png",
+    languages: [
+      {
+        name: "Electron",
+        reason: ["SlackやVSCodeに採用されており興味があったため。", "PCの色々な機能を触ってみたかった。"]
+      },
+      {
+        name: "Typescript",
+        reason: ["実行前にある程度エラーを表示してくれるため。", "Javascriptだけにはもう戻れない。"]
+      },
+      {
+        name: "Next.js",
+        reason: ["表示に使用。", "React Love!"]
+      },
+      {
+        name: "GoogleClassroomAPI",
+        reason: [
+          "学校でGoogleClassroomを使用しており、授業の情報を引っ張ってくるため使用。",
+        ]
+      }
+    ],
+    contents: [
+      {
+        type: "article",
+        headline: "WorkPACKとは？",
+        styled: "",
+        value: "WorkPACKを使うことで、GoogleClassroomをより便利に！GoogleClassroomAPIを活用し、授業の情報がよりわかりやすく、課題に取り組みやすくできます。"
+      },
+      {
+        type: "image",
+        image: ["workPack/logo.png"],
+        width: "20rem",
+        styled: "margin-bottom: 3rem;"
+      },
+      {
+        type: "article",
+        headline: "特徴",
+        value: "1. 未提出の課題が提出期限順に並ぶのでどれから取り組めばいいかわかりやすい。",
+        image: "workPack/workList.png",
+        imagePosition: "bottom",
+      },
+      {
+        type: "article",
+        headline: "",
+        value: "2. 自由に授業の情報をカスタマイズでき、課題の提出までがスムーズ。",
+        image: "workPack/board.png",
+        imagePosition: "bottom",
+      },
+      {
+        type: "article",
+        headline: "",
+        value: "3. 色々なウィジェットの追加可能。",
+        image: "workPack/wi.png",
+        imagePosition: "bottom",
+      },
+      {
+        type: "article",
+        headline: "きっかけ",
+        value: "学校の授業の一環で作りました。アプリのコードはほとんど自分が担当しています。",
+        styled: "padding-bottom: 0;",
+      },
+      {
+        type: "article",
+        styled: "padding-bottom: 0;",
+        value: "この内容にしたきっかけですが、従来のGoogleClassroomは、課題の提出までの工程が多く面倒に感じていたため、「アプリにドラッグ&ドロップだけで提出」をできるようにしたかったのがきっかけです。"
+      },
+      {
+        type: "article",
+        value: "最初はよかったのですが、開発が進んでいく途中でClassroomの仕様上、APIからの提出は実質不可能だと判明したため、コンセプトが「課題に取り組みやすいように特化する」に変わって今のアプリになりました。"
+      },
+      {
+        type: "article",
+        headline: "困ったこと",
+        styled: "padding-bottom: 0;",
+        value: "GoogleAPIの認証で取得したトークンが、デフォルトだとコピペでアプリに貼り付けてくださいとなっており、UX的に自動で取得できるようにしたかったため苦戦した。",
+      },
+      {
+        type: "article",
+        value: "リダイレクト先の設定もできたが、リダイレクト先を認証させる設定の方法がわからなかった。",
+        styled: "padding-bottom: 0;",
+      },
+      {
+        type: "article",
+        value: "結局デフォルトの設定のままで、Electron側からtitleの中にあるトークンを取得するようにして実装できた。",
+        styled: "padding-bottom: 0;",
+      },
+      {
+        type: "image",
+        image: ["workPack/auth.jpeg"],
+        width: "30rem"
+      }
+    ],
+
+  },
   {
     github: "https://github.com/KajiwaraKensei/GatsbyPortFolio",
     demo: "https://kaji-pf.netlify.app/",
@@ -154,6 +256,41 @@ const works: worksType = [
           "アニメーションにも力を入れました。画面の遷移どうでしたでしょうか？遷移を遅らせてその間にアニメーションを入れる感じで実装しました。そこまで触れてこなかったのでいろいろ勉強になりました。",
       },
     ],
+  },
+  {
+    github: "https://github.com/KajiwaraKensei/Chrome",
+    demo: "https://chrome.google.com/webstore/detail/tabbedloco/gjkimeigokcegoaachnjbnppffanilmc",
+    platform: "web",
+    name: "tabbed_loco",
+    workDay: "2020 10",
+    icon: "loco/icon.jpg",
+    briefDescription: "",
+    backgroundImage: "loco/bc.png",
+    languages: [
+      {
+        name: "React.js",
+        reason: ["表示に使用"]
+      },
+      {
+        name: "Typescript",
+        reason: ["webpackでビルドして公開"]
+      }
+    ],
+    contents: [
+      {
+        type: "article",
+        headline: "特徴",
+        value: "開いているチャンネルを他の人と共有できます。共有先の設定は簡単で同じキーワードを登録しているだけで共有できます。"
+      },
+      {
+        type: "image",
+        image: ["loco/conf.png"],
+      },
+      {
+        type: "article",
+        value: "共有されるとアラートで確認できます。設定からアラートで確認を切ることもできます。"
+      }
+    ]
   },
   {
     github: "https://github.com/KajiwaraKensei/Makers",
