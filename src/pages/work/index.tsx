@@ -21,7 +21,6 @@ const Component: React.FC<Props> = props => {
   return (
     <div>
       <EventListener target="window" onResize={handleResize} />
-
       <Work name={props["*"] || ""} />
     </div>
   )
