@@ -29,7 +29,7 @@ const Component: React.FC<Props> = props => {
       />
       <meta charSet="utf-8" />
       <meta name="description" content={description} />
-      <meta name="twitter:card" content={props.twitter.card || "summary_large_image"} />
+      <meta name="twitter:card" content={props.twitter.card || "summary_card"} />
           <meta name="twitter:site" content={"@" + profile.twitter} />
       <meta property="og:url" content={props.twitter.url || "https://kaji-pf.netlify.app/"} />
       <meta property="og:title" content={props.twitter.title || `${profile.name}'s Portfolio`} />
