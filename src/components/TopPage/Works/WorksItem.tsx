@@ -109,21 +109,30 @@ export default styled(Component) <StyledProps>`
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
+    transition: .2s;
+    ${({ focus }) => focus ? css`
     width: ${CARD_SIZE - 5}rem;
     height: ${CARD_SIZE - 5}rem;
-    ${({ focus }) => focus ? css`
-      background-color: #00000044;
+
+      background-color: #00000022;
     `: css`
+    width: ${CARD_SIZE - 6.9}rem;
+    height: ${CARD_SIZE - 6.9}rem;
 
     `}
     &>span{
-      padding: .5rem;
+
       display: block;
-      transition: .2s;
+      transition:  .2s;
       color: #fff;
+      width: ${CARD_SIZE - 5.5}rem;
+      height: ${CARD_SIZE - 5.5}rem;
+      padding: .5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       ${({ focus }) => focus ? css`
-        transform: translateY(0);
+        transform: translateY(0%);
         opacity: 1;
       `: css`
         transform: translateY(100px);
@@ -131,10 +140,7 @@ export default styled(Component) <StyledProps>`
       `}
     }
   }
-  .brief_description:hover .brief_description>span{
-      transform: translateY(0);
-      opacity: 1;
-    }
+
  .work_name {
     color: #000;
     margin: 0;
@@ -154,7 +160,7 @@ export default styled(Component) <StyledProps>`
     height: ${CARD_SIZE - 5}rem;
     margin: 2.5rem;
     z-index: 2;
-    transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
+    transition:  .2s;
   }
   ${({ opacity }) => opacity != null && `opacity: ${opacity};`}
 `

@@ -141,7 +141,7 @@ const works: worksType = [
     platform: "web",
     name: "Portfolio2",
     workDay: "2020 07",
-    briefDescription: "ポートフォリオサイト",
+    briefDescription: "このポートフォリオサイトです。",
     icon: "profile.jpg",
     backgroundImage: "gatsby/back.png",
     languages: [
@@ -327,7 +327,7 @@ const works: worksType = [
     platform: "web",
     name: "ごちナビ",
     workDay: "2019 07",
-    briefDescription: "",
+    briefDescription: "現在地から、ぐるなびAPIを使用し、周囲の飲食店を検索できます。",
     icon: "goti_icon.png",
     backgroundImage: "gotinabi/gotinavi-kate.png",
     languages: [
