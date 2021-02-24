@@ -2,7 +2,7 @@
 // SEO
 import React from "react"
 import { Helmet } from "react-helmet"
-
+import { profile } from "data/profile"
 // ______________________________________________________
 // 型
 type Props = {
@@ -23,6 +23,12 @@ const Component: React.FC<Props> = props => {
       />
       <meta charSet="utf-8" />
       <meta name="description" content={description} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content={"@" + profile.twitter} />
+      <meta property="og:url" content="https://kaji-pf.netlify.app/" />
+      <meta property="og:title" content="KajiDog's Portfolio" />
+      <meta property="og:description" content="KajiDogのポートフォリオサイトです。" />
+      <meta property="og:image" content="https://kajiwarakensei.github.io/GatsbyPortfolio/src/images/gat_icon.png" />
       <title>{title}</title>
     </Helmet>
   )
