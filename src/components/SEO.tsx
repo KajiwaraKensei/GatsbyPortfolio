@@ -16,16 +16,6 @@ type Props = {
     img?: string;
   }
 }
-const Twitter = (
-  <React.Fragment>
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content={"@" + profile.twitter} />
-    <meta property="og:url" content="https://kaji-pf.netlify.app/" />
-    <meta property="og:title" content={`${profile.name}'s Portfolio`} />
-    <meta property="og:description" content={`${profile.name}のポートフォリオサイトです。`} />
-    <meta property="og:image" content="https://kajiwarakensei.github.io/GatsbyPortfolio/src/images/gat_icon.png" />
-  </React.Fragment>
-)
 // ______________________________________________________
 // コンポーネント
 const Component: React.FC<Props> = props => {
