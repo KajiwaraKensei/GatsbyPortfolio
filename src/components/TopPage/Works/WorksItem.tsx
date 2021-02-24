@@ -1,7 +1,7 @@
 // ______________________________________________________
 // Worksの1つ1つ
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { workType } from "~/data/works"
 import Image from "~/Parts/Image"
 export const CARD_SIZE = 24
@@ -30,6 +30,7 @@ const Component: React.FC<Props> = props => {
     <div className={className}>
       <div className="work_image">
         <div
+          className="work_wrap"
           onClick={onClick}
           onMouseOver={onMouseOver}
           onMouseOut={onMouseOut}
@@ -40,7 +41,13 @@ const Component: React.FC<Props> = props => {
             filename={icon}
             alt={work.name + "のアイコン"}
           />
+
         </div>
+        <p className="brief_description" >
+          <span>
+            {work.briefDescription}
+          </span>
+        </p>
 
         <p className="work_name">
           <span>{name}</span>
@@ -63,6 +70,8 @@ export default styled(Component) <StyledProps>`
       : `
   color: #fff;
   `}
+
+
   width: ${CARD_SIZE}rem;
   height: ${CARD_SIZE}rem;
   padding: 1rem;
@@ -90,7 +99,42 @@ export default styled(Component) <StyledProps>`
       margin: 0 auto;
     }
   }
+  .brief_description{
+    margin: none;
+    color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
+    width: ${CARD_SIZE - 5}rem;
+    height: ${CARD_SIZE - 5}rem;
+    ${({ focus }) => focus ? css`
+      background-color: #00000044;
+    `: css`
 
+    `}
+    &>span{
+      padding: .5rem;
+      display: block;
+      transition: .2s;
+      color: #fff;
+      ${({ focus }) => focus ? css`
+        transform: translateY(0);
+        opacity: 1;
+      `: css`
+        transform: translateY(100px);
+        opacity: 0;
+      `}
+    }
+  }
+  .brief_description:hover .brief_description>span{
+      transform: translateY(0);
+      opacity: 1;
+    }
  .work_name {
     color: #000;
     margin: 0;

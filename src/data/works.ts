@@ -39,7 +39,7 @@ const works: worksType = [
     platform: "pc",
     name: "WorkPACK",
     workDay: "2021 01",
-    briefDescription: "",
+    briefDescription: "GoogleClassroomをより便利に。",
     icon: "workPack/logo.png",
     backgroundImage: "workPack/linkedin_banner_image_1.png",
     languages: [
@@ -141,7 +141,7 @@ const works: worksType = [
     platform: "web",
     name: "Portfolio2",
     workDay: "2020 07",
-    briefDescription: "",
+    briefDescription: "ポートフォリオサイト",
     icon: "profile.jpg",
     backgroundImage: "gatsby/back.png",
     languages: [
@@ -264,23 +264,23 @@ const works: worksType = [
     name: "tabbed_loco",
     workDay: "2020 10",
     icon: "loco/icon.jpg",
-    briefDescription: "",
+    briefDescription: "Chromeの拡張機能。開いているタブをブラウザだけで簡単共有。",
     backgroundImage: "loco/bc.png",
     languages: [
       {
         name: "React.js",
-        reason: ["表示に使用"]
+        reason: ["表示に使用", "Firebaseと通信"]
       },
       {
         name: "Typescript",
-        reason: ["webpackでビルドして公開"]
+        reason: ["webpackでJSファイルに変換", "Chromeの拡張機能なので、Javascript必須"]
       }
     ],
     contents: [
       {
         type: "article",
         headline: "特徴",
-        value: "開いているチャンネルを他の人と共有できます。共有先の設定は簡単で同じキーワードを登録しているだけで共有できます。"
+        value: "Chromeの拡張機能です。開いているタブを他の人と共有できます。共有先の設定は簡単で、同じキーワードを登録しているだけで共有できます。"
       },
       {
         type: "image",
