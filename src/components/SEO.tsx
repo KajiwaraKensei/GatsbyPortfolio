@@ -34,7 +34,7 @@ const Component: React.FC<Props> = props => {
       <meta property="og:url" content={props.twitter.url || "https://kaji-pf.netlify.app/"} />
       <meta property="og:title" content={props.twitter.title || `${profile.name}'s Portfolio`} />
       <meta property="og:description" content={props.twitter.description || `${profile.name}のポートフォリオサイトです。`} />
-      <meta property="og:image" content={props.twitter.img || "https://kajiwarakensei.github.io/GatsbyPortfolio/src/images/bc.png"} />
+      <meta property="og:image" content={props.twitter.img || "https://kajiwarakensei.github.io/GatsbyPortfolio/src/images/bc.png?hogheoge/"} />
       <title>{title}</title>
     </Helmet>
   )
