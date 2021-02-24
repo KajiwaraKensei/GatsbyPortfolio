@@ -41,6 +41,13 @@ const Component: React.FC<Props> = props => {
       <SEO
         title={work.name}
         description={work.name + "のページです。" + work.briefDescription}
+        twitter={{
+          card: "summary",
+          url: "https://kaji-pf.netlify.app/work/" + work.name + "/",
+          description: work.briefDescription,
+          title: "作品紹介 : " + work.name,
+          img: "https://kajiwarakensei.github.io/GatsbyPortfolio/src/images/" + work.icon
+        }}
       />
       <Header url={work.backgroundImage} />
       <Contents work={work} />

@@ -24,7 +24,7 @@ const Component: React.FC<Props> = props => {
   return (
     <div>
       <EventListener target="window" onResize={handleResize} />
-      <SEO title={"404!!"} description={"page not found!"} />
+      <SEO twitter={{}} title={"404!!"} description={"page not found!"} />
 
       <A name={props["*"] || "404"} />
     </div>

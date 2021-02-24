@@ -8,8 +8,14 @@ import { profile } from "data/profile"
 type Props = {
   title: string // タイトル
   description: string　// 説明
+  twitter: {
+    card?: string;
+    url?: string;
+    title?: string;
+    description?: string;
+    img?: string;
+  }
 }
-
 // ______________________________________________________
 // コンポーネント
 const Component: React.FC<Props> = props => {
@@ -23,12 +29,12 @@ const Component: React.FC<Props> = props => {
       />
       <meta charSet="utf-8" />
       <meta name="description" content={description} />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content={"@" + profile.twitter} />
-      <meta property="og:url" content="https://kaji-pf.netlify.app/" />
-      <meta property="og:title" content={`${profile.name}'s Portfolio`} />
-      <meta property="og:description" content={`${profile.name}のポートフォリオサイトです。`} />
-      <meta property="og:image" content="https://kajiwarakensei.github.io/GatsbyPortfolio/src/images/gat_icon.png" />
+      <meta name="twitter:card" content={props.twitter.card || "summary_large_image"} />
+          <meta name="twitter:site" content={"@" + profile.twitter} />
+      <meta property="og:url" content={props.twitter.url || "https://kaji-pf.netlify.app/"} />
+      <meta property="og:title" content={props.twitter.title || `${profile.name}'s Portfolio`} />
+      <meta property="og:description" content={props.twitter.description || `${profile.name}のポートフォリオサイトです。`} />
+      <meta property="og:image" content={props.twitter.img || "https://kajiwarakensei.github.io/GatsbyPortfolio/src/images/scc.png"} />
       <title>{title}</title>
     </Helmet>
   )
