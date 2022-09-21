@@ -12,54 +12,81 @@ export type SkillTypes = SkillType[]
 export const skills: SkillTypes = [
   {
     name: "Gatsby.js",
-    proficiencyLevel: 60,
+    proficiencyLevel: 50,
     description:
-      "React の学習の延長。SSG ができるということで。このサイトは Gatsby.js を使用しています。",
+      "このサイトで使用したぐらいの理解度",
     works: [],
   },
   {
     name: "Next.js",
     proficiencyLevel: 70,
     description:
-      "React の学習の延長。SSR の勉強のために学習しました。 Typescript の導入が非常に楽でした。",
+      "簡単に構築ができるのでよく使用してます。",
     works: [],
   },
 
   {
-    name: "JavaScript",
-    proficiencyLevel: 50,
-    description: "最初に学習した言語なので思い入れがあります。",
+    name: "Electron",
+    proficiencyLevel: 70,
+    description:
+      "デスクトップアプリがWebの技術で簡単にできるので、よく業務ツールの作成に使用してます。",
     works: [],
   },
+
   {
-    name: "TypeScript",
-    proficiencyLevel: 80,
-    description: "一番好きな言語です。Union型が非常に素晴らしい！",
+    name: "Svelte",
+    proficiencyLevel: 30,
+    description:
+      "仮想Domを使用しないというライブラリで興味持ってます程度。",
     works: [],
   },
   {
     name: "React.JS",
     proficiencyLevel: 90,
-    description: "最初に学習した Javascript のフレームワークです。",
+    description: "よくほかのフレームワークやライブラリと合わせて使用してるので理解度は高い。",
     works: [],
   },
   {
     name: "Express",
     proficiencyLevel: 60,
-    description: "簡単なAPIの作成に使用しました。with MongoDB",
+    description: "APIサーバーによく使用してます。",
     works: [],
   },
   {
-    name: "Docker",
-    proficiencyLevel: 50,
-    description:
-      "Docker-Compose を使用し、 Lamp 環境を構築したり、アプリの開発環境に使用しています。",
+    name: "JavaScript",
+    proficiencyLevel: 70,
+    description: "Webアプリでよく使用してるので理解度高いです。",
+    works: [],
+  },
+  {
+    name: "TypeScript",
+    proficiencyLevel: 85,
+    description: "一番好きな言語です。導入できる場合はほぼ導入してます。",
     works: [],
   },
   {
     name: "PHP",
+    proficiencyLevel: 40,
+    description: "基本的な文法まで、ある程度完成しているLaravelに機能追加したぐらいの経験",
+    works: [],
+  },
+  {
+    name: "Python",
+    proficiencyLevel: 30,
+    description: "基本的な文法まで、読み書きができる程度",
+    works: [],
+  },
+  {
+    name: "C#",
     proficiencyLevel: 25,
-    description: "超基本的な文法のみ",
+    description: "ソフトウェア業務の保守で使用した程度",
+    works: [],
+  },
+  {
+    name: "Docker",
+    proficiencyLevel: 60,
+    description:
+      "Docker-Compose を使用して開発環境の構築をよくしてます",
     works: [],
   },
 ]
