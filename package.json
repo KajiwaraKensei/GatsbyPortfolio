@@ -27,7 +27,7 @@
     "@types/redux-thunk": "^2.1.0",
     "@types/styled-components": "^5.1.1",
     "dotenv": "^8.2.0",
-    "gatsby": "^2.23.12",
+    "gatsby": "^4.25.7",
     "gatsby-background-image": "^1.1.1",
     "gatsby-cli": "^2.12.60",
     "gatsby-env-variables": "^2.0.0",
